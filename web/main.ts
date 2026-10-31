@@ -61,8 +61,24 @@ import { SITE_VERSION } from './changelog';
 import { maybeAutoOpenAnnouncement, openAnnouncementPanel, syncAnnouncementBadge } from './announcement';
 import { maybeAutoOpenDisclaimer, openDisclaimerPanel } from './disclaimer';
 
+// ─── 预置对战双方（首次进入即有一局可模拟的对战；清空或改动后会写入本地，刷新沿用用户配置）───
+// 红：魏菜刀追击 曹纯·张辽·文鸯 ｜ 蓝：蜀步控制 张飞·诸葛亮·孙权（均取自内置热门预设，英雄不重复）
+function seedTeams(): EditorState {
+  const red: SlotState[] = [
+    { heroId: 'h498', extraSkillIds: ['changbing_fangzhen', 'gongqi_bubei'], freePoints: { attack: 40, defense: 0, strategy: 0, speed: 0 }, redness: 5, level: 40, secondaryTroop: '轻骑兵', secondaryTraits: ['疾行', '出奇'], treasure: { treasureId: 1003, affix: { name: '骁锐', value: 15 } } },
+    { heroId: 'h27', extraSkillIds: ['chengsheng_zhuiji', 'weizhen_xiaoyao'], freePoints: { attack: 40, defense: 0, strategy: 0, speed: 0 }, redness: 5, level: 40, secondaryTroop: '轻骑兵', secondaryTraits: ['疾行', '出奇'], treasure: { treasureId: 1084, affix: { name: '骁锐', value: 15 } } },
+    { heroId: 'h704', extraSkillIds: ['shiwu_xudong', 'xiaoxiong'], freePoints: { attack: 90, defense: 0, strategy: 0, speed: 0 }, redness: 5, level: 40, secondaryTroop: '轻骑兵', secondaryTraits: ['疾行', '出奇'], treasure: { treasureId: 1102, affix: { name: '骁锐', value: 15 } } },
+  ];
+  const blue: SlotState[] = [
+    { heroId: 'h22', extraSkillIds: ['shengbing_qiuzhan', 'jishi'], freePoints: { attack: 40, defense: 0, strategy: 0, speed: 0 }, redness: 0, level: 40, secondaryTroop: '轻骑兵', secondaryTraits: ['扰后', '挫锐'], treasure: { treasureId: 1087, affix: { name: '熟虑', value: 14 } } },
+    { heroId: 'h496', extraSkillIds: ['shiji', 'dingzujiangdong'], freePoints: { attack: 0, defense: 0, strategy: 3, speed: 37 }, redness: 0, level: 40, secondaryTroop: '长弓兵', secondaryTraits: ['地利', '迂回'], treasure: { treasureId: 1057, affix: { name: '天资', value: 10 } } },
+    { heroId: 'sunquan', extraSkillIds: ['jixian_yuanjin', 'zhanbi_duanjin'], freePoints: { attack: 0, defense: 15, strategy: 0, speed: 25 }, redness: 0, level: 40, secondaryTroop: '长弓兵', secondaryTraits: ['地利', '迂回'], treasure: { treasureId: 1072, affix: { name: '机敏', value: 6 } } },
+  ];
+  return { red, blue };
+}
+
 // ─── 状态 ───
-const state: EditorState = emptyEditor();
+const state: EditorState = readTeamState() ?? seedTeams();
 /** 最大回合固定 8，不可调整 */
 const MAX_ROUNDS = 8;
 /** 随机种子：用户不可调整，每次点击「开始模拟」由系统内部自动生成新种子 */
