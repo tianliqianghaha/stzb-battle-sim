@@ -1,0 +1,3238 @@
+{
+  "meta": {
+    "description": "率土之滨 配将卡池（阵营名将卡包口径）。唯一键 = 阵营 + 英雄 + 星级，解析到引擎 hero_id；同键多变体(基卡/SP/赛季)合并于 heroIds。",
+    "sources": {
+      "registry": "率土之滨_五星武将_重制.xlsx（桌面，权威五星枚举+阵营区分，多阵营分多行）",
+      "engine": "hero.json（模拟器武将库，提供 hero_id/属性/变体）",
+      "tier": "docs/率土保底卡池.md（多源共识的大/小保底分层）"
+    },
+    "tierMeaning": {
+      "大保底": "半价/核心五星（价值高，优先围绕建队）",
+      "小保底": "免费/素材五星（价值偏低，多拆战法/拼图）",
+      "未分级": "xlsx 五星但共识名单未列级（仍可作配将素材）"
+    },
+    "keyNote": "英雄可跨阵营，唯一判别 = (阵营, 英雄, 星级)；如 吕布=汉/群、关羽=蜀/魏、司马懿=魏/晋，各自独立成条。",
+    "starNote": "本池仅含 5 星（保底产出口径）。",
+    "engineMissingNote": "hero.json 快照未收录的武将标记 engineAvailable=false（如 刘秀）。",
+    "totalHeroes": 159,
+    "engineAvailable": 158
+  },
+  "factions": {
+    "汉": [
+      "100002",
+      "100003",
+      "100004",
+      "100005",
+      "100006",
+      "100007",
+      "100037",
+      "100101",
+      "100480",
+      "100486",
+      "100526",
+      "100553",
+      "100630",
+      "100623",
+      "100676",
+      "100693",
+      "100742",
+      "100770",
+      "100786",
+      "100794",
+      "100795",
+      "100803",
+      "100804",
+      "100805",
+      "100812",
+      "100369"
+    ],
+    "魏": [
+      "100023",
+      "100024",
+      "100025",
+      "100026",
+      "100027",
+      "100028",
+      "100029",
+      "100310",
+      "100435",
+      "100449",
+      "100472",
+      "100475",
+      "100476",
+      "100498",
+      "100585",
+      "100603",
+      "100618",
+      "100645",
+      "100652",
+      "100655",
+      "100672",
+      "100683",
+      "100685",
+      "100575",
+      "100787",
+      "100796",
+      "100473"
+    ],
+    "蜀": [
+      "100016",
+      "100017",
+      "100019",
+      "100020",
+      "100021",
+      "100022",
+      "100072",
+      "100074",
+      "100358",
+      "100442",
+      "100451",
+      "100477",
+      "100524",
+      "100534",
+      "100582",
+      "100615",
+      "100631",
+      "100649",
+      "100653",
+      "100689",
+      "100691",
+      "100792",
+      "100793",
+      "100799",
+      "100800",
+      "102015",
+      "102016",
+      "100674"
+    ],
+    "吴": [
+      "100030",
+      "100031",
+      "100032",
+      "100033",
+      "100034",
+      "100035",
+      "100036",
+      "100090",
+      "100424",
+      "100450",
+      "100478",
+      "100497",
+      "100522",
+      "100574",
+      "100589",
+      "100616",
+      "100619",
+      "100648",
+      "100654",
+      "100671",
+      "100684",
+      "100687",
+      "100741",
+      "100783",
+      "100788",
+      "100789"
+    ],
+    "群": [
+      "100008",
+      "100009",
+      "100010",
+      "100013",
+      "100015",
+      "100337",
+      "100372",
+      "100374",
+      "100376",
+      "100377",
+      "100443",
+      "100452",
+      "100474",
+      "100494",
+      "100495",
+      "100519",
+      "100557",
+      "100562",
+      "100592",
+      "100593",
+      "100604",
+      "100620",
+      "100634",
+      "100647",
+      "100656",
+      "100670",
+      "100677",
+      "100690",
+      "100692",
+      "100771",
+      "100785",
+      "100790",
+      "100802",
+      "100811",
+      "100488",
+      "100011",
+      "100586",
+      "100646"
+    ],
+    "晋": [
+      "100701",
+      "100702",
+      "100703",
+      "100704",
+      "100705",
+      "100706",
+      "100707",
+      "100708",
+      "100709",
+      "100797",
+      "100801",
+      "100807",
+      "100814"
+    ]
+  },
+  "unresolved": [
+    {
+      "raw": "步诸葛",
+      "resolvedFaction": "蜀"
+    }
+  ],
+  "pool": [
+    {
+      "name": "十常侍",
+      "faction": "汉",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100002",
+      "heroIds": [
+        "100002",
+        "130002"
+      ],
+      "xlsxIds": [
+        "100002"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "吕布",
+      "faction": "汉",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100003",
+      "heroIds": [
+        "100003",
+        "130003"
+      ],
+      "xlsxIds": [
+        "100003"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "蔡文姬",
+      "faction": "汉",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100004",
+      "heroIds": [
+        "100004",
+        "102011",
+        "130004",
+        "132011"
+      ],
+      "xlsxIds": [
+        "100004",
+        "102011"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "貂蝉",
+      "faction": "汉",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100005",
+      "heroIds": [
+        "100005",
+        "130005"
+      ],
+      "xlsxIds": [
+        "100005"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "袁绍",
+      "faction": "汉",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100006",
+      "heroIds": [
+        "100006",
+        "130006"
+      ],
+      "xlsxIds": [
+        "100006"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "卢植",
+      "faction": "汉",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100007",
+      "heroIds": [
+        "100007",
+        "102004",
+        "130007",
+        "132004"
+      ],
+      "xlsxIds": [
+        "100007",
+        "102004"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "张角",
+      "faction": "群",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100008",
+      "heroIds": [
+        "100008",
+        "102014",
+        "130008",
+        "132014"
+      ],
+      "xlsxIds": [
+        "100008",
+        "102014"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "董卓",
+      "faction": "群",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100009",
+      "heroIds": [
+        "100009",
+        "100657",
+        "130009",
+        "130657"
+      ],
+      "xlsxIds": [
+        "100009"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "吕布",
+      "faction": "群",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100010",
+      "heroIds": [
+        "100010",
+        "100479",
+        "100661",
+        "130479",
+        "130661"
+      ],
+      "xlsxIds": [
+        "100010",
+        "100479"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "马超",
+      "faction": "群",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100013",
+      "heroIds": [
+        "100013",
+        "130013"
+      ],
+      "xlsxIds": [
+        "100013"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "甄洛",
+      "faction": "群",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100015",
+      "heroIds": [
+        "100015",
+        "102005",
+        "130015",
+        "132005"
+      ],
+      "xlsxIds": [
+        "100015",
+        "102005"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "刘备",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100016",
+      "heroIds": [
+        "100016",
+        "100018",
+        "130016"
+      ],
+      "xlsxIds": [
+        "100016"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "诸葛亮",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100017",
+      "heroIds": [
+        "100017",
+        "100260",
+        "100496",
+        "130017",
+        "130496"
+      ],
+      "xlsxIds": [
+        "100017",
+        "100496"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "马云禄",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100019",
+      "heroIds": [
+        "100019",
+        "130019"
+      ],
+      "xlsxIds": [
+        "100019"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "黄月英",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100020",
+      "heroIds": [
+        "100020",
+        "130020"
+      ],
+      "xlsxIds": [
+        "100020"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "赵云",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100021",
+      "heroIds": [
+        "100021",
+        "102001",
+        "130021",
+        "132001"
+      ],
+      "xlsxIds": [
+        "100021",
+        "102001"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "张飞",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100022",
+      "heroIds": [
+        "100022",
+        "130022"
+      ],
+      "xlsxIds": [
+        "100022"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "曹操",
+      "faction": "魏",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100023",
+      "heroIds": [
+        "100023",
+        "130023"
+      ],
+      "xlsxIds": [
+        "100023"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "荀彧",
+      "faction": "魏",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100024",
+      "heroIds": [
+        "100024",
+        "130024"
+      ],
+      "xlsxIds": [
+        "100024"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "曹丕",
+      "faction": "魏",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100025",
+      "heroIds": [
+        "100025",
+        "130025"
+      ],
+      "xlsxIds": [
+        "100025"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "关羽",
+      "faction": "魏",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100026",
+      "heroIds": [
+        "100026",
+        "130026"
+      ],
+      "xlsxIds": [
+        "100026"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "张辽",
+      "faction": "魏",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100027",
+      "heroIds": [
+        "100027",
+        "130027"
+      ],
+      "xlsxIds": [
+        "100027"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "王异",
+      "faction": "魏",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100028",
+      "heroIds": [
+        "100028",
+        "130028"
+      ],
+      "xlsxIds": [
+        "100028"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "张春华",
+      "faction": "魏",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100029",
+      "heroIds": [
+        "100029",
+        "130029"
+      ],
+      "xlsxIds": [
+        "100029"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "孙权",
+      "faction": "吴",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100030",
+      "heroIds": [
+        "100030",
+        "100808",
+        "130030",
+        "130808"
+      ],
+      "xlsxIds": [
+        "100030",
+        "100808"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "single-source"
+    },
+    {
+      "name": "周瑜",
+      "faction": "吴",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100031",
+      "heroIds": [
+        "100031",
+        "100784",
+        "130031",
+        "130784"
+      ],
+      "xlsxIds": [
+        "100031",
+        "100784"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "周姬",
+      "faction": "吴",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100032",
+      "heroIds": [
+        "100032",
+        "102017",
+        "130032",
+        "132017"
+      ],
+      "xlsxIds": [
+        "100032",
+        "102017"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "孙坚",
+      "faction": "吴",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100033",
+      "heroIds": [
+        "100033",
+        "130033"
+      ],
+      "xlsxIds": [
+        "100033"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "甘宁",
+      "faction": "吴",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100034",
+      "heroIds": [
+        "100034",
+        "130034"
+      ],
+      "xlsxIds": [
+        "100034"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "吕蒙",
+      "faction": "吴",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100035",
+      "heroIds": [
+        "100035",
+        "130035"
+      ],
+      "xlsxIds": [
+        "100035"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "孙尚香",
+      "faction": "吴",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100036",
+      "heroIds": [
+        "100036",
+        "130036"
+      ],
+      "xlsxIds": [
+        "100036"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "何太后",
+      "faction": "汉",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100037",
+      "heroIds": [
+        "100037",
+        "130037"
+      ],
+      "xlsxIds": [
+        "100037"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "关银屏",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100072",
+      "heroIds": [
+        "100072",
+        "130072"
+      ],
+      "xlsxIds": [
+        "100072"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "姜维",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100074",
+      "heroIds": [
+        "100074",
+        "102012",
+        "100806",
+        "130074",
+        "132012",
+        "130806"
+      ],
+      "xlsxIds": [
+        "100074",
+        "100806",
+        "102012"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "太史慈",
+      "faction": "吴",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100090",
+      "heroIds": [
+        "100090",
+        "102003",
+        "130090",
+        "132003"
+      ],
+      "xlsxIds": [
+        "100090",
+        "102003"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "灵帝",
+      "faction": "汉",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100101",
+      "heroIds": [
+        "100101",
+        "130101"
+      ],
+      "xlsxIds": [
+        "100101"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "邓艾",
+      "faction": "魏",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100310",
+      "heroIds": [
+        "100310",
+        "130310"
+      ],
+      "xlsxIds": [
+        "100310"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "貂蝉",
+      "faction": "群",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100337",
+      "heroIds": [
+        "100337",
+        "130337"
+      ],
+      "xlsxIds": [
+        "100337"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "张姬",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100358",
+      "heroIds": [
+        "100358",
+        "130358"
+      ],
+      "xlsxIds": [
+        "100358"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "妲己",
+      "faction": "群",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100372",
+      "heroIds": [
+        "100372",
+        "130372"
+      ],
+      "xlsxIds": [
+        "100372"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "妺喜",
+      "faction": "群",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100374",
+      "heroIds": [
+        "100374",
+        "130374"
+      ],
+      "xlsxIds": [
+        "100374"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "褒姒",
+      "faction": "群",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100376",
+      "heroIds": [
+        "100376",
+        "130376"
+      ],
+      "xlsxIds": [
+        "100376"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "骊姬",
+      "faction": "群",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100377",
+      "heroIds": [
+        "100377",
+        "130377"
+      ],
+      "xlsxIds": [
+        "100377"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "小乔＆大乔",
+      "faction": "吴",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100424",
+      "heroIds": [
+        "100424",
+        "130424"
+      ],
+      "xlsxIds": [
+        "100424"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "夏侯渊",
+      "faction": "魏",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100435",
+      "heroIds": [
+        "100435",
+        "102002",
+        "130435",
+        "132002"
+      ],
+      "xlsxIds": [
+        "100435",
+        "102002"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "黄忠",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100442",
+      "heroIds": [
+        "100442",
+        "100810",
+        "130442",
+        "130810"
+      ],
+      "xlsxIds": [
+        "100442",
+        "100810"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "陈宫",
+      "faction": "群",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100443",
+      "heroIds": [
+        "100443",
+        "130443"
+      ],
+      "xlsxIds": [
+        "100443"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "夏侯惇",
+      "faction": "魏",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100449",
+      "heroIds": [
+        "100449",
+        "130449"
+      ],
+      "xlsxIds": [
+        "100449"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "孙策",
+      "faction": "吴",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100450",
+      "heroIds": [
+        "100450",
+        "130450"
+      ],
+      "xlsxIds": [
+        "100450"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "关羽",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100451",
+      "heroIds": [
+        "100451",
+        "130451"
+      ],
+      "xlsxIds": [
+        "100451"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "木鹿大王",
+      "faction": "群",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100452",
+      "heroIds": [
+        "100452",
+        "130452"
+      ],
+      "xlsxIds": [
+        "100452"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "司马懿",
+      "faction": "魏",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100472",
+      "heroIds": [
+        "100472",
+        "130472"
+      ],
+      "xlsxIds": [
+        "100472"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "张宁",
+      "faction": "群",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100474",
+      "heroIds": [
+        "100474",
+        "130474"
+      ],
+      "xlsxIds": [
+        "100474"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "郝昭",
+      "faction": "魏",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100475",
+      "heroIds": [
+        "100475",
+        "130475"
+      ],
+      "xlsxIds": [
+        "100475"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "郭嘉",
+      "faction": "魏",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100476",
+      "heroIds": [
+        "100476",
+        "130476"
+      ],
+      "xlsxIds": [
+        "100476"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "庞统",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100477",
+      "heroIds": [
+        "100477",
+        "130477"
+      ],
+      "xlsxIds": [
+        "100477"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "陆逊",
+      "faction": "吴",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100478",
+      "heroIds": [
+        "100478",
+        "100791",
+        "130478",
+        "130791"
+      ],
+      "xlsxIds": [
+        "100478",
+        "100791"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "董卓",
+      "faction": "汉",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100480",
+      "heroIds": [
+        "100480",
+        "130480"
+      ],
+      "xlsxIds": [
+        "100480"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "潘凤",
+      "faction": "汉",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100486",
+      "heroIds": [
+        "100486",
+        "130486"
+      ],
+      "xlsxIds": [
+        "100486"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "祝融夫人",
+      "faction": "群",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100494",
+      "heroIds": [
+        "100494",
+        "130494"
+      ],
+      "xlsxIds": [
+        "100494"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "颜良＆文丑",
+      "faction": "群",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100495",
+      "heroIds": [
+        "100495",
+        "130495"
+      ],
+      "xlsxIds": [
+        "100495"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "步皇后",
+      "faction": "吴",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100497",
+      "heroIds": [
+        "100497",
+        "130497"
+      ],
+      "xlsxIds": [
+        "100497"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "曹纯",
+      "faction": "魏",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100498",
+      "heroIds": [
+        "100498",
+        "130498"
+      ],
+      "xlsxIds": [
+        "100498"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "兀突骨",
+      "faction": "群",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100519",
+      "heroIds": [
+        "100519",
+        "130519"
+      ],
+      "xlsxIds": [
+        "100519"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "诸葛恪",
+      "faction": "吴",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100522",
+      "heroIds": [
+        "100522",
+        "130522"
+      ],
+      "xlsxIds": [
+        "100522"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "沙摩柯",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100524",
+      "heroIds": [
+        "100524",
+        "130524"
+      ],
+      "xlsxIds": [
+        "100524"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "张机",
+      "faction": "汉",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100526",
+      "heroIds": [
+        "100526",
+        "130526"
+      ],
+      "xlsxIds": [
+        "100526"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "徐庶",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100534",
+      "heroIds": [
+        "100534",
+        "130534"
+      ],
+      "xlsxIds": [
+        "100534"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "朱儁",
+      "faction": "汉",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100553",
+      "heroIds": [
+        "100553",
+        "130553"
+      ],
+      "xlsxIds": [
+        "100553"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "张梁",
+      "faction": "群",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100557",
+      "heroIds": [
+        "100557",
+        "130557"
+      ],
+      "xlsxIds": [
+        "100557"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "张宝",
+      "faction": "群",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100562",
+      "heroIds": [
+        "100562",
+        "130562"
+      ],
+      "xlsxIds": [
+        "100562"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "陆抗",
+      "faction": "吴",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100574",
+      "heroIds": [
+        "100574",
+        "130574"
+      ],
+      "xlsxIds": [
+        "100574"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "法正",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100582",
+      "heroIds": [
+        "100582",
+        "130582"
+      ],
+      "xlsxIds": [
+        "100582"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "曹仁",
+      "faction": "魏",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100585",
+      "heroIds": [
+        "100585",
+        "130585"
+      ],
+      "xlsxIds": [
+        "100585"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "周泰",
+      "faction": "吴",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100589",
+      "heroIds": [
+        "100589",
+        "130589"
+      ],
+      "xlsxIds": [
+        "100589"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "董白",
+      "faction": "群",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100592",
+      "heroIds": [
+        "100592",
+        "130592"
+      ],
+      "xlsxIds": [
+        "100592"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "张郃",
+      "faction": "群",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100593",
+      "heroIds": [
+        "100593",
+        "130593"
+      ],
+      "xlsxIds": [
+        "100593"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "卞夫人",
+      "faction": "魏",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100603",
+      "heroIds": [
+        "100603",
+        "130603"
+      ],
+      "xlsxIds": [
+        "100603"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "李儒",
+      "faction": "群",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100604",
+      "heroIds": [
+        "100604",
+        "130604"
+      ],
+      "xlsxIds": [
+        "100604"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "马岱",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100615",
+      "heroIds": [
+        "100615",
+        "130615"
+      ],
+      "xlsxIds": [
+        "100615"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "凌统",
+      "faction": "吴",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100616",
+      "heroIds": [
+        "100616",
+        "130616"
+      ],
+      "xlsxIds": [
+        "100616"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "贾诩",
+      "faction": "魏",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100618",
+      "heroIds": [
+        "100618",
+        "130618"
+      ],
+      "xlsxIds": [
+        "100618"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "大乔",
+      "faction": "吴",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100619",
+      "heroIds": [
+        "100619",
+        "130619"
+      ],
+      "xlsxIds": [
+        "100619"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "张绣",
+      "faction": "群",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100620",
+      "heroIds": [
+        "100620",
+        "130620"
+      ],
+      "xlsxIds": [
+        "100620"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "皇甫嵩",
+      "faction": "汉",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100630",
+      "heroIds": [
+        "100554",
+        "100630",
+        "130630"
+      ],
+      "xlsxIds": [
+        "100630"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "严颜",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100631",
+      "heroIds": [
+        "100631",
+        "130631"
+      ],
+      "xlsxIds": [
+        "100631"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "吕姬",
+      "faction": "群",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100634",
+      "heroIds": [
+        "100634",
+        "130634"
+      ],
+      "xlsxIds": [
+        "100634"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "徐晃",
+      "faction": "魏",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100645",
+      "heroIds": [
+        "100645",
+        "130645"
+      ],
+      "xlsxIds": [
+        "100645"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "华雄",
+      "faction": "群",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100647",
+      "heroIds": [
+        "100647",
+        "130647"
+      ],
+      "xlsxIds": [
+        "100647"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "张昭",
+      "faction": "吴",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100648",
+      "heroIds": [
+        "100648",
+        "130648"
+      ],
+      "xlsxIds": [
+        "100648"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "魏延",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100649",
+      "heroIds": [
+        "100649",
+        "130649"
+      ],
+      "xlsxIds": [
+        "100649"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "王朗",
+      "faction": "魏",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100652",
+      "heroIds": [
+        "100652",
+        "130652"
+      ],
+      "xlsxIds": [
+        "100652"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "关兴＆张苞",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100653",
+      "heroIds": [
+        "100653",
+        "130653"
+      ],
+      "xlsxIds": [
+        "100653"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "孙鲁班",
+      "faction": "吴",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100654",
+      "heroIds": [
+        "100654",
+        "130654"
+      ],
+      "xlsxIds": [
+        "100654"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "郭皇后",
+      "faction": "魏",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100655",
+      "heroIds": [
+        "100655",
+        "130655"
+      ],
+      "xlsxIds": [
+        "100655"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "高顺",
+      "faction": "群",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100656",
+      "heroIds": [
+        "100656",
+        "130656"
+      ],
+      "xlsxIds": [
+        "100656"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "袁绍",
+      "faction": "群",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100670",
+      "heroIds": [
+        "100670",
+        "130670"
+      ],
+      "xlsxIds": [
+        "100670"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "蒋钦",
+      "faction": "吴",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100671",
+      "heroIds": [
+        "100671",
+        "130671"
+      ],
+      "xlsxIds": [
+        "100671"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "曹植",
+      "faction": "魏",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100672",
+      "heroIds": [
+        "100672",
+        "130672"
+      ],
+      "xlsxIds": [
+        "100672"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "刘表",
+      "faction": "汉",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100623",
+      "heroIds": [
+        "100623",
+        "100675",
+        "130675"
+      ],
+      "xlsxIds": [
+        "100675"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "王昭君",
+      "faction": "汉",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100676",
+      "heroIds": [
+        "100676",
+        "130676"
+      ],
+      "xlsxIds": [
+        "100676"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "公孙瓒",
+      "faction": "群",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100677",
+      "heroIds": [
+        "100677",
+        "130677"
+      ],
+      "xlsxIds": [
+        "100677"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "曹彰",
+      "faction": "魏",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100683",
+      "heroIds": [
+        "100683",
+        "130683"
+      ],
+      "xlsxIds": [
+        "100683"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "程普",
+      "faction": "吴",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100684",
+      "heroIds": [
+        "100684",
+        "130684"
+      ],
+      "xlsxIds": [
+        "100684"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "乐进",
+      "faction": "魏",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100685",
+      "heroIds": [
+        "100685",
+        "130685"
+      ],
+      "xlsxIds": [
+        "100685"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "小乔",
+      "faction": "吴",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100687",
+      "heroIds": [
+        "100687",
+        "130687"
+      ],
+      "xlsxIds": [
+        "100687"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "刘禅",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100689",
+      "heroIds": [
+        "100689",
+        "130689"
+      ],
+      "xlsxIds": [
+        "100689"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "西施",
+      "faction": "群",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100690",
+      "heroIds": [
+        "100690",
+        "130690"
+      ],
+      "xlsxIds": [
+        "100690"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "周仓",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100691",
+      "heroIds": [
+        "100691",
+        "130691"
+      ],
+      "xlsxIds": [
+        "100691"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "田丰",
+      "faction": "群",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100692",
+      "heroIds": [
+        "100692",
+        "130692"
+      ],
+      "xlsxIds": [
+        "100692"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "王允",
+      "faction": "汉",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100693",
+      "heroIds": [
+        "100693",
+        "130693"
+      ],
+      "xlsxIds": [
+        "100693"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "司马师",
+      "faction": "晋",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100701",
+      "heroIds": [
+        "100701",
+        "130701"
+      ],
+      "xlsxIds": [
+        "100701"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "司马昭",
+      "faction": "晋",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100702",
+      "heroIds": [
+        "100702",
+        "130702"
+      ],
+      "xlsxIds": [
+        "100702"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "司马炎",
+      "faction": "晋",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100703",
+      "heroIds": [
+        "100703",
+        "130703"
+      ],
+      "xlsxIds": [
+        "100703"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "文鸯",
+      "faction": "晋",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100704",
+      "heroIds": [
+        "100704",
+        "130704"
+      ],
+      "xlsxIds": [
+        "100704"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "杜预",
+      "faction": "晋",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100705",
+      "heroIds": [
+        "100705",
+        "130705"
+      ],
+      "xlsxIds": [
+        "100705"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "王元姬",
+      "faction": "晋",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100706",
+      "heroIds": [
+        "100706",
+        "130706"
+      ],
+      "xlsxIds": [
+        "100706"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "卫瓘",
+      "faction": "晋",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100707",
+      "heroIds": [
+        "100707",
+        "130707"
+      ],
+      "xlsxIds": [
+        "100707"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "贾充",
+      "faction": "晋",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100708",
+      "heroIds": [
+        "100708",
+        "130708"
+      ],
+      "xlsxIds": [
+        "100708"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "羊祜",
+      "faction": "晋",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100709",
+      "heroIds": [
+        "100709",
+        "130709"
+      ],
+      "xlsxIds": [
+        "100709"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "鲁肃",
+      "faction": "吴",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100741",
+      "heroIds": [
+        "100741",
+        "130741"
+      ],
+      "xlsxIds": [
+        "100741"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "阴丽华",
+      "faction": "汉",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100742",
+      "heroIds": [
+        "100742",
+        "130742"
+      ],
+      "xlsxIds": [
+        "100742"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "典韦",
+      "faction": "魏",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100575",
+      "heroIds": [
+        "100575",
+        "100769",
+        "130575",
+        "130769"
+      ],
+      "xlsxIds": [
+        "100769"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "许劭",
+      "faction": "汉",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100770",
+      "heroIds": [
+        "100770",
+        "130770"
+      ],
+      "xlsxIds": [
+        "100770"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "沮授",
+      "faction": "群",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100771",
+      "heroIds": [
+        "100771",
+        "130771"
+      ],
+      "xlsxIds": [
+        "100771"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "黄盖",
+      "faction": "吴",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100783",
+      "heroIds": [
+        "100587",
+        "100783",
+        "130587",
+        "130783"
+      ],
+      "xlsxIds": [
+        "100783"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "马腾",
+      "faction": "群",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100785",
+      "heroIds": [
+        "100605",
+        "100785",
+        "130785"
+      ],
+      "xlsxIds": [
+        "100785"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "卫子夫",
+      "faction": "汉",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100786",
+      "heroIds": [
+        "100786",
+        "130786"
+      ],
+      "xlsxIds": [
+        "100786"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "程昱",
+      "faction": "魏",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100787",
+      "heroIds": [
+        "100787",
+        "130787"
+      ],
+      "xlsxIds": [
+        "100787"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "丁奉",
+      "faction": "吴",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100788",
+      "heroIds": [
+        "100788",
+        "130788"
+      ],
+      "xlsxIds": [
+        "100788"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "陆绩",
+      "faction": "吴",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100789",
+      "heroIds": [
+        "100789",
+        "130789"
+      ],
+      "xlsxIds": [
+        "100789"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "袁术",
+      "faction": "群",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100790",
+      "heroIds": [
+        "100790",
+        "130790"
+      ],
+      "xlsxIds": [
+        "100790"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "马良",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100792",
+      "heroIds": [
+        "100792",
+        "130792"
+      ],
+      "xlsxIds": [
+        "100792"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "陈到",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100793",
+      "heroIds": [
+        "100793",
+        "130793"
+      ],
+      "xlsxIds": [
+        "100793"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "荀彧",
+      "faction": "汉",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100794",
+      "heroIds": [
+        "100794",
+        "130794"
+      ],
+      "xlsxIds": [
+        "100794"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "献帝",
+      "faction": "汉",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100795",
+      "heroIds": [
+        "100551",
+        "100795",
+        "130795"
+      ],
+      "xlsxIds": [
+        "100795"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "于禁",
+      "faction": "魏",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100796",
+      "heroIds": [
+        "100796",
+        "130796"
+      ],
+      "xlsxIds": [
+        "100796"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "胡芳",
+      "faction": "晋",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100797",
+      "heroIds": [
+        "100797",
+        "130797"
+      ],
+      "xlsxIds": [
+        "100797"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "马谡",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100799",
+      "heroIds": [
+        "100799",
+        "130799"
+      ],
+      "xlsxIds": [
+        "100799"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "single-source"
+    },
+    {
+      "name": "蒋琬",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100800",
+      "heroIds": [
+        "100800",
+        "130800"
+      ],
+      "xlsxIds": [
+        "100800"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "single-source"
+    },
+    {
+      "name": "裴秀",
+      "faction": "晋",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100801",
+      "heroIds": [
+        "100801",
+        "130801"
+      ],
+      "xlsxIds": [
+        "100801"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "consensus"
+    },
+    {
+      "name": "左慈",
+      "faction": "群",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100802",
+      "heroIds": [
+        "100802",
+        "130802"
+      ],
+      "xlsxIds": [
+        "100802"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "刘备",
+      "faction": "汉",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100803",
+      "heroIds": [
+        "100803",
+        "130803"
+      ],
+      "xlsxIds": [
+        "100803"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "曹操",
+      "faction": "汉",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100804",
+      "heroIds": [
+        "100804",
+        "130804"
+      ],
+      "xlsxIds": [
+        "100804"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "孙坚",
+      "faction": "汉",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100805",
+      "heroIds": [
+        "100805",
+        "130805"
+      ],
+      "xlsxIds": [
+        "100805"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "司马懿",
+      "faction": "晋",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100807",
+      "heroIds": [
+        "100807",
+        "130807"
+      ],
+      "xlsxIds": [
+        "100807"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json",
+      "confidence": "single-source"
+    },
+    {
+      "name": "司马徽",
+      "faction": "群",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100811",
+      "heroIds": [
+        "100811",
+        "130811"
+      ],
+      "xlsxIds": [
+        "100811"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "冯嫽",
+      "faction": "汉",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100812",
+      "heroIds": [
+        "100812",
+        "130812"
+      ],
+      "xlsxIds": [
+        "100812"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "刘徽",
+      "faction": "晋",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100814",
+      "heroIds": [
+        "100814",
+        "130814"
+      ],
+      "xlsxIds": [
+        "100814"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "孟获",
+      "faction": "群",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100488",
+      "heroIds": [
+        "100488",
+        "130488",
+        "100815",
+        "130815"
+      ],
+      "xlsxIds": [
+        "100815"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "许褚",
+      "faction": "魏",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "100473",
+      "heroIds": [
+        "100473",
+        "130473"
+      ],
+      "xlsxIds": [
+        "100840"
+      ],
+      "sp": false,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "刘秀",
+      "faction": "汉",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": false,
+      "heroId": null,
+      "heroIds": [],
+      "xlsxIds": [
+        "100841"
+      ],
+      "sp": false,
+      "season": false,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "孙尚香",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "102015",
+      "heroIds": [
+        "102015",
+        "132015"
+      ],
+      "xlsxIds": [
+        "102015"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "祝融夫人",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "未分级",
+      "engineAvailable": true,
+      "heroId": "102016",
+      "heroIds": [
+        "102016",
+        "132016"
+      ],
+      "xlsxIds": [
+        "102016"
+      ],
+      "sp": true,
+      "season": true,
+      "source": "xlsx+hero.json"
+    },
+    {
+      "name": "夏侯霸",
+      "faction": "蜀",
+      "star": 5,
+      "tier": "大保底",
+      "engineAvailable": true,
+      "heroId": "100674",
+      "heroIds": [
+        "100674",
+        "130674"
+      ],
+      "xlsxIds": [],
+      "sp": false,
+      "season": true,
+      "source": "consensus-extra (xlsx未收录，hero.json补全)",
+      "confidence": "consensus"
+    },
+    {
+      "name": "华佗",
+      "faction": "汉",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100369",
+      "heroIds": [
+        "100369",
+        "130369"
+      ],
+      "xlsxIds": [],
+      "sp": false,
+      "season": true,
+      "source": "consensus-extra (xlsx未收录，hero.json补全)",
+      "confidence": "consensus"
+    },
+    {
+      "name": "贾诩",
+      "faction": "群",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100011",
+      "heroIds": [
+        "100011",
+        "130011"
+      ],
+      "xlsxIds": [],
+      "sp": false,
+      "season": true,
+      "source": "consensus-extra (xlsx未收录，hero.json补全)",
+      "confidence": "consensus"
+    },
+    {
+      "name": "庞德",
+      "faction": "群",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100586",
+      "heroIds": [
+        "100586",
+        "130586"
+      ],
+      "xlsxIds": [],
+      "sp": false,
+      "season": true,
+      "source": "consensus-extra (xlsx未收录，hero.json补全)",
+      "confidence": "consensus"
+    },
+    {
+      "name": "于吉",
+      "faction": "群",
+      "star": 5,
+      "tier": "小保底",
+      "engineAvailable": true,
+      "heroId": "100646",
+      "heroIds": [
+        "100646",
+        "130646"
+      ],
+      "xlsxIds": [],
+      "sp": false,
+      "season": true,
+      "source": "consensus-extra (xlsx未收录，hero.json补全)",
+      "confidence": "consensus"
+    }
+  ]
+}
