@@ -1980,5 +1980,14 @@ npx tsx scripts/verify-teams.mts
 - **产物**：`docs/小保底最优队论证.md`（论证全文）、`docs/小保底最优队.json`（机器可读）、`scripts/optimize_xiaobaodi.mts`（优化器）、`scripts/_faircheck.mts`（公平性复检）。
 - **复现**：`npx tsx scripts/optimize_xiaobaodi.mts`（预算 EXPLORE/FINE/FINAL/MC_PER_ARCH/HILL_ITERS/HILL_SEEDS 可调）；`npx tsx scripts/_faircheck.mts`。
 
+## T0 × T1 全面混战 · 底层规律论证（2026-11-01）
+- **任务**：网搜 2026-11 最新 T0/T1 → 引擎忠实还原落库 → 全 17 队（8 内置 T0 基准 + 9 网搜 T1）白板归一（40级·0红·士气120·无宝物）全面混战，从最底层事件数据反推「为什么是 T0 / 为什么是 T1」。
+- **规模**：17 队全配对 × 双向（攻/守各半）× 80 种子 = **10880 场**；典型对局另抽 4 组 × 40 种子做逐回合战报深拆。
+- **核心定律**：T0 本质 = **增伤引擎（神兵天降/大赏三军/攻其不备/垒实）×（前3回合爆发 或 减伤+续航兜底）的乘法效应**；缺增伤引擎 → 退化为「高非败、低胜率」乌龟流（如 荀彧张春华曹操 增伤 -0.2% → 75.6% 非败但 0.2% 胜）。
+- **5 条底层规律**：① 增伤引擎是 T0/T1 真正分水岭（与 E5 战法因子 33.5% 居首自洽）；② 爆发窗口 vs 续航兜底是把增伤转胜率的两个出口；③ 纯控制/纯减伤是非致命陷阱（控制只造窗口不造输出）；④ 平局 = 8 回合上限 + 双方同存活（平局均剩兵 9000~18500）；⑤ 场均伤害类型揭示流派 DNA。
+- **诚实口径**：内置 8 T0 基准为「制作人测试集」，白板下内部极差极大（荀彧队 0.2% vs 祝融队 42%）；T1 打 T0 交叉胜率 40.1%/9.7%/50.2% 是「特定匹配集」结果，非全局结论——真正区分梯队的是底层维度剖面，不是原始胜率。
+- **产物**：`docs/T0T1底层规律论证.md`（论证全文）、`docs/t0t1_roster.json`（9 支 T1 集）、`docs/t0t1_crosssim.json`（全量聚合+配对矩阵+维度剖面）、`docs/t0t1_cases.json`（4 组逐回合战报）、`scripts/t0t1_crosssim.mts`（全量混战）、`scripts/t0t1_case_study.mts`（典型深拆）。
+- **复现**：`SEEDS=80 npx tsx scripts/t0t1_crosssim.mts` → `npx tsx scripts/t0t1_case_study.mts`。
+
 
 

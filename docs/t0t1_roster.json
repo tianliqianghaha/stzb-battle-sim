@@ -1,0 +1,105 @@
+{
+  "version": "2026-11-01",
+  "note": "T1 队伍集：网搜 2026 共识（网易大神 @永远配将《2026下半年112队强度榜》、@小白板《26年八大白板战神》等）+ 引擎忠实还原。用于与 web/data/opponent_benchmark.json 的 8 支 T0 基准做全面混战。所有队伍统一为 40 级白板(红度0) / 士气120 / 无宝物，以公平比较「流派机制」本身。",
+  "t1": [
+    {
+      "id": "t1-huanggai-fadao",
+      "note": "黄盖法刀",
+      "archetype": "法刀·神赏",
+      "tier": "T1",
+      "slots": [
+        { "heroId": "h783", "freePoints": { "strategy": 100 }, "skillIds": ["shimian_maifu", "bugong"], "traits": [] },
+        { "heroId": "lvmeng", "freePoints": { "strategy": 100 }, "skillIds": ["fanji_zhence", "daoxing_xianzu"], "traits": [] },
+        { "heroId": "weiguan", "freePoints": { "speed": 60, "strategy": 40 }, "skillIds": ["shenbing_tianjiang", "dashang_sanjun"], "traits": [] }
+      ]
+    },
+    {
+      "id": "t1-wangyi-fadao",
+      "note": "王异法刀",
+      "archetype": "法刀·神赏",
+      "tier": "T1",
+      "slots": [
+        { "heroId": "h28", "freePoints": { "strategy": 100 }, "skillIds": ["shimian_maifu", "bugong"], "traits": [] },
+        { "heroId": "lvmeng", "freePoints": { "strategy": 100 }, "skillIds": ["fanji_zhence", "daoxing_xianzu"], "traits": [] },
+        { "heroId": "h23", "freePoints": { "strategy": 100 }, "skillIds": ["shenbing_tianjiang", "dashang_sanjun"], "traits": [] }
+      ]
+    },
+    {
+      "id": "t1-chengyu-weizhi",
+      "note": "程昱魏智",
+      "archetype": "魏智·三核法",
+      "tier": "T1",
+      "slots": [
+        { "heroId": "h787", "freePoints": { "strategy": 100 }, "skillIds": ["shimian_maifu", "zhongmou_buxie"], "traits": [] },
+        { "heroId": "h24", "freePoints": { "strategy": 100 }, "skillIds": ["dashang_sanjun", "bugong"], "traits": [] },
+        { "heroId": "h476", "freePoints": { "strategy": 100 }, "skillIds": ["fanji_zhence", "heneishize"], "traits": [] }
+      ]
+    },
+    {
+      "id": "t1-ganning-shiliu",
+      "note": "甘宁士气流氓",
+      "archetype": "流氓·神赏增伤",
+      "tier": "T1",
+      "slots": [
+        { "heroId": "h34", "freePoints": { "attack": 100 }, "skillIds": ["jifeng_ershi", "sishuiguan"], "traits": [] },
+        { "heroId": "h703", "freePoints": { "strategy": 100 }, "skillIds": ["shenbing_tianjiang", "dashang_sanjun"], "traits": [] },
+        { "heroId": "sunquan", "freePoints": { "strategy": 100 }, "skillIds": ["shiji", "sanjun_zhizhong"], "traits": [] }
+      ]
+    },
+    {
+      "id": "t1-zhangfei-liumang",
+      "note": "张飞流氓",
+      "archetype": "流氓·物理爆发",
+      "tier": "T1",
+      "slots": [
+        { "heroId": "h22", "freePoints": { "attack": 100 }, "skillIds": ["yiji_dangqian", "jishi"], "traits": [] },
+        { "heroId": "h526", "freePoints": { "strategy": 100 }, "skillIds": ["leishi_yingji", "hunshui_moyu"], "traits": [] },
+        { "heroId": "sunquan", "freePoints": { "strategy": 100 }, "skillIds": ["shiji", "sanjun_zhizhong"], "traits": [] }
+      ]
+    },
+    {
+      "id": "t1-pangtong-shubu",
+      "note": "庞统蜀步",
+      "archetype": "肉步·双减续航",
+      "tier": "T1",
+      "slots": [
+        { "heroId": "h477", "freePoints": { "strategy": 100 }, "skillIds": ["fengsheng_heli", "chuge_siqi"], "traits": [] },
+        { "heroId": "h16", "freePoints": { "strategy": 100 }, "skillIds": ["biqi_fengmang", "bingwu_changshi"], "traits": [] },
+        { "heroId": "zhaoyun", "freePoints": { "defense": 40, "attack": 60 }, "skillIds": ["jianzu_budai", "fangyuan"], "traits": [] }
+      ]
+    },
+    {
+      "id": "t1-caozhang-loutie",
+      "note": "曹彰撸铁",
+      "archetype": "撸铁·物理持续",
+      "tier": "T1",
+      "slots": [
+        { "heroId": "h683", "freePoints": { "attack": 100 }, "skillIds": ["yiji_dangqian", "lingwu_kongxuan"], "traits": [] },
+        { "heroId": "h452", "freePoints": { "attack": 60, "speed": 40 }, "skillIds": ["hunshui_moyu", "gongqi_bubei"], "traits": [] },
+        { "heroId": "h23", "freePoints": { "strategy": 100 }, "skillIds": ["fanji_zhence", "yifudangguan"], "traits": [] }
+      ]
+    },
+    {
+      "id": "t1-machao-caidao",
+      "note": "马超菜刀",
+      "archetype": "菜刀·神赏物理",
+      "tier": "T1",
+      "slots": [
+        { "heroId": "h13", "freePoints": { "attack": 100 }, "skillIds": ["yiji_dangqian", "jishi"], "traits": [] },
+        { "heroId": "h27", "freePoints": { "attack": 60, "speed": 40 }, "skillIds": ["gongqi_bubei", "fanji_zhence"], "traits": [] },
+        { "heroId": "h23", "freePoints": { "strategy": 100 }, "skillIds": ["dashang_sanjun", "shenbing_tianjiang"], "traits": [] }
+      ]
+    },
+    {
+      "id": "t1-zhouyu-dudu",
+      "note": "周瑜嘟嘟",
+      "archetype": "吴法·神赏火法",
+      "tier": "T1",
+      "slots": [
+        { "heroId": "zhouyu", "freePoints": { "strategy": 100 }, "skillIds": ["yanfen_jizhen", "fengsheng_heli"], "traits": [] },
+        { "heroId": "lvmeng", "freePoints": { "strategy": 100 }, "skillIds": ["fanji_zhence", "heneishize"], "traits": [] },
+        { "heroId": "h478", "freePoints": { "strategy": 100 }, "skillIds": ["dashang_sanjun", "shenbing_tianjiang"], "traits": [] }
+      ]
+    }
+  ]
+}

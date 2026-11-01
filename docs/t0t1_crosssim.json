@@ -1,0 +1,2050 @@
+{
+  "meta": {
+    "seeds": 80,
+    "teams": 17,
+    "t0Count": 8,
+    "t1Count": 9,
+    "level": 40,
+    "redness": 0,
+    "morale": 120,
+    "treasure": null,
+    "generatedAt": "2026-11-01T08:24:12.975Z",
+    "version": "2026-11-01"
+  },
+  "tierSummary": [
+    {
+      "tier": "T0",
+      "n": 8,
+      "winRate": 13.51,
+      "lossRate": 30.65,
+      "drawRate": 55.86,
+      "dmgDealt": 16372.38,
+      "dmgTaken": 17485,
+      "earlyBurstPct": 50.5,
+      "buffMagPct": 767.36,
+      "reduceMagPct": 648.73,
+      "controlDealt": 8.13,
+      "healDealt": 3307.5
+    },
+    {
+      "tier": "T1",
+      "n": 9,
+      "winRate": 32.68,
+      "lossRate": 17.44,
+      "drawRate": 49.89,
+      "dmgDealt": 20279.33,
+      "dmgTaken": 15336.33,
+      "earlyBurstPct": 48.17,
+      "buffMagPct": 777.02,
+      "reduceMagPct": 691.57,
+      "controlDealt": 4.64,
+      "healDealt": 2668.44
+    }
+  ],
+  "crossTier": {
+    "t0_vs_t1": {
+      "games": 5760,
+      "t0_winRate": 9.7,
+      "t0_lossRate": 40.1,
+      "t0_drawRate": 50.2
+    },
+    "t1_vs_t0": {
+      "games": 0,
+      "t1_winRate": 0,
+      "t1_lossRate": 0,
+      "t1_drawRate": 0
+    }
+  },
+  "teams": [
+    {
+      "id": "t1-caozhang-loutie",
+      "note": "曹彰撸铁",
+      "tier": "T1",
+      "archetype": "撸铁·物理持续",
+      "winRate": 74.3,
+      "lossRate": 5.9,
+      "drawRate": 19.8,
+      "avgRounds": 6.36,
+      "dmgDealt": 26332,
+      "dmgTaken": 10733,
+      "physDealt": 24912,
+      "stratDealt": 1420,
+      "earlyBurstPct": 45,
+      "controlDealt": 4.09,
+      "controlTaken": 5.76,
+      "healDealt": 0,
+      "healTaken": 0,
+      "buffMagPct": 478,
+      "reduceMagPct": 1034.5,
+      "drawAvgRounds": 8,
+      "drawAvgSurvive": 10221,
+      "topSkills": [
+        {
+          "skillId": "kui_xiangta",
+          "name": "夔吼象踏",
+          "attempts": 7905,
+          "success": 7905,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "wubing_zhilie",
+          "name": "五兵之烈",
+          "attempts": 6566,
+          "success": 3274,
+          "actualRate": 49.9,
+          "expectRate": 45
+        },
+        {
+          "skillId": "qibu_shixian",
+          "name": "七步释嫌",
+          "attempts": 6453,
+          "success": 6453,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "hunshui_moyu",
+          "name": "浑水摸鱼",
+          "attempts": 6000,
+          "success": 2337,
+          "actualRate": 39,
+          "expectRate": 35
+        },
+        {
+          "skillId": "yiji_dangqian",
+          "name": "一骑当千",
+          "attempts": 5323,
+          "success": 2357,
+          "actualRate": 44.3,
+          "expectRate": 39
+        },
+        {
+          "skillId": "shiji",
+          "name": "始计",
+          "attempts": 2486,
+          "success": 2486,
+          "actualRate": 100,
+          "expectRate": 100
+        }
+      ],
+      "vsT0_winRate": 74.8,
+      "vsT1_winRate": 73.8
+    },
+    {
+      "id": "t1-pangtong-shubu",
+      "note": "庞统蜀步",
+      "tier": "T1",
+      "archetype": "肉步·双减续航",
+      "winRate": 43.4,
+      "lossRate": 13.3,
+      "drawRate": 43.4,
+      "avgRounds": 6.95,
+      "dmgDealt": 19457,
+      "dmgTaken": 19772,
+      "physDealt": 10929,
+      "stratDealt": 8528,
+      "earlyBurstPct": 30.9,
+      "controlDealt": 1.01,
+      "controlTaken": 6.68,
+      "healDealt": 10817,
+      "healTaken": 10817,
+      "buffMagPct": 466.2,
+      "reduceMagPct": 1366.6,
+      "drawAvgRounds": 8,
+      "drawAvgSurvive": 18574,
+      "topSkills": [
+        {
+          "skillId": "jianzu_budai",
+          "name": "健卒不殆",
+          "attempts": 22145,
+          "success": 12439,
+          "actualRate": 56.2,
+          "expectRate": 50
+        },
+        {
+          "skillId": "qibu_shixian",
+          "name": "七步释嫌",
+          "attempts": 9802,
+          "success": 9802,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "yinlong_chongzhen",
+          "name": "银龙冲阵",
+          "attempts": 6108,
+          "success": 3449,
+          "actualRate": 56.5,
+          "expectRate": 50
+        },
+        {
+          "skillId": "mimou_dingshu",
+          "name": "密谋定蜀",
+          "attempts": 6019,
+          "success": 2394,
+          "actualRate": 39.8,
+          "expectRate": 35
+        },
+        {
+          "skillId": "fengsheng_heli",
+          "name": "风声鹤唳",
+          "attempts": 4853,
+          "success": 2207,
+          "actualRate": 45.5,
+          "expectRate": 40
+        },
+        {
+          "skillId": "chuge_siqi",
+          "name": "楚歌四起",
+          "attempts": 4227,
+          "success": 2360,
+          "actualRate": 55.8,
+          "expectRate": 50
+        }
+      ],
+      "vsT0_winRate": 60.2,
+      "vsT1_winRate": 26.6
+    },
+    {
+      "id": "t1-ganning-shiliu",
+      "note": "甘宁士气流氓",
+      "tier": "T1",
+      "archetype": "流氓·神赏增伤",
+      "winRate": 43.3,
+      "lossRate": 13.7,
+      "drawRate": 43,
+      "avgRounds": 7,
+      "dmgDealt": 20152,
+      "dmgTaken": 13506,
+      "physDealt": 15266,
+      "stratDealt": 4887,
+      "earlyBurstPct": 37.9,
+      "controlDealt": 0.18,
+      "controlTaken": 6.22,
+      "healDealt": 3582,
+      "healTaken": 3561,
+      "buffMagPct": 979.6,
+      "reduceMagPct": 1270.1,
+      "drawAvgRounds": 8,
+      "drawAvgSurvive": 14975,
+      "topSkills": [
+        {
+          "skillId": "shiji",
+          "name": "始计",
+          "attempts": 11620,
+          "success": 11620,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "qibu_shixian",
+          "name": "七步释嫌",
+          "attempts": 10482,
+          "success": 10482,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "jifeng_ershi",
+          "name": "及锋而试",
+          "attempts": 8039,
+          "success": 5695,
+          "actualRate": 70.8,
+          "expectRate": 53.5
+        },
+        {
+          "skillId": "sishuiguan",
+          "name": "汜水关",
+          "attempts": 8039,
+          "success": 5201,
+          "actualRate": 64.7,
+          "expectRate": 48.5
+        },
+        {
+          "skillId": "jiuxi_huanglong",
+          "name": "九锡黄龙",
+          "attempts": 7745,
+          "success": 3453,
+          "actualRate": 44.6,
+          "expectRate": 35
+        },
+        {
+          "skillId": "sanjun_zhizhong",
+          "name": "三军之众",
+          "attempts": 5261,
+          "success": 3039,
+          "actualRate": 57.8,
+          "expectRate": 45
+        }
+      ],
+      "vsT0_winRate": 50.6,
+      "vsT1_winRate": 35.9
+    },
+    {
+      "id": "bench-zhurong-zhangliao-caocao",
+      "note": "敌方·祝融夫人张辽曹操",
+      "tier": "T0",
+      "archetype": "T0基准",
+      "winRate": 42,
+      "lossRate": 18.5,
+      "drawRate": 39.5,
+      "avgRounds": 6.94,
+      "dmgDealt": 25497,
+      "dmgTaken": 13555,
+      "physDealt": 25497,
+      "stratDealt": 0,
+      "earlyBurstPct": 68.4,
+      "controlDealt": 4.25,
+      "controlTaken": 6.08,
+      "healDealt": 0,
+      "healTaken": 0,
+      "buffMagPct": 2744.3,
+      "reduceMagPct": 438.6,
+      "drawAvgRounds": 8,
+      "drawAvgSurvive": 10587,
+      "topSkills": [
+        {
+          "skillId": "qiji_rufeng",
+          "name": "其疾如风",
+          "attempts": 12845,
+          "success": 9968,
+          "actualRate": 77.6,
+          "expectRate": 70
+        },
+        {
+          "skillId": "jiji_qihou",
+          "name": "疾击其后",
+          "attempts": 9787,
+          "success": 3877,
+          "actualRate": 39.6,
+          "expectRate": 35
+        },
+        {
+          "skillId": "huoshou_chongfeng",
+          "name": "火兽冲锋",
+          "attempts": 9259,
+          "success": 5110,
+          "actualRate": 55.2,
+          "expectRate": 50
+        },
+        {
+          "skillId": "changbing_fangzhen",
+          "name": "长兵方阵",
+          "attempts": 8123,
+          "success": 6831,
+          "actualRate": 84.1,
+          "expectRate": 75
+        },
+        {
+          "skillId": "bingjin",
+          "name": "并进",
+          "attempts": 7004,
+          "success": 3178,
+          "actualRate": 45.4,
+          "expectRate": 40
+        },
+        {
+          "skillId": "hunshui_moyu",
+          "name": "浑水摸鱼",
+          "attempts": 6305,
+          "success": 2462,
+          "actualRate": 39,
+          "expectRate": 35
+        }
+      ],
+      "vsT0_winRate": 43.9,
+      "vsT1_winRate": 40.4
+    },
+    {
+      "id": "t1-zhouyu-dudu",
+      "note": "周瑜嘟嘟",
+      "tier": "T1",
+      "archetype": "吴法·神赏火法",
+      "winRate": 40.7,
+      "lossRate": 25.2,
+      "drawRate": 34.1,
+      "avgRounds": 6.68,
+      "dmgDealt": 22587,
+      "dmgTaken": 14861,
+      "physDealt": 4508,
+      "stratDealt": 18079,
+      "earlyBurstPct": 59.5,
+      "controlDealt": 8.46,
+      "controlTaken": 6.68,
+      "healDealt": 0,
+      "healTaken": 12,
+      "buffMagPct": 739.9,
+      "reduceMagPct": 293,
+      "drawAvgRounds": 8,
+      "drawAvgSurvive": 8156,
+      "topSkills": [
+        {
+          "skillId": "heneishize",
+          "name": "河内世泽",
+          "attempts": 6425,
+          "success": 2471,
+          "actualRate": 38.5,
+          "expectRate": 35
+        },
+        {
+          "skillId": "baiyi_dujiang",
+          "name": "白衣渡江",
+          "attempts": 5760,
+          "success": 5760,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "fengsheng_heli",
+          "name": "风声鹤唳",
+          "attempts": 5125,
+          "success": 2280,
+          "actualRate": 44.5,
+          "expectRate": 40
+        },
+        {
+          "skillId": "xuanwu_fuliu",
+          "name": "玄武洰流",
+          "attempts": 4975,
+          "success": 1872,
+          "actualRate": 37.6,
+          "expectRate": 35
+        },
+        {
+          "skillId": "yanfen_jizhen",
+          "name": "焰焚箕轸",
+          "attempts": 4631,
+          "success": 2634,
+          "actualRate": 56.9,
+          "expectRate": 50
+        },
+        {
+          "skillId": "qibu_shixian",
+          "name": "七步释嫌",
+          "attempts": 4586,
+          "success": 4586,
+          "actualRate": 100,
+          "expectRate": 100
+        }
+      ],
+      "vsT0_winRate": 57.7,
+      "vsT1_winRate": 23.8
+    },
+    {
+      "id": "t1-machao-caidao",
+      "note": "马超菜刀",
+      "tier": "T1",
+      "archetype": "菜刀·神赏物理",
+      "winRate": 36.6,
+      "lossRate": 27.7,
+      "drawRate": 35.6,
+      "avgRounds": 6.81,
+      "dmgDealt": 22702,
+      "dmgTaken": 15703,
+      "physDealt": 22702,
+      "stratDealt": 0,
+      "earlyBurstPct": 61.4,
+      "controlDealt": 2.03,
+      "controlTaken": 6.53,
+      "healDealt": 0,
+      "healTaken": 0,
+      "buffMagPct": 1631.2,
+      "reduceMagPct": 267.1,
+      "drawAvgRounds": 8,
+      "drawAvgSurvive": 7692,
+      "topSkills": [
+        {
+          "skillId": "jishi",
+          "name": "击势",
+          "attempts": 18308,
+          "success": 13201,
+          "actualRate": 72.1,
+          "expectRate": 65
+        },
+        {
+          "skillId": "qiji_rufeng",
+          "name": "其疾如风",
+          "attempts": 12850,
+          "success": 9951,
+          "actualRate": 77.4,
+          "expectRate": 70
+        },
+        {
+          "skillId": "qibu_shixian",
+          "name": "七步释嫌",
+          "attempts": 8851,
+          "success": 8851,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "yiji_dangqian",
+          "name": "一骑当千",
+          "attempts": 6040,
+          "success": 2041,
+          "actualRate": 33.8,
+          "expectRate": 30.5
+        },
+        {
+          "skillId": "shiji",
+          "name": "始计",
+          "attempts": 2450,
+          "success": 2450,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "leishi_yingji",
+          "name": "垒实迎击",
+          "attempts": 2414,
+          "success": 1343,
+          "actualRate": 55.6,
+          "expectRate": 50
+        }
+      ],
+      "vsT0_winRate": 43,
+      "vsT1_winRate": 30.3
+    },
+    {
+      "id": "t1-chengyu-weizhi",
+      "note": "程昱魏智",
+      "tier": "T1",
+      "archetype": "魏智·三核法",
+      "winRate": 33.5,
+      "lossRate": 18.8,
+      "drawRate": 47.7,
+      "avgRounds": 6.98,
+      "dmgDealt": 20094,
+      "dmgTaken": 15470,
+      "physDealt": 3182,
+      "stratDealt": 16912,
+      "earlyBurstPct": 52.5,
+      "controlDealt": 9.69,
+      "controlTaken": 1.91,
+      "healDealt": 1908,
+      "healTaken": 1988,
+      "buffMagPct": 1068.6,
+      "reduceMagPct": 299.9,
+      "drawAvgRounds": 8,
+      "drawAvgSurvive": 11287,
+      "topSkills": [
+        {
+          "skillId": "shenshi_dingji",
+          "name": "审时定计",
+          "attempts": 35263,
+          "success": 19567,
+          "actualRate": 55.5,
+          "expectRate": 50
+        },
+        {
+          "skillId": "bugong",
+          "name": "不攻",
+          "attempts": 9236,
+          "success": 9236,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "zhongmou_buxie",
+          "name": "众谋不懈",
+          "attempts": 8433,
+          "success": 3816,
+          "actualRate": 45.3,
+          "expectRate": 40
+        },
+        {
+          "skillId": "qibu_shixian",
+          "name": "七步释嫌",
+          "attempts": 7938,
+          "success": 7938,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "quhu_tunlang",
+          "name": "驱虎吞狼",
+          "attempts": 7645,
+          "success": 2632,
+          "actualRate": 34.4,
+          "expectRate": 30
+        },
+        {
+          "skillId": "heneishize",
+          "name": "河内世泽",
+          "attempts": 7386,
+          "success": 2887,
+          "actualRate": 39.1,
+          "expectRate": 35
+        }
+      ],
+      "vsT0_winRate": 41.3,
+      "vsT1_winRate": 25.8
+    },
+    {
+      "id": "bench-lvbu-zhangchunhua-zhenluo",
+      "note": "敌方·吕布张春华甄洛",
+      "tier": "T0",
+      "archetype": "T0基准",
+      "winRate": 25.8,
+      "lossRate": 8.4,
+      "drawRate": 65.8,
+      "avgRounds": 7.55,
+      "dmgDealt": 20083,
+      "dmgTaken": 12545,
+      "physDealt": 18102,
+      "stratDealt": 1980,
+      "earlyBurstPct": 35.7,
+      "controlDealt": 14.47,
+      "controlTaken": 4.79,
+      "healDealt": 3881,
+      "healTaken": 3826,
+      "buffMagPct": 352.8,
+      "reduceMagPct": 297.5,
+      "drawAvgRounds": 8,
+      "drawAvgSurvive": 16179,
+      "topSkills": [
+        {
+          "skillId": "shiji",
+          "name": "始计",
+          "attempts": 12082,
+          "success": 12082,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "qiangshi",
+          "name": "强势",
+          "attempts": 9567,
+          "success": 4237,
+          "actualRate": 44.3,
+          "expectRate": 40
+        },
+        {
+          "skillId": "luoshui_jiaren",
+          "name": "洛水佳人",
+          "attempts": 9462,
+          "success": 8533,
+          "actualRate": 90.2,
+          "expectRate": 80
+        },
+        {
+          "skillId": "zhanbi_duanjin",
+          "name": "战必断金",
+          "attempts": 8631,
+          "success": 8609,
+          "actualRate": 99.7,
+          "expectRate": 90
+        },
+        {
+          "skillId": "jifeng_ershi",
+          "name": "及锋而试",
+          "attempts": 8626,
+          "success": 3483,
+          "actualRate": 40.4,
+          "expectRate": 35.9
+        },
+        {
+          "skillId": "sishuiguan",
+          "name": "汜水关",
+          "attempts": 8626,
+          "success": 3063,
+          "actualRate": 35.5,
+          "expectRate": 30.9
+        }
+      ],
+      "vsT0_winRate": 39.5,
+      "vsT1_winRate": 15.1
+    },
+    {
+      "id": "bench-zhangchunhua-yuejin-yujin",
+      "note": "敌方·张春华乐进于禁",
+      "tier": "T0",
+      "archetype": "T0基准",
+      "winRate": 15.2,
+      "lossRate": 32.2,
+      "drawRate": 52.7,
+      "avgRounds": 7.17,
+      "dmgDealt": 18927,
+      "dmgTaken": 16551,
+      "physDealt": 17266,
+      "stratDealt": 1661,
+      "earlyBurstPct": 33.1,
+      "controlDealt": 12.94,
+      "controlTaken": 8.76,
+      "healDealt": 6038,
+      "healTaken": 6097,
+      "buffMagPct": 1013.7,
+      "reduceMagPct": 1854.2,
+      "drawAvgRounds": 8,
+      "drawAvgSurvive": 16161,
+      "topSkills": [
+        {
+          "skillId": "fenji_xiandeng",
+          "name": "奋疾先登",
+          "attempts": 39445,
+          "success": 22963,
+          "actualRate": 58.2,
+          "expectRate": 51.9
+        },
+        {
+          "skillId": "yiyou_dailai",
+          "name": "以诱待来",
+          "attempts": 20497,
+          "success": 11332,
+          "actualRate": 55.3,
+          "expectRate": 50
+        },
+        {
+          "skillId": "qiangshi",
+          "name": "强势",
+          "attempts": 8517,
+          "success": 3835,
+          "actualRate": 45,
+          "expectRate": 40
+        },
+        {
+          "skillId": "qibu_shixian",
+          "name": "七步释嫌",
+          "attempts": 8230,
+          "success": 8230,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "luolei",
+          "name": "落雷",
+          "attempts": 7938,
+          "success": 3188,
+          "actualRate": 40.2,
+          "expectRate": 35
+        },
+        {
+          "skillId": "mizhen",
+          "name": "迷阵",
+          "attempts": 7627,
+          "success": 2914,
+          "actualRate": 38.2,
+          "expectRate": 35
+        }
+      ],
+      "vsT0_winRate": 25.9,
+      "vsT1_winRate": 6.8
+    },
+    {
+      "id": "bench-zhurong-lukang-caocao",
+      "note": "敌方·祝融夫人陆抗曹操",
+      "tier": "T0",
+      "archetype": "T0基准",
+      "winRate": 15.2,
+      "lossRate": 37.9,
+      "drawRate": 46.9,
+      "avgRounds": 7.14,
+      "dmgDealt": 18821,
+      "dmgTaken": 16945,
+      "physDealt": 17652,
+      "stratDealt": 1169,
+      "earlyBurstPct": 64.6,
+      "controlDealt": 5.78,
+      "controlTaken": 6.7,
+      "healDealt": 1007,
+      "healTaken": 1007,
+      "buffMagPct": 1415.9,
+      "reduceMagPct": 602.8,
+      "drawAvgRounds": 8,
+      "drawAvgSurvive": 9635,
+      "topSkills": [
+        {
+          "skillId": "wenjiu_zhanjiang",
+          "name": "温酒斩将",
+          "attempts": 11043,
+          "success": 4281,
+          "actualRate": 38.8,
+          "expectRate": 35
+        },
+        {
+          "skillId": "huoshou_chongfeng",
+          "name": "火兽冲锋",
+          "attempts": 9500,
+          "success": 5303,
+          "actualRate": 55.8,
+          "expectRate": 50
+        },
+        {
+          "skillId": "zhanbi_duanjin",
+          "name": "战必断金",
+          "attempts": 8550,
+          "success": 8530,
+          "actualRate": 99.8,
+          "expectRate": 90
+        },
+        {
+          "skillId": "changbing_fangzhen",
+          "name": "长兵方阵",
+          "attempts": 8136,
+          "success": 6757,
+          "actualRate": 83.1,
+          "expectRate": 75
+        },
+        {
+          "skillId": "xiling_kejin",
+          "name": "西陵克晋",
+          "attempts": 7877,
+          "success": 4457,
+          "actualRate": 56.6,
+          "expectRate": 50
+        },
+        {
+          "skillId": "qibu_shixian",
+          "name": "七步释嫌",
+          "attempts": 4253,
+          "success": 4253,
+          "actualRate": 100,
+          "expectRate": 100
+        }
+      ],
+      "vsT0_winRate": 25.9,
+      "vsT1_winRate": 6.9
+    },
+    {
+      "id": "t1-wangyi-fadao",
+      "note": "王异法刀",
+      "tier": "T1",
+      "archetype": "法刀·神赏",
+      "winRate": 9.1,
+      "lossRate": 19.8,
+      "drawRate": 71.2,
+      "avgRounds": 7.58,
+      "dmgDealt": 16160,
+      "dmgTaken": 16032,
+      "physDealt": 5179,
+      "stratDealt": 10981,
+      "earlyBurstPct": 59.1,
+      "controlDealt": 6.69,
+      "controlTaken": 7.01,
+      "healDealt": 0,
+      "healTaken": 0,
+      "buffMagPct": 633.3,
+      "reduceMagPct": 413.2,
+      "drawAvgRounds": 8,
+      "drawAvgSurvive": 9748,
+      "topSkills": [
+        {
+          "skillId": "bugong",
+          "name": "不攻",
+          "attempts": 10765,
+          "success": 10765,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "qibu_shixian",
+          "name": "七步释嫌",
+          "attempts": 9816,
+          "success": 9816,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "daoxing_xianzu",
+          "name": "道行险阻",
+          "attempts": 7381,
+          "success": 3363,
+          "actualRate": 45.6,
+          "expectRate": 40
+        },
+        {
+          "skillId": "shimian_maifu",
+          "name": "十面埋伏",
+          "attempts": 6251,
+          "success": 2790,
+          "actualRate": 44.6,
+          "expectRate": 40
+        },
+        {
+          "skillId": "baiyi_dujiang",
+          "name": "白衣渡江",
+          "attempts": 5758,
+          "success": 5758,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "shenshi_dingji",
+          "name": "审时定计",
+          "attempts": 3037,
+          "success": 1704,
+          "actualRate": 56.1,
+          "expectRate": 50
+        }
+      ],
+      "vsT0_winRate": 13.9,
+      "vsT1_winRate": 4.2
+    },
+    {
+      "id": "t1-huanggai-fadao",
+      "note": "黄盖法刀",
+      "tier": "T1",
+      "archetype": "法刀·神赏",
+      "winRate": 7.9,
+      "lossRate": 21.8,
+      "drawRate": 70.3,
+      "avgRounds": 7.53,
+      "dmgDealt": 16920,
+      "dmgTaken": 16903,
+      "physDealt": 4871,
+      "stratDealt": 12050,
+      "earlyBurstPct": 60.5,
+      "controlDealt": 6.75,
+      "controlTaken": 6.95,
+      "healDealt": 0,
+      "healTaken": 0,
+      "buffMagPct": 536.5,
+      "reduceMagPct": 428.4,
+      "drawAvgRounds": 8,
+      "drawAvgSurvive": 9023,
+      "topSkills": [
+        {
+          "skillId": "bugong",
+          "name": "不攻",
+          "attempts": 10596,
+          "success": 10596,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "qibu_shixian",
+          "name": "七步释嫌",
+          "attempts": 9988,
+          "success": 9988,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "daoxing_xianzu",
+          "name": "道行险阻",
+          "attempts": 7185,
+          "success": 3267,
+          "actualRate": 45.5,
+          "expectRate": 40
+        },
+        {
+          "skillId": "shimian_maifu",
+          "name": "十面埋伏",
+          "attempts": 6104,
+          "success": 2735,
+          "actualRate": 44.8,
+          "expectRate": 40
+        },
+        {
+          "skillId": "baiyi_dujiang",
+          "name": "白衣渡江",
+          "attempts": 5760,
+          "success": 5760,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "shenshi_dingji",
+          "name": "审时定计",
+          "attempts": 2766,
+          "success": 1570,
+          "actualRate": 56.8,
+          "expectRate": 50
+        }
+      ],
+      "vsT0_winRate": 13.8,
+      "vsT1_winRate": 2
+    },
+    {
+      "id": "bench-taishici-caozhi-zhangliao",
+      "note": "敌方·太史慈曹植张辽",
+      "tier": "T0",
+      "archetype": "T0基准",
+      "winRate": 6.2,
+      "lossRate": 36.2,
+      "drawRate": 57.7,
+      "avgRounds": 7.29,
+      "dmgDealt": 13247,
+      "dmgTaken": 21714,
+      "physDealt": 12464,
+      "stratDealt": 783,
+      "earlyBurstPct": 61.9,
+      "controlDealt": 7.11,
+      "controlTaken": 7.24,
+      "healDealt": 5862,
+      "healTaken": 5853,
+      "buffMagPct": 498,
+      "reduceMagPct": 339.2,
+      "drawAvgRounds": 8,
+      "drawAvgSurvive": 11029,
+      "topSkills": [
+        {
+          "skillId": "qibu_shixian",
+          "name": "七步释嫌",
+          "attempts": 72285,
+          "success": 72285,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "qiji_rufeng",
+          "name": "其疾如风",
+          "attempts": 12822,
+          "success": 9938,
+          "actualRate": 77.5,
+          "expectRate": 70
+        },
+        {
+          "skillId": "fangzhen_tuji",
+          "name": "方阵突击",
+          "attempts": 10843,
+          "success": 3751,
+          "actualRate": 34.6,
+          "expectRate": 30
+        },
+        {
+          "skillId": "wenjiu_zhanjiang",
+          "name": "温酒斩将",
+          "attempts": 10731,
+          "success": 4255,
+          "actualRate": 39.7,
+          "expectRate": 35
+        },
+        {
+          "skillId": "yangwei",
+          "name": "扬威",
+          "attempts": 9886,
+          "success": 3863,
+          "actualRate": 39.1,
+          "expectRate": 35
+        },
+        {
+          "skillId": "dunbing_cuorui",
+          "name": "钝兵挫锐",
+          "attempts": 9344,
+          "success": 3164,
+          "actualRate": 33.9,
+          "expectRate": 30
+        }
+      ],
+      "vsT0_winRate": 6.8,
+      "vsT1_winRate": 5.7
+    },
+    {
+      "id": "t1-zhangfei-liumang",
+      "note": "张飞流氓",
+      "tier": "T1",
+      "archetype": "流氓·物理爆发",
+      "winRate": 5.3,
+      "lossRate": 10.8,
+      "drawRate": 83.9,
+      "avgRounds": 7.79,
+      "dmgDealt": 18110,
+      "dmgTaken": 15047,
+      "physDealt": 18110,
+      "stratDealt": 0,
+      "earlyBurstPct": 26.7,
+      "controlDealt": 2.86,
+      "controlTaken": 6.44,
+      "healDealt": 7709,
+      "healTaken": 7690,
+      "buffMagPct": 459.9,
+      "reduceMagPct": 851.3,
+      "drawAvgRounds": 8,
+      "drawAvgSurvive": 18178,
+      "topSkills": [
+        {
+          "skillId": "leishi_yingji",
+          "name": "垒实迎击",
+          "attempts": 34419,
+          "success": 19209,
+          "actualRate": 55.8,
+          "expectRate": 50
+        },
+        {
+          "skillId": "jishi",
+          "name": "击势",
+          "attempts": 20974,
+          "success": 15152,
+          "actualRate": 72.2,
+          "expectRate": 65
+        },
+        {
+          "skillId": "shiji",
+          "name": "始计",
+          "attempts": 12066,
+          "success": 12066,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "qibu_shixian",
+          "name": "七步释嫌",
+          "attempts": 10193,
+          "success": 10193,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "jiuxi_huanglong",
+          "name": "九锡黄龙",
+          "attempts": 9117,
+          "success": 3655,
+          "actualRate": 40.1,
+          "expectRate": 35
+        },
+        {
+          "skillId": "hunshui_moyu",
+          "name": "浑水摸鱼",
+          "attempts": 7670,
+          "success": 2984,
+          "actualRate": 38.9,
+          "expectRate": 35
+        }
+      ],
+      "vsT0_winRate": 5.9,
+      "vsT1_winRate": 4.7
+    },
+    {
+      "id": "bench-taishici-zhangchunhua-zhoutai",
+      "note": "敌方·太史慈张春华周泰",
+      "tier": "T0",
+      "archetype": "T0基准",
+      "winRate": 2.6,
+      "lossRate": 35.2,
+      "drawRate": 62.3,
+      "avgRounds": 7.3,
+      "dmgDealt": 12955,
+      "dmgTaken": 17970,
+      "physDealt": 10059,
+      "stratDealt": 2896,
+      "earlyBurstPct": 47.1,
+      "controlDealt": 6.16,
+      "controlTaken": 5.48,
+      "healDealt": 1559,
+      "healTaken": 1559,
+      "buffMagPct": 113.2,
+      "reduceMagPct": 1067.4,
+      "drawAvgRounds": 8,
+      "drawAvgSurvive": 10944,
+      "topSkills": [
+        {
+          "skillId": "chuangyi_leishen",
+          "name": "疮痍累身",
+          "attempts": 24478,
+          "success": 14759,
+          "actualRate": 60.3,
+          "expectRate": 50
+        },
+        {
+          "skillId": "shiji",
+          "name": "始计",
+          "attempts": 11770,
+          "success": 11770,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "fangzhen_tuji",
+          "name": "方阵突击",
+          "attempts": 11741,
+          "success": 4096,
+          "actualRate": 34.9,
+          "expectRate": 30
+        },
+        {
+          "skillId": "yangwei",
+          "name": "扬威",
+          "attempts": 10980,
+          "success": 4264,
+          "actualRate": 38.8,
+          "expectRate": 35
+        },
+        {
+          "skillId": "qibu_shixian",
+          "name": "七步释嫌",
+          "attempts": 10172,
+          "success": 10172,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "qiangshi",
+          "name": "强势",
+          "attempts": 8755,
+          "success": 3939,
+          "actualRate": 45,
+          "expectRate": 40
+        }
+      ],
+      "vsT0_winRate": 4.3,
+      "vsT1_winRate": 1.3
+    },
+    {
+      "id": "bench-taishici-caozhi-guanyu",
+      "note": "敌方·太史慈曹植关羽",
+      "tier": "T0",
+      "archetype": "T0基准",
+      "winRate": 0.9,
+      "lossRate": 52.4,
+      "drawRate": 46.6,
+      "avgRounds": 6.85,
+      "dmgDealt": 11243,
+      "dmgTaken": 23438,
+      "physDealt": 9386,
+      "stratDealt": 1857,
+      "earlyBurstPct": 53.6,
+      "controlDealt": 3.25,
+      "controlTaken": 6.98,
+      "healDealt": 6563,
+      "healTaken": 6514,
+      "buffMagPct": 1.2,
+      "reduceMagPct": 333.2,
+      "drawAvgRounds": 8,
+      "drawAvgSurvive": 11986,
+      "topSkills": [
+        {
+          "skillId": "qibu_shixian",
+          "name": "七步释嫌",
+          "attempts": 66496,
+          "success": 66496,
+          "actualRate": 100,
+          "expectRate": 100
+        },
+        {
+          "skillId": "fangzhen_tuji",
+          "name": "方阵突击",
+          "attempts": 10877,
+          "success": 3675,
+          "actualRate": 33.8,
+          "expectRate": 30
+        },
+        {
+          "skillId": "wenjiu_zhanjiang",
+          "name": "温酒斩将",
+          "attempts": 10751,
+          "success": 4057,
+          "actualRate": 37.7,
+          "expectRate": 35
+        },
+        {
+          "skillId": "qianli_danqi",
+          "name": "千里单骑",
+          "attempts": 7908,
+          "success": 4371,
+          "actualRate": 55.3,
+          "expectRate": 50
+        },
+        {
+          "skillId": "luolei",
+          "name": "落雷",
+          "attempts": 6706,
+          "success": 2691,
+          "actualRate": 40.1,
+          "expectRate": 35
+        },
+        {
+          "skillId": "lianzhan",
+          "name": "连战",
+          "attempts": 5705,
+          "success": 2238,
+          "actualRate": 39.2,
+          "expectRate": 35
+        }
+      ],
+      "vsT0_winRate": 0.9,
+      "vsT1_winRate": 1
+    },
+    {
+      "id": "bench-xunyu-zhangchunhua-caocao",
+      "note": "敌方·荀彧张春华曹操",
+      "tier": "T0",
+      "archetype": "T0基准",
+      "winRate": 0.2,
+      "lossRate": 24.4,
+      "drawRate": 75.4,
+      "avgRounds": 7.61,
+      "dmgDealt": 10206,
+      "dmgTaken": 17162,
+      "physDealt": 4633,
+      "stratDealt": 5573,
+      "earlyBurstPct": 39.6,
+      "controlDealt": 11.05,
+      "controlTaken": 6.56,
+      "healDealt": 1550,
+      "healTaken": 1550,
+      "buffMagPct": -0.2,
+      "reduceMagPct": 256.9,
+      "drawAvgRounds": 8,
+      "drawAvgSurvive": 11573,
+      "topSkills": [
+        {
+          "skillId": "zhongmou_buxie",
+          "name": "众谋不懈",
+          "attempts": 16174,
+          "success": 7379,
+          "actualRate": 45.6,
+          "expectRate": 40
+        },
+        {
+          "skillId": "qiangshi",
+          "name": "强势",
+          "attempts": 8851,
+          "success": 4028,
+          "actualRate": 45.5,
+          "expectRate": 40
+        },
+        {
+          "skillId": "zhanbi_duanjin",
+          "name": "战必断金",
+          "attempts": 8632,
+          "success": 8615,
+          "actualRate": 99.8,
+          "expectRate": 90
+        },
+        {
+          "skillId": "quhu_tunlang",
+          "name": "驱虎吞狼",
+          "attempts": 8323,
+          "success": 2800,
+          "actualRate": 33.6,
+          "expectRate": 30
+        },
+        {
+          "skillId": "luolei",
+          "name": "落雷",
+          "attempts": 8214,
+          "success": 3254,
+          "actualRate": 39.6,
+          "expectRate": 35
+        },
+        {
+          "skillId": "qibu_shixian",
+          "name": "七步释嫌",
+          "attempts": 7923,
+          "success": 7923,
+          "actualRate": 100,
+          "expectRate": 100
+        }
+      ],
+      "vsT0_winRate": 0.5,
+      "vsT1_winRate": 0
+    }
+  ],
+  "matchup": {
+    "bench-lvbu-zhangchunhua-zhenluo": {
+      "bench-zhangchunhua-yuejin-yujin": {
+        "w": 35,
+        "l": 8,
+        "d": 37
+      },
+      "bench-taishici-caozhi-zhangliao": {
+        "w": 28,
+        "l": 0,
+        "d": 52
+      },
+      "bench-zhurong-zhangliao-caocao": {
+        "w": 16,
+        "l": 17,
+        "d": 47
+      },
+      "bench-taishici-zhangchunhua-zhoutai": {
+        "w": 23,
+        "l": 1,
+        "d": 56
+      },
+      "bench-taishici-caozhi-guanyu": {
+        "w": 56,
+        "l": 0,
+        "d": 24
+      },
+      "bench-zhurong-lukang-caocao": {
+        "w": 35,
+        "l": 0,
+        "d": 45
+      },
+      "bench-xunyu-zhangchunhua-caocao": {
+        "w": 28,
+        "l": 0,
+        "d": 52
+      },
+      "t1-huanggai-fadao": {
+        "w": 5,
+        "l": 3,
+        "d": 72
+      },
+      "t1-wangyi-fadao": {
+        "w": 23,
+        "l": 3,
+        "d": 54
+      },
+      "t1-chengyu-weizhi": {
+        "w": 12,
+        "l": 16,
+        "d": 52
+      },
+      "t1-ganning-shiliu": {
+        "w": 1,
+        "l": 13,
+        "d": 66
+      },
+      "t1-zhangfei-liumang": {
+        "w": 6,
+        "l": 0,
+        "d": 74
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 15,
+        "d": 65
+      },
+      "t1-caozhang-loutie": {
+        "w": 8,
+        "l": 9,
+        "d": 63
+      },
+      "t1-machao-caidao": {
+        "w": 31,
+        "l": 5,
+        "d": 44
+      },
+      "t1-zhouyu-dudu": {
+        "w": 23,
+        "l": 18,
+        "d": 39
+      }
+    },
+    "bench-zhangchunhua-yuejin-yujin": {
+      "bench-taishici-caozhi-zhangliao": {
+        "w": 35,
+        "l": 11,
+        "d": 34
+      },
+      "bench-zhurong-zhangliao-caocao": {
+        "w": 0,
+        "l": 34,
+        "d": 46
+      },
+      "bench-taishici-zhangchunhua-zhoutai": {
+        "w": 20,
+        "l": 5,
+        "d": 55
+      },
+      "bench-taishici-caozhi-guanyu": {
+        "w": 69,
+        "l": 2,
+        "d": 9
+      },
+      "bench-zhurong-lukang-caocao": {
+        "w": 12,
+        "l": 0,
+        "d": 68
+      },
+      "bench-xunyu-zhangchunhua-caocao": {
+        "w": 1,
+        "l": 0,
+        "d": 79
+      },
+      "t1-huanggai-fadao": {
+        "w": 0,
+        "l": 15,
+        "d": 65
+      },
+      "t1-wangyi-fadao": {
+        "w": 0,
+        "l": 13,
+        "d": 67
+      },
+      "t1-chengyu-weizhi": {
+        "w": 16,
+        "l": 34,
+        "d": 30
+      },
+      "t1-ganning-shiliu": {
+        "w": 0,
+        "l": 61,
+        "d": 19
+      },
+      "t1-zhangfei-liumang": {
+        "w": 0,
+        "l": 2,
+        "d": 78
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 49,
+        "d": 31
+      },
+      "t1-caozhang-loutie": {
+        "w": 0,
+        "l": 67,
+        "d": 13
+      },
+      "t1-machao-caidao": {
+        "w": 0,
+        "l": 48,
+        "d": 32
+      },
+      "t1-zhouyu-dudu": {
+        "w": 33,
+        "l": 36,
+        "d": 11
+      }
+    },
+    "bench-taishici-caozhi-zhangliao": {
+      "bench-zhurong-zhangliao-caocao": {
+        "w": 8,
+        "l": 46,
+        "d": 26
+      },
+      "bench-taishici-zhangchunhua-zhoutai": {
+        "w": 2,
+        "l": 5,
+        "d": 73
+      },
+      "bench-taishici-caozhi-guanyu": {
+        "w": 13,
+        "l": 2,
+        "d": 65
+      },
+      "bench-zhurong-lukang-caocao": {
+        "w": 2,
+        "l": 55,
+        "d": 23
+      },
+      "bench-xunyu-zhangchunhua-caocao": {
+        "w": 2,
+        "l": 0,
+        "d": 78
+      },
+      "t1-huanggai-fadao": {
+        "w": 0,
+        "l": 10,
+        "d": 70
+      },
+      "t1-wangyi-fadao": {
+        "w": 10,
+        "l": 8,
+        "d": 62
+      },
+      "t1-chengyu-weizhi": {
+        "w": 6,
+        "l": 38,
+        "d": 36
+      },
+      "t1-ganning-shiliu": {
+        "w": 0,
+        "l": 36,
+        "d": 44
+      },
+      "t1-zhangfei-liumang": {
+        "w": 0,
+        "l": 3,
+        "d": 77
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 56,
+        "d": 24
+      },
+      "t1-caozhang-loutie": {
+        "w": 0,
+        "l": 59,
+        "d": 21
+      },
+      "t1-machao-caidao": {
+        "w": 21,
+        "l": 20,
+        "d": 39
+      },
+      "t1-zhouyu-dudu": {
+        "w": 4,
+        "l": 62,
+        "d": 14
+      }
+    },
+    "bench-zhurong-zhangliao-caocao": {
+      "bench-taishici-zhangchunhua-zhoutai": {
+        "w": 57,
+        "l": 1,
+        "d": 22
+      },
+      "bench-taishici-caozhi-guanyu": {
+        "w": 59,
+        "l": 0,
+        "d": 21
+      },
+      "bench-zhurong-lukang-caocao": {
+        "w": 17,
+        "l": 18,
+        "d": 45
+      },
+      "bench-xunyu-zhangchunhua-caocao": {
+        "w": 16,
+        "l": 0,
+        "d": 64
+      },
+      "t1-huanggai-fadao": {
+        "w": 41,
+        "l": 6,
+        "d": 33
+      },
+      "t1-wangyi-fadao": {
+        "w": 42,
+        "l": 1,
+        "d": 37
+      },
+      "t1-chengyu-weizhi": {
+        "w": 57,
+        "l": 4,
+        "d": 19
+      },
+      "t1-ganning-shiliu": {
+        "w": 43,
+        "l": 22,
+        "d": 15
+      },
+      "t1-zhangfei-liumang": {
+        "w": 9,
+        "l": 4,
+        "d": 67
+      },
+      "t1-pangtong-shubu": {
+        "w": 6,
+        "l": 50,
+        "d": 24
+      },
+      "t1-caozhang-loutie": {
+        "w": 8,
+        "l": 61,
+        "d": 11
+      },
+      "t1-machao-caidao": {
+        "w": 34,
+        "l": 35,
+        "d": 11
+      },
+      "t1-zhouyu-dudu": {
+        "w": 51,
+        "l": 11,
+        "d": 18
+      }
+    },
+    "bench-taishici-zhangchunhua-zhoutai": {
+      "bench-taishici-caozhi-guanyu": {
+        "w": 9,
+        "l": 0,
+        "d": 71
+      },
+      "bench-zhurong-lukang-caocao": {
+        "w": 1,
+        "l": 13,
+        "d": 66
+      },
+      "bench-xunyu-zhangchunhua-caocao": {
+        "w": 2,
+        "l": 0,
+        "d": 78
+      },
+      "t1-huanggai-fadao": {
+        "w": 0,
+        "l": 22,
+        "d": 58
+      },
+      "t1-wangyi-fadao": {
+        "w": 1,
+        "l": 14,
+        "d": 65
+      },
+      "t1-chengyu-weizhi": {
+        "w": 2,
+        "l": 41,
+        "d": 37
+      },
+      "t1-ganning-shiliu": {
+        "w": 0,
+        "l": 43,
+        "d": 37
+      },
+      "t1-zhangfei-liumang": {
+        "w": 0,
+        "l": 4,
+        "d": 76
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 53,
+        "d": 27
+      },
+      "t1-caozhang-loutie": {
+        "w": 0,
+        "l": 59,
+        "d": 21
+      },
+      "t1-machao-caidao": {
+        "w": 5,
+        "l": 40,
+        "d": 35
+      },
+      "t1-zhouyu-dudu": {
+        "w": 1,
+        "l": 59,
+        "d": 20
+      }
+    },
+    "bench-taishici-caozhi-guanyu": {
+      "bench-zhurong-lukang-caocao": {
+        "w": 0,
+        "l": 54,
+        "d": 26
+      },
+      "bench-xunyu-zhangchunhua-caocao": {
+        "w": 1,
+        "l": 1,
+        "d": 78
+      },
+      "t1-huanggai-fadao": {
+        "w": 0,
+        "l": 19,
+        "d": 61
+      },
+      "t1-wangyi-fadao": {
+        "w": 0,
+        "l": 17,
+        "d": 63
+      },
+      "t1-chengyu-weizhi": {
+        "w": 6,
+        "l": 58,
+        "d": 16
+      },
+      "t1-ganning-shiliu": {
+        "w": 0,
+        "l": 43,
+        "d": 37
+      },
+      "t1-zhangfei-liumang": {
+        "w": 0,
+        "l": 8,
+        "d": 72
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 68,
+        "d": 12
+      },
+      "t1-caozhang-loutie": {
+        "w": 0,
+        "l": 78,
+        "d": 2
+      },
+      "t1-machao-caidao": {
+        "w": 1,
+        "l": 45,
+        "d": 34
+      },
+      "t1-zhouyu-dudu": {
+        "w": 0,
+        "l": 74,
+        "d": 6
+      }
+    },
+    "bench-zhurong-lukang-caocao": {
+      "bench-xunyu-zhangchunhua-caocao": {
+        "w": 5,
+        "l": 2,
+        "d": 73
+      },
+      "t1-huanggai-fadao": {
+        "w": 2,
+        "l": 10,
+        "d": 68
+      },
+      "t1-wangyi-fadao": {
+        "w": 1,
+        "l": 31,
+        "d": 48
+      },
+      "t1-chengyu-weizhi": {
+        "w": 13,
+        "l": 39,
+        "d": 28
+      },
+      "t1-ganning-shiliu": {
+        "w": 0,
+        "l": 60,
+        "d": 20
+      },
+      "t1-zhangfei-liumang": {
+        "w": 0,
+        "l": 9,
+        "d": 71
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 75,
+        "d": 5
+      },
+      "t1-caozhang-loutie": {
+        "w": 1,
+        "l": 78,
+        "d": 1
+      },
+      "t1-machao-caidao": {
+        "w": 29,
+        "l": 41,
+        "d": 10
+      },
+      "t1-zhouyu-dudu": {
+        "w": 4,
+        "l": 73,
+        "d": 3
+      }
+    },
+    "bench-xunyu-zhangchunhua-caocao": {
+      "t1-huanggai-fadao": {
+        "w": 0,
+        "l": 3,
+        "d": 77
+      },
+      "t1-wangyi-fadao": {
+        "w": 0,
+        "l": 2,
+        "d": 78
+      },
+      "t1-chengyu-weizhi": {
+        "w": 0,
+        "l": 34,
+        "d": 46
+      },
+      "t1-ganning-shiliu": {
+        "w": 0,
+        "l": 46,
+        "d": 34
+      },
+      "t1-zhangfei-liumang": {
+        "w": 0,
+        "l": 8,
+        "d": 72
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 19,
+        "d": 61
+      },
+      "t1-caozhang-loutie": {
+        "w": 0,
+        "l": 68,
+        "d": 12
+      },
+      "t1-machao-caidao": {
+        "w": 0,
+        "l": 41,
+        "d": 39
+      },
+      "t1-zhouyu-dudu": {
+        "w": 0,
+        "l": 36,
+        "d": 44
+      }
+    },
+    "t1-huanggai-fadao": {
+      "t1-wangyi-fadao": {
+        "w": 1,
+        "l": 0,
+        "d": 79
+      },
+      "t1-chengyu-weizhi": {
+        "w": 1,
+        "l": 26,
+        "d": 53
+      },
+      "t1-ganning-shiliu": {
+        "w": 0,
+        "l": 40,
+        "d": 40
+      },
+      "t1-zhangfei-liumang": {
+        "w": 0,
+        "l": 5,
+        "d": 75
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 29,
+        "d": 51
+      },
+      "t1-caozhang-loutie": {
+        "w": 0,
+        "l": 68,
+        "d": 12
+      },
+      "t1-machao-caidao": {
+        "w": 11,
+        "l": 33,
+        "d": 36
+      },
+      "t1-zhouyu-dudu": {
+        "w": 0,
+        "l": 30,
+        "d": 50
+      }
+    },
+    "t1-wangyi-fadao": {
+      "t1-chengyu-weizhi": {
+        "w": 1,
+        "l": 8,
+        "d": 71
+      },
+      "t1-ganning-shiliu": {
+        "w": 0,
+        "l": 42,
+        "d": 38
+      },
+      "t1-zhangfei-liumang": {
+        "w": 2,
+        "l": 1,
+        "d": 77
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 17,
+        "d": 63
+      },
+      "t1-caozhang-loutie": {
+        "w": 2,
+        "l": 68,
+        "d": 10
+      },
+      "t1-machao-caidao": {
+        "w": 19,
+        "l": 26,
+        "d": 35
+      },
+      "t1-zhouyu-dudu": {
+        "w": 3,
+        "l": 13,
+        "d": 64
+      }
+    },
+    "t1-chengyu-weizhi": {
+      "t1-ganning-shiliu": {
+        "w": 14,
+        "l": 21,
+        "d": 45
+      },
+      "t1-zhangfei-liumang": {
+        "w": 34,
+        "l": 4,
+        "d": 42
+      },
+      "t1-pangtong-shubu": {
+        "w": 21,
+        "l": 9,
+        "d": 50
+      },
+      "t1-caozhang-loutie": {
+        "w": 17,
+        "l": 47,
+        "d": 16
+      },
+      "t1-machao-caidao": {
+        "w": 26,
+        "l": 34,
+        "d": 20
+      },
+      "t1-zhouyu-dudu": {
+        "w": 19,
+        "l": 12,
+        "d": 49
+      }
+    },
+    "t1-ganning-shiliu": {
+      "t1-zhangfei-liumang": {
+        "w": 11,
+        "l": 0,
+        "d": 69
+      },
+      "t1-pangtong-shubu": {
+        "w": 29,
+        "l": 22,
+        "d": 29
+      },
+      "t1-caozhang-loutie": {
+        "w": 11,
+        "l": 57,
+        "d": 12
+      },
+      "t1-machao-caidao": {
+        "w": 32,
+        "l": 15,
+        "d": 33
+      },
+      "t1-zhouyu-dudu": {
+        "w": 44,
+        "l": 23,
+        "d": 13
+      }
+    },
+    "t1-zhangfei-liumang": {
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 12,
+        "d": 68
+      },
+      "t1-caozhang-loutie": {
+        "w": 1,
+        "l": 41,
+        "d": 38
+      },
+      "t1-machao-caidao": {
+        "w": 12,
+        "l": 5,
+        "d": 63
+      },
+      "t1-zhouyu-dudu": {
+        "w": 7,
+        "l": 18,
+        "d": 55
+      }
+    },
+    "t1-pangtong-shubu": {
+      "t1-caozhang-loutie": {
+        "w": 5,
+        "l": 66,
+        "d": 9
+      },
+      "t1-machao-caidao": {
+        "w": 25,
+        "l": 47,
+        "d": 8
+      },
+      "t1-zhouyu-dudu": {
+        "w": 51,
+        "l": 1,
+        "d": 28
+      }
+    },
+    "t1-caozhang-loutie": {
+      "t1-machao-caidao": {
+        "w": 61,
+        "l": 16,
+        "d": 3
+      },
+      "t1-zhouyu-dudu": {
+        "w": 64,
+        "l": 7,
+        "d": 9
+      }
+    },
+    "t1-machao-caidao": {
+      "t1-zhouyu-dudu": {
+        "w": 18,
+        "l": 48,
+        "d": 14
+      }
+    },
+    "t1-zhouyu-dudu": {}
+  }
+}
