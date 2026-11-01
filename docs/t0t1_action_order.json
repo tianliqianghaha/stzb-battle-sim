@@ -1,0 +1,221 @@
+{
+  "meta": {
+    "seeds": 80,
+    "task": "始计接通大营验证",
+    "level": 40,
+    "redness": 0,
+    "morale": 120
+  },
+  "teams": [
+    {
+      "id": "bench-lvbu-zhangchunhua-zhenluo",
+      "note": "敌方·吕布张春华甄洛",
+      "battles": 1280,
+      "baseSpeed": {
+        "carrier": 156,
+        "daying": 132
+      },
+      "speedOrder": "始计先于大营（R1实测）",
+      "dayingAttacks": 38231,
+      "dayingAttacksBuffed": 9486,
+      "dayingAttackBuffRate": 24.8,
+      "dayingR1Attacks": 3790,
+      "dayingR1AttacksBuffed": 1904,
+      "dayingR1BuffRate": 50.2,
+      "dayingR1to4Attacks": 19176,
+      "dayingR1to4AttacksBuffed": 8628,
+      "dayingR1to4BuffRate": 45,
+      "r1Order": {
+        "carrierFasterR1": 1127,
+        "carrierSlowerR1": 0
+      },
+      "byOpponent": {
+        "bench-zhangchunhua-yuejin-yujin": {
+          "atk": 2321,
+          "buffed": 616,
+          "rate": 26.5
+        },
+        "bench-taishici-caozhi-zhangliao": {
+          "atk": 2525,
+          "buffed": 626,
+          "rate": 24.8
+        },
+        "bench-zhurong-zhangliao-caocao": {
+          "atk": 2183,
+          "buffed": 552,
+          "rate": 25.3
+        },
+        "bench-taishici-zhangchunhua-zhoutai": {
+          "atk": 2181,
+          "buffed": 556,
+          "rate": 25.5
+        },
+        "bench-taishici-caozhi-guanyu": {
+          "atk": 2272,
+          "buffed": 651,
+          "rate": 28.7
+        },
+        "bench-zhurong-lukang-caocao": {
+          "atk": 2657,
+          "buffed": 641,
+          "rate": 24.1
+        },
+        "bench-xunyu-zhangchunhua-caocao": {
+          "atk": 2255,
+          "buffed": 544,
+          "rate": 24.1
+        },
+        "t1-huanggai-fadao": {
+          "atk": 2808,
+          "buffed": 595,
+          "rate": 21.2
+        },
+        "t1-wangyi-fadao": {
+          "atk": 2434,
+          "buffed": 552,
+          "rate": 22.7
+        },
+        "t1-chengyu-weizhi": {
+          "atk": 2130,
+          "buffed": 573,
+          "rate": 26.9
+        },
+        "t1-ganning-shiliu": {
+          "atk": 2190,
+          "buffed": 498,
+          "rate": 22.7
+        },
+        "t1-zhangfei-liumang": {
+          "atk": 1926,
+          "buffed": 524,
+          "rate": 27.2
+        },
+        "t1-pangtong-shubu": {
+          "atk": 3012,
+          "buffed": 710,
+          "rate": 23.6
+        },
+        "t1-caozhang-loutie": {
+          "atk": 2350,
+          "buffed": 593,
+          "rate": 25.2
+        },
+        "t1-machao-caidao": {
+          "atk": 2623,
+          "buffed": 657,
+          "rate": 25
+        },
+        "t1-zhouyu-dudu": {
+          "atk": 2364,
+          "buffed": 598,
+          "rate": 25.3
+        }
+      }
+    },
+    {
+      "id": "bench-taishici-zhangchunhua-zhoutai",
+      "note": "敌方·太史慈张春华周泰",
+      "battles": 1280,
+      "baseSpeed": {
+        "carrier": 156,
+        "daying": 106
+      },
+      "speedOrder": "大营先于始计（R1实测，受优先行动/加速覆盖）",
+      "dayingAttacks": 17479,
+      "dayingAttacksBuffed": 2984,
+      "dayingAttackBuffRate": 17.1,
+      "dayingR1Attacks": 3416,
+      "dayingR1AttacksBuffed": 0,
+      "dayingR1BuffRate": 0,
+      "dayingR1to4Attacks": 11637,
+      "dayingR1to4AttacksBuffed": 2774,
+      "dayingR1to4BuffRate": 23.8,
+      "r1Order": {
+        "carrierFasterR1": 0,
+        "carrierSlowerR1": 976
+      },
+      "byOpponent": {
+        "bench-lvbu-zhangchunhua-zhenluo": {
+          "atk": 650,
+          "buffed": 127,
+          "rate": 19.5
+        },
+        "bench-zhangchunhua-yuejin-yujin": {
+          "atk": 1445,
+          "buffed": 244,
+          "rate": 16.9
+        },
+        "bench-taishici-caozhi-zhangliao": {
+          "atk": 1424,
+          "buffed": 240,
+          "rate": 16.9
+        },
+        "bench-zhurong-zhangliao-caocao": {
+          "atk": 1105,
+          "buffed": 201,
+          "rate": 18.2
+        },
+        "bench-taishici-caozhi-guanyu": {
+          "atk": 1378,
+          "buffed": 232,
+          "rate": 16.8
+        },
+        "bench-zhurong-lukang-caocao": {
+          "atk": 949,
+          "buffed": 134,
+          "rate": 14.1
+        },
+        "bench-xunyu-zhangchunhua-caocao": {
+          "atk": 869,
+          "buffed": 120,
+          "rate": 13.8
+        },
+        "t1-huanggai-fadao": {
+          "atk": 1123,
+          "buffed": 188,
+          "rate": 16.7
+        },
+        "t1-wangyi-fadao": {
+          "atk": 1177,
+          "buffed": 194,
+          "rate": 16.5
+        },
+        "t1-chengyu-weizhi": {
+          "atk": 1130,
+          "buffed": 201,
+          "rate": 17.8
+        },
+        "t1-ganning-shiliu": {
+          "atk": 1032,
+          "buffed": 163,
+          "rate": 15.8
+        },
+        "t1-zhangfei-liumang": {
+          "atk": 940,
+          "buffed": 141,
+          "rate": 15
+        },
+        "t1-pangtong-shubu": {
+          "atk": 1201,
+          "buffed": 221,
+          "rate": 18.4
+        },
+        "t1-caozhang-loutie": {
+          "atk": 1120,
+          "buffed": 212,
+          "rate": 18.9
+        },
+        "t1-machao-caidao": {
+          "atk": 1329,
+          "buffed": 236,
+          "rate": 17.8
+        },
+        "t1-zhouyu-dudu": {
+          "atk": 607,
+          "buffed": 130,
+          "rate": 21.4
+        }
+      }
+    }
+  ]
+}
