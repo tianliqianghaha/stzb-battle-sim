@@ -2027,6 +2027,12 @@ npx tsx scripts/verify-teams.mts
   - 旧律深化：D1 增伤主导胜率（均值视角最干净）、D2 兵种克制 ±0.3（次级因子）。
   - **产物**：`docs/T0T1新规律与红度放大.md`、`docs/t0t1_redness.json`、`scripts/t0t1_redness.mts`、`scripts/_mine.cjs`、`scripts/_redfix.cjs`。
   - **复现**：`npx tsx scripts/t0t1_redness.mts` → 输出 `docs/t0t1_redness.json`；`node scripts/_redfix.cjs` 复核 bothRed 离散度。
+- **T0T1 阵位规律（大营/中军/前锋的成因与优质画像）**：精读 17 队全部武将主战法 + 四维属性与成长 + 攻击距离，反推"为什么放这个位置"并回判 17 队（命中 88.2%，6 例外全为相对/体系特例）。
+  - 主律（绝对）：肉度/自身抗压武将放前锋（曹操/周泰/赵云/于禁/关羽等必中）；核心输出 + 攻击距离≥3 + 自带主战法为胜负手者放大营；其余归中军（连接/减伤/续航/控制锚点）。
+  - 相对律（解释例外）：阵位由"相对队友的胜负手权重 vs 承伤权重"决定——大营=本队第一胜负手、前锋=本队第一承伤者、中军=其余；体系特例含张春华控制锚点、法刀黄盖/卫瓘、魏智程昱/荀彧。
+  - 三位置"优质"画像与 0–100 打分（`positionQuality(hero,pos)`）：大营重输出+胜负手+距离；中军重连接/减伤/续航+速度；前锋重防御成长+自身抗压+距离≤2。
+  - **产物**：`docs/T0T1阵位规律.md`、`docs/t0t1_position.json`、`scripts/position_rule.mts`（`recommendPosition` + `positionQuality` 可复跑）。
+  - **复现**：`npx tsx scripts/position_rule.mts` → 输出报告与 `docs/t0t1_position.json`。
 
 
 

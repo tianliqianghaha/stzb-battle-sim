@@ -1,0 +1,1128 @@
+{
+  "meta": {
+    "teams": 17,
+    "slots": 51,
+    "accuracy": 88.2,
+    "hit": 45,
+    "exceptions": [
+      {
+        "team": "bench-zhangchunhua-yuejin-yujin",
+        "hero": "张春华",
+        "actual": "大营",
+        "pred": "中军"
+      },
+      {
+        "team": "bench-zhangchunhua-yuejin-yujin",
+        "hero": "乐进",
+        "actual": "中军",
+        "pred": "大营"
+      },
+      {
+        "team": "t1-huanggai-fadao",
+        "hero": "黄盖",
+        "actual": "大营",
+        "pred": "前锋"
+      },
+      {
+        "team": "t1-huanggai-fadao",
+        "hero": "卫瓘",
+        "actual": "前锋",
+        "pred": "大营"
+      },
+      {
+        "team": "t1-chengyu-weizhi",
+        "hero": "XP程昱",
+        "actual": "大营",
+        "pred": "中军"
+      },
+      {
+        "team": "t1-chengyu-weizhi",
+        "hero": "荀彧",
+        "actual": "中军",
+        "pred": "大营"
+      }
+    ]
+  },
+  "teams": [
+    {
+      "id": "bench-lvbu-zhangchunhua-zhenluo",
+      "note": "敌方·吕布张春华甄洛",
+      "tier": "T0",
+      "slots": [
+        {
+          "hero": "吕布",
+          "actual": "大营",
+          "pred": "大营",
+          "ok": true,
+          "range": 4,
+          "def": 145,
+          "gDef": 1.87,
+          "out40": 258,
+          "main": "辕门射戟",
+          "tags": [
+            "输出"
+          ],
+          "qFront": 50,
+          "qBack": 96,
+          "qMid": 53
+        },
+        {
+          "hero": "张春华",
+          "actual": "中军",
+          "pred": "中军",
+          "ok": true,
+          "range": 3,
+          "def": 85,
+          "gDef": 0.75,
+          "out40": 142,
+          "main": "强势",
+          "tags": [
+            "控制"
+          ],
+          "qFront": 32,
+          "qBack": 70,
+          "qMid": 47
+        },
+        {
+          "hero": "甄洛",
+          "actual": "前锋",
+          "pred": "前锋",
+          "ok": true,
+          "range": 3,
+          "def": 125,
+          "gDef": 1.29,
+          "out40": 184,
+          "main": "洛水佳人",
+          "tags": [
+            "续航"
+          ],
+          "qFront": 45,
+          "qBack": 56,
+          "qMid": 66
+        }
+      ]
+    },
+    {
+      "id": "bench-zhangchunhua-yuejin-yujin",
+      "note": "敌方·张春华乐进于禁",
+      "tier": "T0",
+      "slots": [
+        {
+          "hero": "张春华",
+          "actual": "大营",
+          "pred": "中军",
+          "ok": false,
+          "range": 3,
+          "def": 85,
+          "gDef": 0.75,
+          "out40": 142,
+          "main": "强势",
+          "tags": [
+            "控制"
+          ],
+          "qFront": 32,
+          "qBack": 70,
+          "qMid": 47
+        },
+        {
+          "hero": "乐进",
+          "actual": "中军",
+          "pred": "大营",
+          "ok": false,
+          "range": 2,
+          "def": 163,
+          "gDef": 1.95,
+          "out40": 179,
+          "main": "奋疾先登",
+          "tags": [
+            "增伤",
+            "输出"
+          ],
+          "qFront": 54,
+          "qBack": 79,
+          "qMid": 44
+        },
+        {
+          "hero": "于禁",
+          "actual": "前锋",
+          "pred": "前锋",
+          "ok": true,
+          "range": 2,
+          "def": 172,
+          "gDef": 2.1,
+          "out40": 163,
+          "main": "当敌制决",
+          "tags": [
+            "减伤",
+            "增伤",
+            "增益"
+          ],
+          "qFront": 75,
+          "qBack": 63,
+          "qMid": 64
+        }
+      ]
+    },
+    {
+      "id": "bench-taishici-caozhi-zhangliao",
+      "note": "敌方·太史慈曹植张辽",
+      "tier": "T0",
+      "slots": [
+        {
+          "hero": "太史慈",
+          "actual": "大营",
+          "pred": "大营",
+          "ok": true,
+          "range": 5,
+          "def": 159,
+          "gDef": 1.8,
+          "out40": 215,
+          "main": "方阵突击",
+          "tags": [
+            "控制",
+            "输出"
+          ],
+          "qFront": 56,
+          "qBack": 88,
+          "qMid": 49
+        },
+        {
+          "hero": "曹植",
+          "actual": "中军",
+          "pred": "中军",
+          "ok": true,
+          "range": 3,
+          "def": 139,
+          "gDef": 1.51,
+          "out40": 213,
+          "main": "七步释嫌",
+          "tags": [
+            "减伤",
+            "续航"
+          ],
+          "qFront": 50,
+          "qBack": 72,
+          "qMid": 69
+        },
+        {
+          "hero": "张辽",
+          "actual": "前锋",
+          "pred": "前锋",
+          "ok": true,
+          "range": 3,
+          "def": 183,
+          "gDef": 2.27,
+          "out40": 177,
+          "main": "其疾如风",
+          "tags": [
+            "增益",
+            "爆发"
+          ],
+          "qFront": 61,
+          "qBack": 78,
+          "qMid": 70
+        }
+      ]
+    },
+    {
+      "id": "bench-zhurong-zhangliao-caocao",
+      "note": "敌方·祝融夫人张辽曹操",
+      "tier": "T0",
+      "slots": [
+        {
+          "hero": "祝融夫人",
+          "actual": "大营",
+          "pred": "大营",
+          "ok": true,
+          "range": 3,
+          "def": 129,
+          "gDef": 1.24,
+          "out40": 222,
+          "main": "火兽冲锋",
+          "tags": [
+            "增伤",
+            "输出"
+          ],
+          "qFront": 39,
+          "qBack": 82,
+          "qMid": 48
+        },
+        {
+          "hero": "张辽",
+          "actual": "中军",
+          "pred": "中军",
+          "ok": true,
+          "range": 3,
+          "def": 183,
+          "gDef": 2.27,
+          "out40": 177,
+          "main": "其疾如风",
+          "tags": [
+            "增益",
+            "爆发"
+          ],
+          "qFront": 61,
+          "qBack": 78,
+          "qMid": 70
+        },
+        {
+          "hero": "曹操",
+          "actual": "前锋",
+          "pred": "前锋",
+          "ok": true,
+          "range": 2,
+          "def": 222,
+          "gDef": 2.95,
+          "out40": 192,
+          "main": "魏武之世",
+          "tags": [
+            "减伤",
+            "增益"
+          ],
+          "qFront": 68,
+          "qBack": 57,
+          "qMid": 62
+        }
+      ]
+    },
+    {
+      "id": "bench-taishici-zhangchunhua-zhoutai",
+      "note": "敌方·太史慈张春华周泰",
+      "tier": "T0",
+      "slots": [
+        {
+          "hero": "太史慈",
+          "actual": "大营",
+          "pred": "大营",
+          "ok": true,
+          "range": 5,
+          "def": 159,
+          "gDef": 1.8,
+          "out40": 215,
+          "main": "方阵突击",
+          "tags": [
+            "控制",
+            "输出"
+          ],
+          "qFront": 56,
+          "qBack": 88,
+          "qMid": 49
+        },
+        {
+          "hero": "张春华",
+          "actual": "中军",
+          "pred": "中军",
+          "ok": true,
+          "range": 3,
+          "def": 85,
+          "gDef": 0.75,
+          "out40": 142,
+          "main": "强势",
+          "tags": [
+            "控制"
+          ],
+          "qFront": 32,
+          "qBack": 70,
+          "qMid": 47
+        },
+        {
+          "hero": "周泰",
+          "actual": "前锋",
+          "pred": "前锋",
+          "ok": true,
+          "range": 2,
+          "def": 190,
+          "gDef": 2.25,
+          "out40": 157,
+          "main": "疮痍累身",
+          "tags": [
+            "减伤",
+            "爆发",
+            "输出"
+          ],
+          "qFront": 79,
+          "qBack": 69,
+          "qMid": 62
+        }
+      ]
+    },
+    {
+      "id": "bench-taishici-caozhi-guanyu",
+      "note": "敌方·太史慈曹植关羽",
+      "tier": "T0",
+      "slots": [
+        {
+          "hero": "太史慈",
+          "actual": "大营",
+          "pred": "大营",
+          "ok": true,
+          "range": 5,
+          "def": 159,
+          "gDef": 1.8,
+          "out40": 215,
+          "main": "方阵突击",
+          "tags": [
+            "控制",
+            "输出"
+          ],
+          "qFront": 56,
+          "qBack": 88,
+          "qMid": 49
+        },
+        {
+          "hero": "曹植",
+          "actual": "中军",
+          "pred": "中军",
+          "ok": true,
+          "range": 3,
+          "def": 139,
+          "gDef": 1.51,
+          "out40": 213,
+          "main": "七步释嫌",
+          "tags": [
+            "减伤",
+            "续航"
+          ],
+          "qFront": 50,
+          "qBack": 72,
+          "qMid": 69
+        },
+        {
+          "hero": "关羽",
+          "actual": "前锋",
+          "pred": "前锋",
+          "ok": true,
+          "range": 1,
+          "def": 155,
+          "gDef": 1.77,
+          "out40": 196,
+          "main": "千里单骑",
+          "tags": [
+            "续航",
+            "输出"
+          ],
+          "qFront": 42,
+          "qBack": 64,
+          "qMid": 49
+        }
+      ]
+    },
+    {
+      "id": "bench-zhurong-lukang-caocao",
+      "note": "敌方·祝融夫人陆抗曹操",
+      "tier": "T0",
+      "slots": [
+        {
+          "hero": "祝融夫人",
+          "actual": "大营",
+          "pred": "大营",
+          "ok": true,
+          "range": 3,
+          "def": 129,
+          "gDef": 1.24,
+          "out40": 222,
+          "main": "火兽冲锋",
+          "tags": [
+            "增伤",
+            "输出"
+          ],
+          "qFront": 39,
+          "qBack": 82,
+          "qMid": 48
+        },
+        {
+          "hero": "陆抗",
+          "actual": "中军",
+          "pred": "中军",
+          "ok": true,
+          "range": 2,
+          "def": 162,
+          "gDef": 1.77,
+          "out40": 173,
+          "main": "西陵克晋",
+          "tags": [
+            "续航",
+            "输出"
+          ],
+          "qFront": 57,
+          "qBack": 77,
+          "qMid": 64
+        },
+        {
+          "hero": "曹操",
+          "actual": "前锋",
+          "pred": "前锋",
+          "ok": true,
+          "range": 2,
+          "def": 222,
+          "gDef": 2.95,
+          "out40": 192,
+          "main": "魏武之世",
+          "tags": [
+            "减伤",
+            "增益"
+          ],
+          "qFront": 68,
+          "qBack": 57,
+          "qMid": 62
+        }
+      ]
+    },
+    {
+      "id": "bench-xunyu-zhangchunhua-caocao",
+      "note": "敌方·荀彧张春华曹操",
+      "tier": "T0",
+      "slots": [
+        {
+          "hero": "荀彧",
+          "actual": "大营",
+          "pred": "大营",
+          "ok": true,
+          "range": 2,
+          "def": 150,
+          "gDef": 1.56,
+          "out40": 184,
+          "main": "驱虎吞狼",
+          "tags": [
+            "控制",
+            "输出"
+          ],
+          "qFront": 51,
+          "qBack": 77,
+          "qMid": 45
+        },
+        {
+          "hero": "张春华",
+          "actual": "中军",
+          "pred": "中军",
+          "ok": true,
+          "range": 3,
+          "def": 85,
+          "gDef": 0.75,
+          "out40": 142,
+          "main": "强势",
+          "tags": [
+            "控制"
+          ],
+          "qFront": 32,
+          "qBack": 70,
+          "qMid": 47
+        },
+        {
+          "hero": "曹操",
+          "actual": "前锋",
+          "pred": "前锋",
+          "ok": true,
+          "range": 2,
+          "def": 222,
+          "gDef": 2.95,
+          "out40": 192,
+          "main": "魏武之世",
+          "tags": [
+            "减伤",
+            "增益"
+          ],
+          "qFront": 68,
+          "qBack": 57,
+          "qMid": 62
+        }
+      ]
+    },
+    {
+      "id": "t1-huanggai-fadao",
+      "note": "黄盖法刀",
+      "tier": "T1",
+      "slots": [
+        {
+          "hero": "黄盖",
+          "actual": "大营",
+          "pred": "前锋",
+          "ok": false,
+          "range": 2,
+          "def": 164,
+          "gDef": 2.16,
+          "out40": 228,
+          "main": "烈火焚舟",
+          "tags": [
+            "爆发",
+            "输出"
+          ],
+          "qFront": 57,
+          "qBack": 75,
+          "qMid": 43
+        },
+        {
+          "hero": "吕蒙",
+          "actual": "中军",
+          "pred": "中军",
+          "ok": true,
+          "range": 4,
+          "def": 179,
+          "gDef": 2.23,
+          "out40": 257,
+          "main": "白衣渡江",
+          "tags": [
+            "控制",
+            "爆发",
+            "输出"
+          ],
+          "qFront": 65,
+          "qBack": 84,
+          "qMid": 47
+        },
+        {
+          "hero": "卫瓘",
+          "actual": "前锋",
+          "pred": "大营",
+          "ok": false,
+          "range": 2,
+          "def": 144,
+          "gDef": 1.55,
+          "out40": 186,
+          "main": "持节镇西",
+          "tags": [
+            "减伤",
+            "增伤",
+            "增益",
+            "输出"
+          ],
+          "qFront": 45,
+          "qBack": 64,
+          "qMid": 62
+        }
+      ]
+    },
+    {
+      "id": "t1-wangyi-fadao",
+      "note": "王异法刀",
+      "tier": "T1",
+      "slots": [
+        {
+          "hero": "王异",
+          "actual": "大营",
+          "pred": "大营",
+          "ok": true,
+          "range": 4,
+          "def": 85,
+          "gDef": 0.84,
+          "out40": 256,
+          "main": "世仇",
+          "tags": [
+            "输出"
+          ],
+          "qFront": 28,
+          "qBack": 80,
+          "qMid": 47
+        },
+        {
+          "hero": "吕蒙",
+          "actual": "中军",
+          "pred": "中军",
+          "ok": true,
+          "range": 4,
+          "def": 179,
+          "gDef": 2.23,
+          "out40": 257,
+          "main": "白衣渡江",
+          "tags": [
+            "控制",
+            "爆发",
+            "输出"
+          ],
+          "qFront": 65,
+          "qBack": 84,
+          "qMid": 47
+        },
+        {
+          "hero": "曹操",
+          "actual": "前锋",
+          "pred": "前锋",
+          "ok": true,
+          "range": 2,
+          "def": 222,
+          "gDef": 2.95,
+          "out40": 252,
+          "main": "魏武之世",
+          "tags": [
+            "减伤",
+            "增益"
+          ],
+          "qFront": 68,
+          "qBack": 61,
+          "qMid": 62
+        }
+      ]
+    },
+    {
+      "id": "t1-chengyu-weizhi",
+      "note": "程昱魏智",
+      "tier": "T1",
+      "slots": [
+        {
+          "hero": "XP程昱",
+          "actual": "大营",
+          "pred": "中军",
+          "ok": false,
+          "range": 3,
+          "def": 171,
+          "gDef": 1.92,
+          "out40": 281,
+          "main": "审时定计",
+          "tags": [
+            "续航",
+            "增伤"
+          ],
+          "qFront": 60,
+          "qBack": 85,
+          "qMid": 70
+        },
+        {
+          "hero": "荀彧",
+          "actual": "中军",
+          "pred": "大营",
+          "ok": false,
+          "range": 2,
+          "def": 150,
+          "gDef": 1.56,
+          "out40": 284,
+          "main": "驱虎吞狼",
+          "tags": [
+            "控制",
+            "输出"
+          ],
+          "qFront": 51,
+          "qBack": 83,
+          "qMid": 45
+        },
+        {
+          "hero": "郭嘉",
+          "actual": "前锋",
+          "pred": "前锋",
+          "ok": true,
+          "range": 2,
+          "def": 157,
+          "gDef": 1.79,
+          "out40": 292,
+          "main": "奇佐鬼谋",
+          "tags": [
+            "控制"
+          ],
+          "qFront": 55,
+          "qBack": 88,
+          "qMid": 45
+        }
+      ]
+    },
+    {
+      "id": "t1-ganning-shiliu",
+      "note": "甘宁士气流氓",
+      "tier": "T1",
+      "slots": [
+        {
+          "hero": "甘宁",
+          "actual": "大营",
+          "pred": "大营",
+          "ok": true,
+          "range": 2,
+          "def": 162,
+          "gDef": 1.92,
+          "out40": 278,
+          "main": "侵掠如火",
+          "tags": [
+            "增伤"
+          ],
+          "qFront": 53,
+          "qBack": 73,
+          "qMid": 19
+        },
+        {
+          "hero": "司马炎",
+          "actual": "中军",
+          "pred": "中军",
+          "ok": true,
+          "range": 3,
+          "def": 166,
+          "gDef": 1.98,
+          "out40": 271,
+          "main": "谋议宏图",
+          "tags": [
+            "增益",
+            "爆发"
+          ],
+          "qFront": 54,
+          "qBack": 82,
+          "qMid": 69
+        },
+        {
+          "hero": "孙权",
+          "actual": "前锋",
+          "pred": "前锋",
+          "ok": true,
+          "range": 4,
+          "def": 138,
+          "gDef": 1.28,
+          "out40": 248,
+          "main": "九锡黄龙",
+          "tags": [
+            "减伤",
+            "规避",
+            "净化"
+          ],
+          "qFront": 58,
+          "qBack": 66,
+          "qMid": 67
+        }
+      ]
+    },
+    {
+      "id": "t1-zhangfei-liumang",
+      "note": "张飞流氓",
+      "tier": "T1",
+      "slots": [
+        {
+          "hero": "张飞",
+          "actual": "大营",
+          "pred": "大营",
+          "ok": true,
+          "range": 2,
+          "def": 153,
+          "gDef": 1.68,
+          "out40": 307,
+          "main": "长坂之吼",
+          "tags": [
+            "输出"
+          ],
+          "qFront": 48,
+          "qBack": 89,
+          "qMid": 47
+        },
+        {
+          "hero": "张机",
+          "actual": "中军",
+          "pred": "中军",
+          "ok": true,
+          "range": 3,
+          "def": 160,
+          "gDef": 1.79,
+          "out40": 252,
+          "main": "金匮要略",
+          "tags": [
+            "续航",
+            "爆发"
+          ],
+          "qFront": 57,
+          "qBack": 71,
+          "qMid": 67
+        },
+        {
+          "hero": "孙权",
+          "actual": "前锋",
+          "pred": "前锋",
+          "ok": true,
+          "range": 4,
+          "def": 138,
+          "gDef": 1.28,
+          "out40": 248,
+          "main": "九锡黄龙",
+          "tags": [
+            "减伤",
+            "规避",
+            "净化"
+          ],
+          "qFront": 58,
+          "qBack": 66,
+          "qMid": 67
+        }
+      ]
+    },
+    {
+      "id": "t1-pangtong-shubu",
+      "note": "庞统蜀步",
+      "tier": "T1",
+      "slots": [
+        {
+          "hero": "庞统",
+          "actual": "大营",
+          "pred": "大营",
+          "ok": true,
+          "range": 3,
+          "def": 162,
+          "gDef": 1.83,
+          "out40": 282,
+          "main": "密谋定蜀",
+          "tags": [
+            "控制",
+            "增伤",
+            "增益",
+            "输出"
+          ],
+          "qFront": 56,
+          "qBack": 96,
+          "qMid": 69
+        },
+        {
+          "hero": "刘备",
+          "actual": "中军",
+          "pred": "中军",
+          "ok": true,
+          "range": 3,
+          "def": 152,
+          "gDef": 1.83,
+          "out40": 230,
+          "main": "皇裔流离",
+          "tags": [
+            "续航"
+          ],
+          "qFront": 56,
+          "qBack": 68,
+          "qMid": 67
+        },
+        {
+          "hero": "赵云",
+          "actual": "前锋",
+          "pred": "前锋",
+          "ok": true,
+          "range": 3,
+          "def": 219,
+          "gDef": 2.23,
+          "out40": 250,
+          "main": "银龙冲阵",
+          "tags": [
+            "增伤",
+            "输出"
+          ],
+          "qFront": 64,
+          "qBack": 96,
+          "qMid": 50
+        }
+      ]
+    },
+    {
+      "id": "t1-caozhang-loutie",
+      "note": "曹彰撸铁",
+      "tier": "T1",
+      "slots": [
+        {
+          "hero": "曹彰",
+          "actual": "大营",
+          "pred": "大营",
+          "ok": true,
+          "range": 2,
+          "def": 164,
+          "gDef": 1.87,
+          "out40": 282,
+          "main": "五兵之烈",
+          "tags": [
+            "增伤",
+            "净化",
+            "输出"
+          ],
+          "qFront": 52,
+          "qBack": 86,
+          "qMid": 44
+        },
+        {
+          "hero": "木鹿大王",
+          "actual": "中军",
+          "pred": "中军",
+          "ok": true,
+          "range": 3,
+          "def": 158,
+          "gDef": 1.86,
+          "out40": 212,
+          "main": "夔吼象踏",
+          "tags": [
+            "增益",
+            "输出"
+          ],
+          "qFront": 52,
+          "qBack": 85,
+          "qMid": 68
+        },
+        {
+          "hero": "曹操",
+          "actual": "前锋",
+          "pred": "前锋",
+          "ok": true,
+          "range": 2,
+          "def": 222,
+          "gDef": 2.95,
+          "out40": 252,
+          "main": "魏武之世",
+          "tags": [
+            "减伤",
+            "增益"
+          ],
+          "qFront": 68,
+          "qBack": 61,
+          "qMid": 62
+        }
+      ]
+    },
+    {
+      "id": "t1-machao-caidao",
+      "note": "马超菜刀",
+      "tier": "T1",
+      "slots": [
+        {
+          "hero": "马超",
+          "actual": "大营",
+          "pred": "大营",
+          "ok": true,
+          "range": 3,
+          "def": 163,
+          "gDef": 1.84,
+          "out40": 305,
+          "main": "血溅黄砂",
+          "tags": [
+            "控制",
+            "增伤"
+          ],
+          "qFront": 75,
+          "qBack": 99,
+          "qMid": 52
+        },
+        {
+          "hero": "张辽",
+          "actual": "中军",
+          "pred": "中军",
+          "ok": true,
+          "range": 3,
+          "def": 183,
+          "gDef": 2.27,
+          "out40": 237,
+          "main": "其疾如风",
+          "tags": [
+            "增益",
+            "爆发"
+          ],
+          "qFront": 61,
+          "qBack": 82,
+          "qMid": 70
+        },
+        {
+          "hero": "曹操",
+          "actual": "前锋",
+          "pred": "前锋",
+          "ok": true,
+          "range": 2,
+          "def": 222,
+          "gDef": 2.95,
+          "out40": 252,
+          "main": "魏武之世",
+          "tags": [
+            "减伤",
+            "增益"
+          ],
+          "qFront": 68,
+          "qBack": 61,
+          "qMid": 62
+        }
+      ]
+    },
+    {
+      "id": "t1-zhouyu-dudu",
+      "note": "周瑜嘟嘟",
+      "tier": "T1",
+      "slots": [
+        {
+          "hero": "周瑜",
+          "actual": "大营",
+          "pred": "大营",
+          "ok": true,
+          "range": 4,
+          "def": 144,
+          "gDef": 1.34,
+          "out40": 288,
+          "main": "玄武洰流",
+          "tags": [
+            "控制",
+            "输出"
+          ],
+          "qFront": 47,
+          "qBack": 93,
+          "qMid": 50
+        },
+        {
+          "hero": "吕蒙",
+          "actual": "中军",
+          "pred": "中军",
+          "ok": true,
+          "range": 4,
+          "def": 179,
+          "gDef": 2.23,
+          "out40": 257,
+          "main": "白衣渡江",
+          "tags": [
+            "控制",
+            "爆发",
+            "输出"
+          ],
+          "qFront": 65,
+          "qBack": 84,
+          "qMid": 47
+        },
+        {
+          "hero": "陆逊",
+          "actual": "前锋",
+          "pred": "前锋",
+          "ok": true,
+          "range": 2,
+          "def": 177,
+          "gDef": 2.09,
+          "out40": 277,
+          "main": "火势风威",
+          "tags": [
+            "输出"
+          ],
+          "qFront": 57,
+          "qBack": 84,
+          "qMid": 44
+        }
+      ]
+    }
+  ],
+  "exceptions": [
+    {
+      "team": "bench-zhangchunhua-yuejin-yujin",
+      "hero": "张春华",
+      "actual": "大营",
+      "pred": "中军"
+    },
+    {
+      "team": "bench-zhangchunhua-yuejin-yujin",
+      "hero": "乐进",
+      "actual": "中军",
+      "pred": "大营"
+    },
+    {
+      "team": "t1-huanggai-fadao",
+      "hero": "黄盖",
+      "actual": "大营",
+      "pred": "前锋"
+    },
+    {
+      "team": "t1-huanggai-fadao",
+      "hero": "卫瓘",
+      "actual": "前锋",
+      "pred": "大营"
+    },
+    {
+      "team": "t1-chengyu-weizhi",
+      "hero": "XP程昱",
+      "actual": "大营",
+      "pred": "中军"
+    },
+    {
+      "team": "t1-chengyu-weizhi",
+      "hero": "荀彧",
+      "actual": "中军",
+      "pred": "大营"
+    }
+  ],
+  "qualityDef": {
+    "front": "防御成长×16(≤40)+满级DEF+自身抗压18+续航6+距离≥2 +6+反击/控制 +5",
+    "back": "主成长×20(≤45)+满级主属性+距离≥3 +18/距离2 +8+胜负手12+生存5",
+    "mid": "功能纯度25+衔接20+距离+副输出潜力"
+  }
+}
