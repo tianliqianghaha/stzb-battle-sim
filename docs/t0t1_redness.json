@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "seeds": 30,
+    "rednessModel": "redness=5, troops9000->10000, +50自由点投主战属性, level=40固定",
+    "baseline": "docs/t0t1_fullsim.json 0红"
+  },
+  "rows": [
+    {
+      "id": "bench-lvbu-zhangchunhua-zhenluo",
+      "note": "敌方·吕布张春华甄洛",
+      "tier": "T0",
+      "base0red": 25.5,
+      "增伤0red": 0.45,
+      "redOnlyWin": 37.7,
+      "delta1": 12.2,
+      "bothRedWin": 29,
+      "delta2": 3.5
+    },
+    {
+      "id": "bench-zhangchunhua-yuejin-yujin",
+      "note": "敌方·张春华乐进于禁",
+      "tier": "T0",
+      "base0red": 15.5,
+      "增伤0red": 1.27,
+      "redOnlyWin": 39.2,
+      "delta1": 23.7,
+      "bothRedWin": 20.2,
+      "delta2": 4.7
+    },
+    {
+      "id": "bench-taishici-caozhi-zhangliao",
+      "note": "敌方·太史慈曹植张辽",
+      "tier": "T0",
+      "base0red": 6.3,
+      "增伤0red": 0.61,
+      "redOnlyWin": 13.8,
+      "delta1": 7.5,
+      "bothRedWin": 8.1,
+      "delta2": 1.8
+    },
+    {
+      "id": "bench-zhurong-zhangliao-caocao",
+      "note": "敌方·祝融夫人张辽曹操",
+      "tier": "T0",
+      "base0red": 42.6,
+      "增伤0red": 3.46,
+      "redOnlyWin": 67.7,
+      "delta1": 25.1,
+      "bothRedWin": 46.7,
+      "delta2": 4.1
+    },
+    {
+      "id": "bench-taishici-zhangchunhua-zhoutai",
+      "note": "敌方·太史慈张春华周泰",
+      "tier": "T0",
+      "base0red": 2,
+      "增伤0red": 0.14,
+      "redOnlyWin": 6.3,
+      "delta1": 4.3,
+      "bothRedWin": 3.1,
+      "delta2": 1.1
+    },
+    {
+      "id": "bench-taishici-caozhi-guanyu",
+      "note": "敌方·太史慈曹植关羽",
+      "tier": "T0",
+      "base0red": 1.3,
+      "增伤0red": 0,
+      "redOnlyWin": 2.9,
+      "delta1": 1.6,
+      "bothRedWin": 2.1,
+      "delta2": 0.8
+    },
+    {
+      "id": "bench-zhurong-lukang-caocao",
+      "note": "敌方·祝融夫人陆抗曹操",
+      "tier": "T0",
+      "base0red": 14.4,
+      "增伤0red": 1.77,
+      "redOnlyWin": 27.9,
+      "delta1": 13.5,
+      "bothRedWin": 17.1,
+      "delta2": 2.7
+    },
+    {
+      "id": "bench-xunyu-zhangchunhua-caocao",
+      "note": "敌方·荀彧张春华曹操",
+      "tier": "T0",
+      "base0red": 0.1,
+      "增伤0red": 0,
+      "redOnlyWin": 0.2,
+      "delta1": 0.1,
+      "bothRedWin": 0,
+      "delta2": -0.1
+    },
+    {
+      "id": "t1-huanggai-fadao",
+      "note": "黄盖法刀",
+      "tier": "T1",
+      "base0red": 7.7,
+      "增伤0red": 0.69,
+      "redOnlyWin": 11.9,
+      "delta1": 4.2,
+      "bothRedWin": 4.8,
+      "delta2": -2.9
+    },
+    {
+      "id": "t1-wangyi-fadao",
+      "note": "王异法刀",
+      "tier": "T1",
+      "base0red": 8.2,
+      "增伤0red": 0.81,
+      "redOnlyWin": 13.1,
+      "delta1": 4.9,
+      "bothRedWin": 7.9,
+      "delta2": -0.3
+    },
+    {
+      "id": "t1-chengyu-weizhi",
+      "note": "程昱魏智",
+      "tier": "T1",
+      "base0red": 25.9,
+      "增伤0red": 1.27,
+      "redOnlyWin": 35.6,
+      "delta1": 9.7,
+      "bothRedWin": 19.6,
+      "delta2": -6.3
+    },
+    {
+      "id": "t1-ganning-shiliu",
+      "note": "甘宁士气流氓",
+      "tier": "T1",
+      "base0red": 43.3,
+      "增伤0red": 1.22,
+      "redOnlyWin": 56.7,
+      "delta1": 13.4,
+      "bothRedWin": 44.6,
+      "delta2": 1.3
+    },
+    {
+      "id": "t1-zhangfei-liumang",
+      "note": "张飞流氓",
+      "tier": "T1",
+      "base0red": 3.9,
+      "增伤0red": 0.58,
+      "redOnlyWin": 10.2,
+      "delta1": 6.3,
+      "bothRedWin": 5,
+      "delta2": 1.1
+    },
+    {
+      "id": "t1-pangtong-shubu",
+      "note": "庞统蜀步",
+      "tier": "T1",
+      "base0red": 46,
+      "增伤0red": 0.58,
+      "redOnlyWin": 55.6,
+      "delta1": 9.6,
+      "bothRedWin": 44.2,
+      "delta2": -1.8
+    },
+    {
+      "id": "t1-caozhang-loutie",
+      "note": "曹彰撸铁",
+      "tier": "T1",
+      "base0red": 74.9,
+      "增伤0red": 0.59,
+      "redOnlyWin": 85.6,
+      "delta1": 10.7,
+      "bothRedWin": 72.9,
+      "delta2": -2
+    },
+    {
+      "id": "t1-machao-caidao",
+      "note": "马超菜刀",
+      "tier": "T1",
+      "base0red": 40.9,
+      "增伤0red": 2.04,
+      "redOnlyWin": 56.5,
+      "delta1": 15.6,
+      "bothRedWin": 37.9,
+      "delta2": -3
+    },
+    {
+      "id": "t1-zhouyu-dudu",
+      "note": "周瑜嘟嘟",
+      "tier": "T1",
+      "base0red": 35.9,
+      "增伤0red": 0.89,
+      "redOnlyWin": 45.4,
+      "delta1": 9.5,
+      "bothRedWin": 30.2,
+      "delta2": -5.7
+    }
+  ],
+  "marquee": [
+    {
+      "name": "曹彰(强/T1增伤) vs 荀彧(弱/T0无增伤)",
+      "base_iWinRate": 86.7,
+      "redStrong_iWinRate": 100,
+      "marginGain": 13.3
+    },
+    {
+      "name": "祝融张辽曹操(强/T0增伤3.46) vs 太史慈曹植关羽(弱/T0无增伤)",
+      "base_iWinRate": 76.7,
+      "redStrong_iWinRate": 90,
+      "marginGain": 13.3
+    },
+    {
+      "name": "庞统蜀步(减伤墙) vs 张春华乐进于禁(中)",
+      "base_iWinRate": 50,
+      "redStrong_iWinRate": 70,
+      "marginGain": 20
+    }
+  ],
+  "spread": {
+    "base0red_spread": 74.8,
+    "bothRed_spread": 72.9
+  },
+  "deltaSummary": {
+    "meanDelta1": 10.11,
+    "strongTeamsDelta1_avg": 14.88,
+    "weakTeamsDelta1_avg": 4.13
+  }
+}

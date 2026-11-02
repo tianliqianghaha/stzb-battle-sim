@@ -2017,6 +2017,16 @@ npx tsx scripts/verify-teams.mts
 - **产物**：`docs/T0T1全谱战报验证.md`（论证全文）、`docs/t0t1_fullsim.json`（272 组均值矩阵+17队画像）、`docs/t0t1_deepread.json`（9 场完整事件流覆盖 80 战法）、`scripts/t0t1_fullsim.mts`、`scripts/_dump_deepread.cjs`。
 - **复现**：`SEEDS=40 npx tsx scripts/t0t1_fullsim.mts` → `node scripts/_dump_deepread.cjs`（→ `docs/_deepread_dump.txt`）。
 - **注**：v1 的 7 份单局战报（`docs/T0T1战报验证分析.md` / `docs/t0t1_reports.json` / `scripts/t0t1_reports.mts`）已被本 v2 全量版覆盖；v1 在"曹操 vs 曹操"等英雄重叠配对上有跨边错算，结论方向仍成立但数字以 v2 为准。
+- **T0T1 新规律与红度放大（均值+鲁棒验证）**：在 v2 全谱 272 配对基础上挖 5 条新规律，并对红度放大效应做三角度鲁棒验证。
+  - N1 物理输出才是真驱动（r=0.53），谋略输出与胜率几乎无关（r=0.006）。
+  - N2 增伤存在性膝点：增伤<0.2 → 胜率坍塌至~1%（硬地板）。
+  - N3 减伤饱和/对冲：减伤活跃度与场均承伤零相关（r=-0.089），减伤是"平局制造器"而非减伤数字本身。
+  - N4 增伤差决定胶着度：双方增伤差<0.5 → 均平局 59%；≥2 → 40%。
+  - N5 先手增益与爆发正相关（r=0.56）：爆发队先手吃香，控制/续航队后手更优。
+  - 红度放大三角度：单队边际 Δ1 与增伤 r=0.82（强者愈强）；增伤=0 队 Δ1 仅 0.85%、增伤>0 队 11.35%；全员满红极差 72.9%（不反转梯队但顶端封顶）。
+  - 旧律深化：D1 增伤主导胜率（均值视角最干净）、D2 兵种克制 ±0.3（次级因子）。
+  - **产物**：`docs/T0T1新规律与红度放大.md`、`docs/t0t1_redness.json`、`scripts/t0t1_redness.mts`、`scripts/_mine.cjs`、`scripts/_redfix.cjs`。
+  - **复现**：`npx tsx scripts/t0t1_redness.mts` → 输出 `docs/t0t1_redness.json`；`node scripts/_redfix.cjs` 复核 bothRed 离散度。
 
 
 
