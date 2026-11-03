@@ -1,0 +1,1419 @@
+{
+  "meta": {
+    "seeds": 40,
+    "teams": 17,
+    "t0Count": 8,
+    "t1Count": 9,
+    "level": 40,
+    "redness": 0,
+    "morale": 120,
+    "treasure": null,
+    "rosterVersion": "2026-11-01",
+    "generatedAt": "2026-11-02T11:33:08.879Z"
+  },
+  "metricNote": "战损(净)=初始总兵−终态存活=死兵+伤兵；胜场战损=获胜时我方净兵损均值；交换比=我方造成敌方净兵损/我方净兵损",
+  "tierSummary": [
+    {
+      "tier": "T0",
+      "n": 8,
+      "winRate": 13.9,
+      "lossRate": 30.9,
+      "drawRate": 55.2,
+      "avgLossNet": 16389,
+      "avgDead": 6436,
+      "winLossNet": 7279,
+      "trade": 0.9
+    },
+    {
+      "tier": "T1",
+      "n": 9,
+      "winRate": 32.3,
+      "lossRate": 17.1,
+      "drawRate": 50.6,
+      "avgLossNet": 14389,
+      "avgDead": 5846,
+      "winLossNet": 8668,
+      "trade": 1.3
+    }
+  ],
+  "crossTier": {
+    "games": 2880,
+    "t0_winRate": 9.6,
+    "t1_winRate": 39.9,
+    "drawRate": 50.5
+  },
+  "teams": [
+    {
+      "id": "bench-lvbu-zhangchunhua-zhenluo",
+      "note": "敌方·吕布张春华甄洛",
+      "tier": "T0",
+      "archetype": "T0基准",
+      "winRate": 26.6,
+      "lossRate": 7.7,
+      "drawRate": 65.8,
+      "nonLossRate": 92.3,
+      "avgLossNet": 10427,
+      "avgDead": 4441,
+      "avgWounded": 5986,
+      "winLossNet": 5332,
+      "lossLossNet": 23485,
+      "avgOppLossNet": 16722,
+      "trade": 1.6,
+      "deadInWins": 2702
+    },
+    {
+      "id": "bench-zhangchunhua-yuejin-yujin",
+      "note": "敌方·张春华乐进于禁",
+      "tier": "T0",
+      "archetype": "T0基准",
+      "winRate": 15.9,
+      "lossRate": 30.5,
+      "drawRate": 53.6,
+      "nonLossRate": 69.5,
+      "avgLossNet": 12488,
+      "avgDead": 5568,
+      "avgWounded": 6920,
+      "winLossNet": 5106,
+      "lossLossNet": 19315,
+      "avgOppLossNet": 16960,
+      "trade": 1.36,
+      "deadInWins": 3086
+    },
+    {
+      "id": "bench-taishici-caozhi-zhangliao",
+      "note": "敌方·太史慈曹植张辽",
+      "tier": "T0",
+      "archetype": "T0基准",
+      "winRate": 6.7,
+      "lossRate": 37.2,
+      "drawRate": 56.1,
+      "nonLossRate": 62.8,
+      "avgLossNet": 18747,
+      "avgDead": 7101,
+      "avgWounded": 11646,
+      "winLossNet": 10083,
+      "lossLossNet": 24846,
+      "avgOppLossNet": 10395,
+      "trade": 0.55,
+      "deadInWins": 4304
+    },
+    {
+      "id": "bench-zhurong-zhangliao-caocao",
+      "note": "敌方·祝融夫人张辽曹操",
+      "tier": "T0",
+      "archetype": "T0基准",
+      "winRate": 42.2,
+      "lossRate": 18.3,
+      "drawRate": 39.5,
+      "nonLossRate": 81.7,
+      "avgLossNet": 15016,
+      "avgDead": 6092,
+      "avgWounded": 8924,
+      "winLossNet": 9994,
+      "lossLossNet": 23478,
+      "avgOppLossNet": 21851,
+      "trade": 1.46,
+      "deadInWins": 4362
+    },
+    {
+      "id": "bench-taishici-zhangchunhua-zhoutai",
+      "note": "敌方·太史慈张春华周泰",
+      "tier": "T0",
+      "archetype": "T0基准",
+      "winRate": 2.8,
+      "lossRate": 37.2,
+      "drawRate": 60,
+      "nonLossRate": 62.8,
+      "avgLossNet": 18618,
+      "avgDead": 7150,
+      "avgWounded": 11469,
+      "winLossNet": 9029,
+      "lossLossNet": 23817,
+      "avgOppLossNet": 9355,
+      "trade": 0.5,
+      "deadInWins": 3707
+    },
+    {
+      "id": "bench-taishici-caozhi-guanyu",
+      "note": "敌方·太史慈曹植关羽",
+      "tier": "T0",
+      "archetype": "T0基准",
+      "winRate": 1.3,
+      "lossRate": 52.3,
+      "drawRate": 46.4,
+      "nonLossRate": 47.7,
+      "avgLossNet": 19876,
+      "avgDead": 7667,
+      "avgWounded": 12210,
+      "winLossNet": 5244,
+      "lossLossNet": 24507,
+      "avgOppLossNet": 8497,
+      "trade": 0.43,
+      "deadInWins": 2862
+    },
+    {
+      "id": "bench-zhurong-lukang-caocao",
+      "note": "敌方·祝融夫人陆抗曹操",
+      "tier": "T0",
+      "archetype": "T0基准",
+      "winRate": 15.3,
+      "lossRate": 38.9,
+      "drawRate": 45.8,
+      "nonLossRate": 61.1,
+      "avgLossNet": 18319,
+      "avgDead": 6595,
+      "avgWounded": 11724,
+      "winLossNet": 7665,
+      "lossLossNet": 23490,
+      "avgOppLossNet": 15404,
+      "trade": 0.84,
+      "deadInWins": 3252
+    },
+    {
+      "id": "bench-xunyu-zhangchunhua-caocao",
+      "note": "敌方·荀彧张春华曹操",
+      "tier": "T0",
+      "archetype": "T0基准",
+      "winRate": 0.3,
+      "lossRate": 25.3,
+      "drawRate": 74.4,
+      "nonLossRate": 74.7,
+      "avgLossNet": 17618,
+      "avgDead": 6874,
+      "avgWounded": 10744,
+      "winLossNet": 5780,
+      "lossLossNet": 24269,
+      "avgOppLossNet": 7810,
+      "trade": 0.44,
+      "deadInWins": 2953
+    },
+    {
+      "id": "t1-huanggai-fadao",
+      "note": "黄盖法刀",
+      "tier": "T1",
+      "archetype": "法刀·神赏",
+      "winRate": 8.3,
+      "lossRate": 20.3,
+      "drawRate": 71.4,
+      "nonLossRate": 79.7,
+      "avgLossNet": 19072,
+      "avgDead": 7357,
+      "avgWounded": 11714,
+      "winLossNet": 10355,
+      "lossLossNet": 25864,
+      "avgOppLossNet": 12766,
+      "trade": 0.67,
+      "deadInWins": 3731
+    },
+    {
+      "id": "t1-wangyi-fadao",
+      "note": "王异法刀",
+      "tier": "T1",
+      "archetype": "法刀·神赏",
+      "winRate": 8.4,
+      "lossRate": 19.1,
+      "drawRate": 72.5,
+      "nonLossRate": 80.9,
+      "avgLossNet": 17945,
+      "avgDead": 6888,
+      "avgWounded": 11058,
+      "winLossNet": 10278,
+      "lossLossNet": 24435,
+      "avgOppLossNet": 12130,
+      "trade": 0.68,
+      "deadInWins": 4259
+    },
+    {
+      "id": "t1-chengyu-weizhi",
+      "note": "程昱魏智",
+      "tier": "T1",
+      "archetype": "魏智·三核法",
+      "winRate": 33.3,
+      "lossRate": 18.8,
+      "drawRate": 48,
+      "nonLossRate": 81.3,
+      "avgLossNet": 15156,
+      "avgDead": 6510,
+      "avgWounded": 8646,
+      "winLossNet": 8503,
+      "lossLossNet": 25435,
+      "avgOppLossNet": 18221,
+      "trade": 1.2,
+      "deadInWins": 3923
+    },
+    {
+      "id": "t1-ganning-shiliu",
+      "note": "甘宁士气流氓",
+      "tier": "T1",
+      "archetype": "流氓·神赏增伤",
+      "winRate": 44.8,
+      "lossRate": 13.6,
+      "drawRate": 41.6,
+      "nonLossRate": 86.4,
+      "avgLossNet": 11684,
+      "avgDead": 5117,
+      "avgWounded": 6567,
+      "winLossNet": 7263,
+      "lossLossNet": 24416,
+      "avgOppLossNet": 17077,
+      "trade": 1.46,
+      "deadInWins": 3451
+    },
+    {
+      "id": "t1-zhangfei-liumang",
+      "note": "张飞流氓",
+      "tier": "T1",
+      "archetype": "流氓·物理爆发",
+      "winRate": 5.5,
+      "lossRate": 9.7,
+      "drawRate": 84.8,
+      "nonLossRate": 90.3,
+      "avgLossNet": 9994,
+      "avgDead": 4238,
+      "avgWounded": 5756,
+      "winLossNet": 6277,
+      "lossLossNet": 20050,
+      "avgOppLossNet": 15764,
+      "trade": 1.58,
+      "deadInWins": 3081
+    },
+    {
+      "id": "t1-pangtong-shubu",
+      "note": "庞统蜀步",
+      "tier": "T1",
+      "archetype": "肉步·双减续航",
+      "winRate": 41.9,
+      "lossRate": 13.9,
+      "drawRate": 44.2,
+      "nonLossRate": 86.1,
+      "avgLossNet": 8829,
+      "avgDead": 4155,
+      "avgWounded": 4673,
+      "winLossNet": 5193,
+      "lossLossNet": 21848,
+      "avgOppLossNet": 16456,
+      "trade": 1.86,
+      "deadInWins": 3013
+    },
+    {
+      "id": "t1-caozhang-loutie",
+      "note": "曹彰撸铁",
+      "tier": "T1",
+      "archetype": "撸铁·物理持续",
+      "winRate": 73.8,
+      "lossRate": 5.3,
+      "drawRate": 20.9,
+      "nonLossRate": 94.7,
+      "avgLossNet": 12142,
+      "avgDead": 4838,
+      "avgWounded": 7304,
+      "winLossNet": 9930,
+      "lossLossNet": 24634,
+      "avgOppLossNet": 23071,
+      "trade": 1.9,
+      "deadInWins": 3976
+    },
+    {
+      "id": "t1-machao-caidao",
+      "note": "马超菜刀",
+      "tier": "T1",
+      "archetype": "菜刀·神赏物理",
+      "winRate": 38.8,
+      "lossRate": 26.6,
+      "drawRate": 34.7,
+      "nonLossRate": 73.4,
+      "avgLossNet": 17670,
+      "avgDead": 7090,
+      "avgWounded": 10580,
+      "winLossNet": 11241,
+      "lossLossNet": 24291,
+      "avgOppLossNet": 19688,
+      "trade": 1.11,
+      "deadInWins": 4743
+    },
+    {
+      "id": "t1-zhouyu-dudu",
+      "note": "周瑜嘟嘟",
+      "tier": "T1",
+      "archetype": "吴法·神赏火法",
+      "winRate": 35.6,
+      "lossRate": 26.9,
+      "drawRate": 37.5,
+      "nonLossRate": 73.1,
+      "avgLossNet": 17011,
+      "avgDead": 6418,
+      "avgWounded": 10593,
+      "winLossNet": 8971,
+      "lossLossNet": 24705,
+      "avgOppLossNet": 18444,
+      "trade": 1.08,
+      "deadInWins": 3388
+    }
+  ],
+  "matchup": {
+    "bench-lvbu-zhangchunhua-zhenluo": {
+      "bench-zhangchunhua-yuejin-yujin": {
+        "w": 20,
+        "l": 3,
+        "d": 17,
+        "myLossNet": 632268,
+        "enLossNet": 447808
+      },
+      "bench-taishici-caozhi-zhangliao": {
+        "w": 15,
+        "l": 0,
+        "d": 25,
+        "myLossNet": 203144,
+        "enLossNet": 837449
+      },
+      "bench-zhurong-zhangliao-caocao": {
+        "w": 5,
+        "l": 8,
+        "d": 27,
+        "myLossNet": 680112,
+        "enLossNet": 644320
+      },
+      "bench-taishici-zhangchunhua-zhoutai": {
+        "w": 12,
+        "l": 0,
+        "d": 28,
+        "myLossNet": 248415,
+        "enLossNet": 724590
+      },
+      "bench-taishici-caozhi-guanyu": {
+        "w": 26,
+        "l": 0,
+        "d": 14,
+        "myLossNet": 145786,
+        "enLossNet": 913213
+      },
+      "bench-zhurong-lukang-caocao": {
+        "w": 21,
+        "l": 0,
+        "d": 19,
+        "myLossNet": 247318,
+        "enLossNet": 875518
+      },
+      "bench-xunyu-zhangchunhua-caocao": {
+        "w": 16,
+        "l": 0,
+        "d": 24,
+        "myLossNet": 110587,
+        "enLossNet": 766741
+      },
+      "t1-huanggai-fadao": {
+        "w": 1,
+        "l": 2,
+        "d": 37,
+        "myLossNet": 513596,
+        "enLossNet": 695831
+      },
+      "t1-wangyi-fadao": {
+        "w": 10,
+        "l": 1,
+        "d": 29,
+        "myLossNet": 333090,
+        "enLossNet": 753711
+      },
+      "t1-chengyu-weizhi": {
+        "w": 6,
+        "l": 6,
+        "d": 28,
+        "myLossNet": 602077,
+        "enLossNet": 632322
+      },
+      "t1-ganning-shiliu": {
+        "w": 1,
+        "l": 9,
+        "d": 30,
+        "myLossNet": 568911,
+        "enLossNet": 457562
+      },
+      "t1-zhangfei-liumang": {
+        "w": 3,
+        "l": 0,
+        "d": 37,
+        "myLossNet": 271286,
+        "enLossNet": 473579
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 7,
+        "d": 33,
+        "myLossNet": 559469,
+        "enLossNet": 153001
+      },
+      "t1-caozhang-loutie": {
+        "w": 6,
+        "l": 3,
+        "d": 31,
+        "myLossNet": 527952,
+        "enLossNet": 749649
+      },
+      "t1-machao-caidao": {
+        "w": 14,
+        "l": 2,
+        "d": 24,
+        "myLossNet": 452947,
+        "enLossNet": 847784
+      },
+      "t1-zhouyu-dudu": {
+        "w": 14,
+        "l": 8,
+        "d": 18,
+        "myLossNet": 576353,
+        "enLossNet": 729153
+      }
+    },
+    "bench-zhangchunhua-yuejin-yujin": {
+      "bench-taishici-caozhi-zhangliao": {
+        "w": 21,
+        "l": 4,
+        "d": 15,
+        "myLossNet": 271477,
+        "enLossNet": 924571
+      },
+      "bench-zhurong-zhangliao-caocao": {
+        "w": 0,
+        "l": 11,
+        "d": 29,
+        "myLossNet": 906800,
+        "enLossNet": 489288
+      },
+      "bench-taishici-zhangchunhua-zhoutai": {
+        "w": 10,
+        "l": 2,
+        "d": 28,
+        "myLossNet": 205469,
+        "enLossNet": 931581
+      },
+      "bench-taishici-caozhi-guanyu": {
+        "w": 37,
+        "l": 1,
+        "d": 2,
+        "myLossNet": 145349,
+        "enLossNet": 1051843
+      },
+      "bench-zhurong-lukang-caocao": {
+        "w": 7,
+        "l": 0,
+        "d": 33,
+        "myLossNet": 431314,
+        "enLossNet": 897864
+      },
+      "bench-xunyu-zhangchunhua-caocao": {
+        "w": 1,
+        "l": 0,
+        "d": 39,
+        "myLossNet": 250233,
+        "enLossNet": 783531
+      },
+      "t1-huanggai-fadao": {
+        "w": 0,
+        "l": 9,
+        "d": 31,
+        "myLossNet": 439427,
+        "enLossNet": 802955
+      },
+      "t1-wangyi-fadao": {
+        "w": 0,
+        "l": 4,
+        "d": 36,
+        "myLossNet": 367845,
+        "enLossNet": 733885
+      },
+      "t1-chengyu-weizhi": {
+        "w": 5,
+        "l": 17,
+        "d": 18,
+        "myLossNet": 681629,
+        "enLossNet": 660891
+      },
+      "t1-ganning-shiliu": {
+        "w": 0,
+        "l": 30,
+        "d": 10,
+        "myLossNet": 624327,
+        "enLossNet": 407333
+      },
+      "t1-zhangfei-liumang": {
+        "w": 0,
+        "l": 2,
+        "d": 38,
+        "myLossNet": 454496,
+        "enLossNet": 660740
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 18,
+        "d": 22,
+        "myLossNet": 432463,
+        "enLossNet": 303746
+      },
+      "t1-caozhang-loutie": {
+        "w": 0,
+        "l": 33,
+        "d": 7,
+        "myLossNet": 877114,
+        "enLossNet": 300585
+      },
+      "t1-machao-caidao": {
+        "w": 0,
+        "l": 29,
+        "d": 11,
+        "myLossNet": 912322,
+        "enLossNet": 452269
+      },
+      "t1-zhouyu-dudu": {
+        "w": 18,
+        "l": 15,
+        "d": 7,
+        "myLossNet": 544288,
+        "enLossNet": 820777
+      }
+    },
+    "bench-taishici-caozhi-zhangliao": {
+      "bench-zhurong-zhangliao-caocao": {
+        "w": 4,
+        "l": 25,
+        "d": 11,
+        "myLossNet": 967678,
+        "enLossNet": 482951
+      },
+      "bench-taishici-zhangchunhua-zhoutai": {
+        "w": 2,
+        "l": 5,
+        "d": 33,
+        "myLossNet": 514467,
+        "enLossNet": 514357
+      },
+      "bench-taishici-caozhi-guanyu": {
+        "w": 6,
+        "l": 1,
+        "d": 33,
+        "myLossNet": 504879,
+        "enLossNet": 568890
+      },
+      "bench-zhurong-lukang-caocao": {
+        "w": 1,
+        "l": 29,
+        "d": 10,
+        "myLossNet": 995295,
+        "enLossNet": 274325
+      },
+      "bench-xunyu-zhangchunhua-caocao": {
+        "w": 0,
+        "l": 0,
+        "d": 40,
+        "myLossNet": 416167,
+        "enLossNet": 416499
+      },
+      "t1-huanggai-fadao": {
+        "w": 0,
+        "l": 6,
+        "d": 34,
+        "myLossNet": 582660,
+        "enLossNet": 546613
+      },
+      "t1-wangyi-fadao": {
+        "w": 4,
+        "l": 3,
+        "d": 33,
+        "myLossNet": 528394,
+        "enLossNet": 554153
+      },
+      "t1-chengyu-weizhi": {
+        "w": 4,
+        "l": 17,
+        "d": 19,
+        "myLossNet": 840996,
+        "enLossNet": 567809
+      },
+      "t1-ganning-shiliu": {
+        "w": 0,
+        "l": 21,
+        "d": 19,
+        "myLossNet": 670256,
+        "enLossNet": 297049
+      },
+      "t1-zhangfei-liumang": {
+        "w": 0,
+        "l": 1,
+        "d": 39,
+        "myLossNet": 722691,
+        "enLossNet": 247949
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 27,
+        "d": 13,
+        "myLossNet": 779498,
+        "enLossNet": 112176
+      },
+      "t1-caozhang-loutie": {
+        "w": 0,
+        "l": 31,
+        "d": 9,
+        "myLossNet": 989894,
+        "enLossNet": 430819
+      },
+      "t1-machao-caidao": {
+        "w": 15,
+        "l": 6,
+        "d": 19,
+        "myLossNet": 743590,
+        "enLossNet": 771888
+      },
+      "t1-zhouyu-dudu": {
+        "w": 3,
+        "l": 30,
+        "d": 7,
+        "myLossNet": 979534,
+        "enLossNet": 392897
+      }
+    },
+    "bench-zhurong-zhangliao-caocao": {
+      "bench-taishici-zhangchunhua-zhoutai": {
+        "w": 30,
+        "l": 1,
+        "d": 9,
+        "myLossNet": 398652,
+        "enLossNet": 1030461
+      },
+      "bench-taishici-caozhi-guanyu": {
+        "w": 30,
+        "l": 0,
+        "d": 10,
+        "myLossNet": 395581,
+        "enLossNet": 977852
+      },
+      "bench-zhurong-lukang-caocao": {
+        "w": 10,
+        "l": 9,
+        "d": 21,
+        "myLossNet": 867542,
+        "enLossNet": 847995
+      },
+      "bench-xunyu-zhangchunhua-caocao": {
+        "w": 11,
+        "l": 0,
+        "d": 29,
+        "myLossNet": 443446,
+        "enLossNet": 828685
+      },
+      "t1-huanggai-fadao": {
+        "w": 18,
+        "l": 3,
+        "d": 19,
+        "myLossNet": 572147,
+        "enLossNet": 963413
+      },
+      "t1-wangyi-fadao": {
+        "w": 23,
+        "l": 0,
+        "d": 17,
+        "myLossNet": 487523,
+        "enLossNet": 998253
+      },
+      "t1-chengyu-weizhi": {
+        "w": 29,
+        "l": 2,
+        "d": 9,
+        "myLossNet": 434839,
+        "enLossNet": 1019618
+      },
+      "t1-ganning-shiliu": {
+        "w": 26,
+        "l": 8,
+        "d": 6,
+        "myLossNet": 508201,
+        "enLossNet": 979542
+      },
+      "t1-zhangfei-liumang": {
+        "w": 3,
+        "l": 3,
+        "d": 34,
+        "myLossNet": 677835,
+        "enLossNet": 628561
+      },
+      "t1-pangtong-shubu": {
+        "w": 3,
+        "l": 26,
+        "d": 11,
+        "myLossNet": 723492,
+        "enLossNet": 570589
+      },
+      "t1-caozhang-loutie": {
+        "w": 3,
+        "l": 31,
+        "d": 6,
+        "myLossNet": 973753,
+        "enLossNet": 699051
+      },
+      "t1-machao-caidao": {
+        "w": 16,
+        "l": 19,
+        "d": 5,
+        "myLossNet": 928687,
+        "enLossNet": 889302
+      },
+      "t1-zhouyu-dudu": {
+        "w": 24,
+        "l": 6,
+        "d": 10,
+        "myLossNet": 581731,
+        "enLossNet": 996643
+      }
+    },
+    "bench-taishici-zhangchunhua-zhoutai": {
+      "bench-taishici-caozhi-guanyu": {
+        "w": 7,
+        "l": 0,
+        "d": 33,
+        "myLossNet": 427349,
+        "enLossNet": 609496
+      },
+      "bench-zhurong-lukang-caocao": {
+        "w": 1,
+        "l": 8,
+        "d": 31,
+        "myLossNet": 891266,
+        "enLossNet": 359373
+      },
+      "bench-xunyu-zhangchunhua-caocao": {
+        "w": 1,
+        "l": 0,
+        "d": 39,
+        "myLossNet": 323441,
+        "enLossNet": 469428
+      },
+      "t1-huanggai-fadao": {
+        "w": 0,
+        "l": 11,
+        "d": 29,
+        "myLossNet": 701375,
+        "enLossNet": 520801
+      },
+      "t1-wangyi-fadao": {
+        "w": 0,
+        "l": 3,
+        "d": 37,
+        "myLossNet": 592306,
+        "enLossNet": 560848
+      },
+      "t1-chengyu-weizhi": {
+        "w": 0,
+        "l": 26,
+        "d": 14,
+        "myLossNet": 868246,
+        "enLossNet": 416439
+      },
+      "t1-ganning-shiliu": {
+        "w": 0,
+        "l": 22,
+        "d": 18,
+        "myLossNet": 756461,
+        "enLossNet": 213493
+      },
+      "t1-zhangfei-liumang": {
+        "w": 0,
+        "l": 3,
+        "d": 37,
+        "myLossNet": 571679,
+        "enLossNet": 211466
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 26,
+        "d": 14,
+        "myLossNet": 687953,
+        "enLossNet": 83171
+      },
+      "t1-caozhang-loutie": {
+        "w": 0,
+        "l": 31,
+        "d": 9,
+        "myLossNet": 1000374,
+        "enLossNet": 339357
+      },
+      "t1-machao-caidao": {
+        "w": 0,
+        "l": 26,
+        "d": 14,
+        "myLossNet": 972178,
+        "enLossNet": 459878
+      },
+      "t1-zhouyu-dudu": {
+        "w": 1,
+        "l": 28,
+        "d": 11,
+        "myLossNet": 922161,
+        "enLossNet": 376241
+      }
+    },
+    "bench-taishici-caozhi-guanyu": {
+      "bench-zhurong-lukang-caocao": {
+        "w": 0,
+        "l": 27,
+        "d": 13,
+        "myLossNet": 975893,
+        "enLossNet": 262076
+      },
+      "bench-xunyu-zhangchunhua-caocao": {
+        "w": 1,
+        "l": 1,
+        "d": 38,
+        "myLossNet": 432792,
+        "enLossNet": 418360
+      },
+      "t1-huanggai-fadao": {
+        "w": 0,
+        "l": 9,
+        "d": 31,
+        "myLossNet": 559644,
+        "enLossNet": 565124
+      },
+      "t1-wangyi-fadao": {
+        "w": 0,
+        "l": 9,
+        "d": 31,
+        "myLossNet": 603516,
+        "enLossNet": 534709
+      },
+      "t1-chengyu-weizhi": {
+        "w": 4,
+        "l": 26,
+        "d": 10,
+        "myLossNet": 882976,
+        "enLossNet": 535338
+      },
+      "t1-ganning-shiliu": {
+        "w": 0,
+        "l": 22,
+        "d": 18,
+        "myLossNet": 776191,
+        "enLossNet": 215675
+      },
+      "t1-zhangfei-liumang": {
+        "w": 0,
+        "l": 3,
+        "d": 37,
+        "myLossNet": 710982,
+        "enLossNet": 165805
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 34,
+        "d": 6,
+        "myLossNet": 723776,
+        "enLossNet": 54606
+      },
+      "t1-caozhang-loutie": {
+        "w": 0,
+        "l": 39,
+        "d": 1,
+        "myLossNet": 1055313,
+        "enLossNet": 228674
+      },
+      "t1-machao-caidao": {
+        "w": 1,
+        "l": 24,
+        "d": 15,
+        "myLossNet": 894775,
+        "enLossNet": 575002
+      },
+      "t1-zhouyu-dudu": {
+        "w": 0,
+        "l": 35,
+        "d": 5,
+        "myLossNet": 983657,
+        "enLossNet": 263713
+      }
+    },
+    "bench-zhurong-lukang-caocao": {
+      "bench-xunyu-zhangchunhua-caocao": {
+        "w": 3,
+        "l": 1,
+        "d": 36,
+        "myLossNet": 522236,
+        "enLossNet": 598857
+      },
+      "t1-huanggai-fadao": {
+        "w": 0,
+        "l": 5,
+        "d": 35,
+        "myLossNet": 687030,
+        "enLossNet": 732079
+      },
+      "t1-wangyi-fadao": {
+        "w": 0,
+        "l": 18,
+        "d": 22,
+        "myLossNet": 677249,
+        "enLossNet": 601446
+      },
+      "t1-chengyu-weizhi": {
+        "w": 7,
+        "l": 19,
+        "d": 14,
+        "myLossNet": 724519,
+        "enLossNet": 744345
+      },
+      "t1-ganning-shiliu": {
+        "w": 0,
+        "l": 27,
+        "d": 13,
+        "myLossNet": 992421,
+        "enLossNet": 457299
+      },
+      "t1-zhangfei-liumang": {
+        "w": 0,
+        "l": 4,
+        "d": 36,
+        "myLossNet": 876713,
+        "enLossNet": 217963
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 39,
+        "d": 1,
+        "myLossNet": 874440,
+        "enLossNet": 201028
+      },
+      "t1-caozhang-loutie": {
+        "w": 1,
+        "l": 39,
+        "d": 0,
+        "myLossNet": 1020005,
+        "enLossNet": 555335
+      },
+      "t1-machao-caidao": {
+        "w": 10,
+        "l": 24,
+        "d": 6,
+        "myLossNet": 946663,
+        "enLossNet": 864853
+      },
+      "t1-zhouyu-dudu": {
+        "w": 4,
+        "l": 33,
+        "d": 3,
+        "myLossNet": 885561,
+        "enLossNet": 476461
+      }
+    },
+    "bench-xunyu-zhangchunhua-caocao": {
+      "t1-huanggai-fadao": {
+        "w": 0,
+        "l": 2,
+        "d": 38,
+        "myLossNet": 559553,
+        "enLossNet": 428306
+      },
+      "t1-wangyi-fadao": {
+        "w": 0,
+        "l": 2,
+        "d": 38,
+        "myLossNet": 590087,
+        "enLossNet": 395263
+      },
+      "t1-chengyu-weizhi": {
+        "w": 0,
+        "l": 11,
+        "d": 29,
+        "myLossNet": 852280,
+        "enLossNet": 292816
+      },
+      "t1-ganning-shiliu": {
+        "w": 0,
+        "l": 26,
+        "d": 14,
+        "myLossNet": 789902,
+        "enLossNet": 210324
+      },
+      "t1-zhangfei-liumang": {
+        "w": 0,
+        "l": 4,
+        "d": 36,
+        "myLossNet": 733160,
+        "enLossNet": 119319
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 8,
+        "d": 32,
+        "myLossNet": 687762,
+        "enLossNet": 167184
+      },
+      "t1-caozhang-loutie": {
+        "w": 0,
+        "l": 33,
+        "d": 7,
+        "myLossNet": 947966,
+        "enLossNet": 198680
+      },
+      "t1-machao-caidao": {
+        "w": 0,
+        "l": 26,
+        "d": 14,
+        "myLossNet": 921541,
+        "enLossNet": 373363
+      },
+      "t1-zhouyu-dudu": {
+        "w": 0,
+        "l": 17,
+        "d": 23,
+        "myLossNet": 911121,
+        "enLossNet": 314154
+      }
+    },
+    "t1-huanggai-fadao": {
+      "t1-wangyi-fadao": {
+        "w": 1,
+        "l": 0,
+        "d": 39,
+        "myLossNet": 624233,
+        "enLossNet": 598516
+      },
+      "t1-chengyu-weizhi": {
+        "w": 1,
+        "l": 16,
+        "d": 23,
+        "myLossNet": 928196,
+        "enLossNet": 390884
+      },
+      "t1-ganning-shiliu": {
+        "w": 0,
+        "l": 20,
+        "d": 20,
+        "myLossNet": 875714,
+        "enLossNet": 332370
+      },
+      "t1-zhangfei-liumang": {
+        "w": 0,
+        "l": 3,
+        "d": 37,
+        "myLossNet": 836149,
+        "enLossNet": 230025
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 15,
+        "d": 25,
+        "myLossNet": 891572,
+        "enLossNet": 221775
+      },
+      "t1-caozhang-loutie": {
+        "w": 0,
+        "l": 32,
+        "d": 8,
+        "myLossNet": 988966,
+        "enLossNet": 429788
+      },
+      "t1-machao-caidao": {
+        "w": 4,
+        "l": 15,
+        "d": 21,
+        "myLossNet": 853494,
+        "enLossNet": 691470
+      },
+      "t1-zhouyu-dudu": {
+        "w": 0,
+        "l": 10,
+        "d": 30,
+        "myLossNet": 952316,
+        "enLossNet": 660116
+      }
+    },
+    "t1-wangyi-fadao": {
+      "t1-chengyu-weizhi": {
+        "w": 1,
+        "l": 6,
+        "d": 33,
+        "myLossNet": 820021,
+        "enLossNet": 437157
+      },
+      "t1-ganning-shiliu": {
+        "w": 0,
+        "l": 22,
+        "d": 18,
+        "myLossNet": 733428,
+        "enLossNet": 248096
+      },
+      "t1-zhangfei-liumang": {
+        "w": 1,
+        "l": 0,
+        "d": 39,
+        "myLossNet": 735072,
+        "enLossNet": 263595
+      },
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 7,
+        "d": 33,
+        "myLossNet": 839853,
+        "enLossNet": 188650
+      },
+      "t1-caozhang-loutie": {
+        "w": 0,
+        "l": 35,
+        "d": 5,
+        "myLossNet": 1004489,
+        "enLossNet": 461724
+      },
+      "t1-machao-caidao": {
+        "w": 8,
+        "l": 12,
+        "d": 20,
+        "myLossNet": 845972,
+        "enLossNet": 665676
+      },
+      "t1-zhouyu-dudu": {
+        "w": 4,
+        "l": 2,
+        "d": 34,
+        "myLossNet": 775367,
+        "enLossNet": 693856
+      }
+    },
+    "t1-chengyu-weizhi": {
+      "t1-ganning-shiliu": {
+        "w": 8,
+        "l": 11,
+        "d": 21,
+        "myLossNet": 588465,
+        "enLossNet": 576157
+      },
+      "t1-zhangfei-liumang": {
+        "w": 17,
+        "l": 2,
+        "d": 21,
+        "myLossNet": 437464,
+        "enLossNet": 610120
+      },
+      "t1-pangtong-shubu": {
+        "w": 11,
+        "l": 5,
+        "d": 24,
+        "myLossNet": 538916,
+        "enLossNet": 599050
+      },
+      "t1-caozhang-loutie": {
+        "w": 8,
+        "l": 22,
+        "d": 10,
+        "myLossNet": 905298,
+        "enLossNet": 683560
+      },
+      "t1-machao-caidao": {
+        "w": 14,
+        "l": 19,
+        "d": 7,
+        "myLossNet": 870758,
+        "enLossNet": 651261
+      },
+      "t1-zhouyu-dudu": {
+        "w": 9,
+        "l": 4,
+        "d": 27,
+        "myLossNet": 661157,
+        "enLossNet": 905505
+      }
+    },
+    "t1-ganning-shiliu": {
+      "t1-zhangfei-liumang": {
+        "w": 6,
+        "l": 0,
+        "d": 34,
+        "myLossNet": 384688,
+        "enLossNet": 453109
+      },
+      "t1-pangtong-shubu": {
+        "w": 19,
+        "l": 10,
+        "d": 11,
+        "myLossNet": 522657,
+        "enLossNet": 487379
+      },
+      "t1-caozhang-loutie": {
+        "w": 5,
+        "l": 29,
+        "d": 6,
+        "myLossNet": 880695,
+        "enLossNet": 515640
+      },
+      "t1-machao-caidao": {
+        "w": 15,
+        "l": 5,
+        "d": 20,
+        "myLossNet": 604429,
+        "enLossNet": 819841
+      },
+      "t1-zhouyu-dudu": {
+        "w": 24,
+        "l": 8,
+        "d": 8,
+        "myLossNet": 690286,
+        "enLossNet": 769337
+      }
+    },
+    "t1-zhangfei-liumang": {
+      "t1-pangtong-shubu": {
+        "w": 0,
+        "l": 5,
+        "d": 35,
+        "myLossNet": 425759,
+        "enLossNet": 496759
+      },
+      "t1-caozhang-loutie": {
+        "w": 0,
+        "l": 18,
+        "d": 22,
+        "myLossNet": 720759,
+        "enLossNet": 541351
+      },
+      "t1-machao-caidao": {
+        "w": 5,
+        "l": 3,
+        "d": 32,
+        "myLossNet": 394402,
+        "enLossNet": 851885
+      },
+      "t1-zhouyu-dudu": {
+        "w": 5,
+        "l": 6,
+        "d": 29,
+        "myLossNet": 572818,
+        "enLossNet": 786529
+      }
+    },
+    "t1-pangtong-shubu": {
+      "t1-caozhang-loutie": {
+        "w": 3,
+        "l": 32,
+        "d": 5,
+        "myLossNet": 897150,
+        "enLossNet": 402251
+      },
+      "t1-machao-caidao": {
+        "w": 12,
+        "l": 24,
+        "d": 4,
+        "myLossNet": 842431,
+        "enLossNet": 522162
+      },
+      "t1-zhouyu-dudu": {
+        "w": 26,
+        "l": 0,
+        "d": 14,
+        "myLossNet": 271578,
+        "enLossNet": 919922
+      }
+    },
+    "t1-caozhang-loutie": {
+      "t1-machao-caidao": {
+        "w": 34,
+        "l": 4,
+        "d": 2,
+        "myLossNet": 617050,
+        "enLossNet": 993191
+      },
+      "t1-zhouyu-dudu": {
+        "w": 30,
+        "l": 4,
+        "d": 6,
+        "myLossNet": 617349,
+        "enLossNet": 982514
+      }
+    },
+    "t1-machao-caidao": {
+      "t1-zhouyu-dudu": {
+        "w": 10,
+        "l": 22,
+        "d": 8,
+        "myLossNet": 879200,
+        "enLossNet": 799323
+      }
+    },
+    "t1-zhouyu-dudu": {}
+  },
+  "sampleReport": {
+    "teamA": {
+      "id": "t1-caozhang-loutie",
+      "note": "曹彰撸铁",
+      "tier": "T1",
+      "initial": 27000
+    },
+    "teamB": {
+      "id": "t1-ganning-shiliu",
+      "note": "甘宁士气流氓",
+      "tier": "T1",
+      "initial": 27000
+    },
+    "seed": 20261102,
+    "result": "loss",
+    "rounds": 6,
+    "finalMyAlive": 2670,
+    "finalEnAlive": 22104,
+    "finalMyDead": 8604,
+    "finalEnDead": 3183,
+    "myLossNet": 24330,
+    "enLossNet": 4896,
+    "roundTrajectory": [
+      {
+        "round": 1,
+        "myAlive": 23081,
+        "enAlive": 22527,
+        "myWounded": 3723,
+        "enWounded": 4249,
+        "myDead": 196,
+        "enDead": 224
+      },
+      {
+        "round": 2,
+        "myAlive": 19659,
+        "enAlive": 20891,
+        "myWounded": 6453,
+        "enWounded": 5044,
+        "myDead": 888,
+        "enDead": 1065
+      },
+      {
+        "round": 3,
+        "myAlive": 13416,
+        "enAlive": 19875,
+        "myWounded": 11479,
+        "enWounded": 5303,
+        "myDead": 2105,
+        "enDead": 1822
+      },
+      {
+        "round": 4,
+        "myAlive": 8859,
+        "enAlive": 22104,
+        "myWounded": 14200,
+        "enWounded": 2316,
+        "myDead": 3941,
+        "enDead": 2580
+      },
+      {
+        "round": 5,
+        "myAlive": 3923,
+        "enAlive": 22104,
+        "myWounded": 16901,
+        "enWounded": 1992,
+        "myDead": 6176,
+        "enDead": 2904
+      },
+      {
+        "round": 6,
+        "myAlive": 2670,
+        "enAlive": 22104,
+        "myWounded": 15726,
+        "enWounded": 1713,
+        "myDead": 8604,
+        "enDead": 3183
+      }
+    ]
+  }
+}

@@ -1,0 +1,3225 @@
+{
+  "meta": {
+    "seeds": 60,
+    "marchers": 9,
+    "rosterVersion": "2026-11-01",
+    "generatedAt": "2026-11-03T03:00:39.481Z"
+  },
+  "teams": [
+    {
+      "marcherId": "t1-pangtong-shubu",
+      "note": "庞统蜀步",
+      "tier": "T1",
+      "archetype": "肉步·双减续航",
+      "baseWhite": {
+        "p1": 0.4479166666666667,
+        "effFull": 5379.106976744186,
+        "lossNet": 11882.590566037736,
+        "avgNet": 8969.571875,
+        "games": 960,
+        "wins": 430
+      },
+      "baseRed": {
+        "p1": 0.5864583333333333,
+        "effFull": 5302.923623445826,
+        "lossNet": 11653.836272040302,
+        "avgNet": 7929.290625,
+        "games": 960,
+        "wins": 563
+      },
+      "dP1_fullred": 0.139,
+      "dEff_fullred": -76,
+      "dAvgNet_fullred": -1040,
+      "dossier": [
+        {
+          "heroId": "h477",
+          "position": "大营",
+          "troopType": "infantry",
+          "attackRange": 3,
+          "stats": {
+            "attack": 124,
+            "defense": 162,
+            "strategy": 282,
+            "speed": 66,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "mimou_dingshu",
+            "name": "密谋定蜀",
+            "type": "active",
+            "triggerRate": 0.35,
+            "tags": [
+              "damage_boost",
+              "panic",
+              "curse"
+            ],
+            "desc": "使敌军群体进行攻击和策略攻击的伤害降低30.0%（受谋略属性影响），并陷入恐慌（伤害率143.0%，受谋略属性影响），每当其试图发动追击战法将额外受到妖术诅咒（伤害率133.0%，受谋略属性影响），持续2回合；每次发动后，自身造成策略攻击伤害提升5.0%（受谋略属性影响），可叠加，持续到战斗结束",
+            "dimensions": [
+              "增伤",
+              "控制",
+              "主动·看发动率"
+            ]
+          },
+          "carries": [
+            {
+              "id": "fengsheng_heli",
+              "name": "风声鹤唳",
+              "type": "active",
+              "triggerRate": 0.4,
+              "tags": [
+                "panic",
+                "damage_boost"
+              ],
+              "desc": "1回合准备，使敌军群体陷入恐慌状态，每回合损失较多兵力（伤害率130.0%，受谋略属性影响），并使其受到策略攻击时的伤害提高12.0%（受谋略属性影响），持续2回合",
+              "dimensions": [
+                "增伤",
+                "控制",
+                "主动·看发动率"
+              ]
+            },
+            {
+              "id": "chuge_siqi",
+              "name": "楚歌四起",
+              "type": "active",
+              "triggerRate": 0.5,
+              "tags": [
+                "panic"
+              ],
+              "desc": "1回合准备，使敌军群体陷入恐慌状态，每回合损失较多兵力（伤害率127.0%，受谋略属性影响），持续2回合",
+              "dimensions": [
+                "控制",
+                "主动·看发动率"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "h16",
+          "position": "中军",
+          "troopType": "infantry",
+          "attackRange": 3,
+          "stats": {
+            "attack": 140,
+            "defense": 152,
+            "strategy": 230,
+            "speed": 74,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "huangyi_liuli",
+            "name": "皇裔流离",
+            "type": "command",
+            "triggerRate": 1,
+            "tags": [
+              "first_aid",
+              "heal"
+            ],
+            "desc": "本场战斗中，使我军全体受到伤害时，有50.0%的几率能恢复一定兵力（恢复率68.0%，受谋略属性影响），该效果每生效3次后，生效几率提升5.0%，可叠加",
+            "dimensions": [
+              "续航"
+            ]
+          },
+          "carries": [
+            {
+              "id": "biqi_fengmang",
+              "name": "避其锋芒",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_reduce"
+              ],
+              "desc": "战斗开始后前3回合，使我军群体受到攻击和策略攻击时的伤害降低30.0%（受谋略属性影响）",
+              "dimensions": [
+                "其他"
+              ]
+            },
+            {
+              "id": "bingwu_changshi",
+              "name": "兵无常势",
+              "type": "passive",
+              "triggerRate": 1,
+              "tags": [
+                "heal",
+                "buff_attack",
+                "buff_defense",
+                "buff_strategy",
+                "damage_reduce"
+              ],
+              "desc": "战斗中，每回合自身行动时随机获得以下效果中的两种：自身恢复一定兵力（恢复率250.0%）；自身攻击、防御、谋略属性提高50.0，持续1回合；自身受到的所有伤害降低40.0%，持续1回合",
+              "dimensions": [
+                "续航"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "zhaoyun",
+          "position": "前锋",
+          "troopType": "infantry",
+          "attackRange": 3,
+          "stats": {
+            "attack": 250,
+            "defense": 219,
+            "strategy": 122,
+            "speed": 109,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "yinlong_chongzhen",
+            "name": "银龙冲阵",
+            "type": "active",
+            "triggerRate": 0.5,
+            "tags": [
+              "damage",
+              "damage_boost"
+            ],
+            "desc": "随机对敌军单体发动2次攻击（伤害率150.0%），每次目标独立判断，并使首次受到攻击的敌军单体受到攻击和策略攻击时的伤害提高20.0%（受攻击属性影响），持续至战斗结束，最多可叠加3次",
+            "dimensions": [
+              "增伤",
+              "主动·看发动率"
+            ]
+          },
+          "carries": [
+            {
+              "id": "jianzu_budai",
+              "name": "健卒不殆",
+              "type": "passive",
+              "triggerRate": 1,
+              "tags": [
+                "damage",
+                "damage_reduce"
+              ],
+              "desc": "使自身受到普通攻击时能进行反击（伤害率40.0%），受到所有伤害时都有50.0%的几率使本次伤害降低50.0%",
+              "dimensions": [
+                "其他"
+              ]
+            },
+            {
+              "id": "fangyuan",
+              "name": "方圆",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost"
+              ],
+              "desc": "战斗中，使我军全体步兵进行普通攻击的伤害降低20.0%，主动、追击战法的伤害提高16.8%（受防御属性影响）",
+              "dimensions": [
+                "增伤"
+              ]
+            }
+          ]
+        }
+      ],
+      "ablations": [
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "h477",
+          "slot": 0,
+          "skillId": "fengsheng_heli",
+          "label": "摘·庞统携带1",
+          "p1": 0.32916666666666666,
+          "effFull": 4774.655063291139,
+          "lossNet": 11562.041925465839,
+          "avgNet": 9327.860416666666,
+          "games": 960,
+          "wins": 316,
+          "dP1": -0.119,
+          "dEff": -604,
+          "dAvgNet": 358,
+          "dLoss": -321
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "h477",
+          "slot": 1,
+          "skillId": "chuge_siqi",
+          "label": "摘·庞统携带2",
+          "p1": 0.3229166666666667,
+          "effFull": 4887.845161290323,
+          "lossNet": 11560.156923076924,
+          "avgNet": 9405.55625,
+          "games": 960,
+          "wins": 310,
+          "dP1": -0.125,
+          "dEff": -491,
+          "dAvgNet": 436,
+          "dLoss": -322
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "h16",
+          "slot": 0,
+          "skillId": "biqi_fengmang",
+          "label": "摘·刘备携带1",
+          "p1": 0.4083333333333333,
+          "effFull": 6405.2704081632655,
+          "lossNet": 14208.794014084508,
+          "avgNet": 11022.355208333332,
+          "games": 960,
+          "wins": 392,
+          "dP1": -0.04,
+          "dEff": 1026,
+          "dAvgNet": 2053,
+          "dLoss": 2326
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "h16",
+          "slot": 1,
+          "skillId": "bingwu_changshi",
+          "label": "摘·刘备携带2",
+          "p1": 0.3958333333333333,
+          "effFull": 6553.505263157895,
+          "lossNet": 13956.677586206897,
+          "avgNet": 11026.255208333334,
+          "games": 960,
+          "wins": 380,
+          "dP1": -0.052,
+          "dEff": 1174,
+          "dAvgNet": 2057,
+          "dLoss": 2074
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "zhaoyun",
+          "slot": 0,
+          "skillId": "jianzu_budai",
+          "label": "摘·赵云携带1",
+          "p1": 0.32708333333333334,
+          "effFull": 5959.6942675159235,
+          "lossNet": 14211.636222910216,
+          "avgNet": 11512.563541666666,
+          "games": 960,
+          "wins": 314,
+          "dP1": -0.121,
+          "dEff": 581,
+          "dAvgNet": 2543,
+          "dLoss": 2329
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "zhaoyun",
+          "slot": 1,
+          "skillId": "fangyuan",
+          "label": "摘·赵云携带2",
+          "p1": 0.3927083333333333,
+          "effFull": 5709.671087533156,
+          "lossNet": 11362.193825042881,
+          "avgNet": 9142.401041666666,
+          "games": 960,
+          "wins": 377,
+          "dP1": -0.055,
+          "dEff": 331,
+          "dAvgNet": 173,
+          "dLoss": -520
+        },
+        {
+          "kind": "mispoint",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "错配加点(攻/谋互换)",
+          "p1": 0.19479166666666667,
+          "effFull": 8226.598930481283,
+          "lossNet": 15488.104786545924,
+          "avgNet": 14073.623958333334,
+          "games": 960,
+          "wins": 187,
+          "dP1": -0.253,
+          "dEff": 2847,
+          "dAvgNet": 5104,
+          "dLoss": 3606
+        },
+        {
+          "kind": "swapPos",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "大营↔前锋换位",
+          "p1": 0.30520833333333336,
+          "effFull": 5330.634812286689,
+          "lossNet": 13169.334332833583,
+          "avgNet": 10776.897916666667,
+          "games": 960,
+          "wins": 293,
+          "dP1": -0.143,
+          "dEff": -48,
+          "dAvgNet": 1807,
+          "dLoss": 1287
+        }
+      ],
+      "critWin": {
+        "label": "摘·庞统携带2",
+        "skillId": "chuge_siqi",
+        "dP1": -0.125,
+        "dEff": -491
+      },
+      "critEff": {
+        "label": "摘·刘备携带2",
+        "skillId": "bingwu_changshi",
+        "dP1": -0.052,
+        "dEff": 1174
+      }
+    },
+    {
+      "marcherId": "t1-caozhang-loutie",
+      "note": "曹彰撸铁",
+      "tier": "T1",
+      "archetype": "撸铁·物理持续",
+      "baseWhite": {
+        "p1": 0.7197916666666667,
+        "effFull": 9538.774240231549,
+        "lossNet": 19047.46468401487,
+        "avgNet": 12203.188541666666,
+        "games": 960,
+        "wins": 691
+      },
+      "baseRed": {
+        "p1": 0.8302083333333333,
+        "effFull": 9086.357590966123,
+        "lossNet": 18920.77300613497,
+        "avgNet": 10756.159375,
+        "games": 960,
+        "wins": 797
+      },
+      "dP1_fullred": 0.11,
+      "dEff_fullred": -452,
+      "dAvgNet_fullred": -1447,
+      "dossier": [
+        {
+          "heroId": "h683",
+          "position": "大营",
+          "troopType": "cavalry",
+          "attackRange": 2,
+          "stats": {
+            "attack": 282,
+            "defense": 164,
+            "strategy": 90,
+            "speed": 162,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "wubing_zhilie",
+            "name": "五兵之烈",
+            "type": "active",
+            "triggerRate": 0.35,
+            "tags": [
+              "damage",
+              "debuff_defense",
+              "damage_boost"
+            ],
+            "desc": "对敌军群体发动一次猛烈的攻击（伤害率300.0%）。当授予曹彰不同种类宝物时，将额外获得以下效果。剑：先移除目标的有益效果再发动攻击；刀：使自身造成的攻击伤害提升15.0%，可叠加并持续直至战斗结束；长兵：使目标攻击距离-1，持续2回合；弓：有60.0%几率该战法目标数+1；其余宝物或未授予：使目标防御属性降低36.0%（受攻击属性影响），持续2回合",
+            "dimensions": [
+              "增伤",
+              "主动·看发动率"
+            ]
+          },
+          "carries": [
+            {
+              "id": "yiji_dangqian",
+              "name": "一骑当千",
+              "type": "active",
+              "triggerRate": 0.3,
+              "tags": [
+                "damage"
+              ],
+              "desc": "1回合准备，对敌军全体发动一次猛烈攻击（伤害率280.0%）",
+              "dimensions": [
+                "主动·看发动率"
+              ]
+            },
+            {
+              "id": "lingwu_kongxuan",
+              "name": "令无空悬",
+              "type": "passive",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost",
+                "trigger_boost"
+              ],
+              "desc": "战斗中，自身每次试图发动主动战法时，使主动战法造成的下一次伤害提升30.0%，此效果最多叠加4次；第1、3、5、7回合自身行动时，本回合内造成攻击或策略攻击伤害的主动战法发动率提升10.0%",
+              "dimensions": [
+                "增伤"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "h452",
+          "position": "中军",
+          "troopType": "cavalry",
+          "attackRange": 3,
+          "stats": {
+            "attack": 212,
+            "defense": 158,
+            "strategy": 154,
+            "speed": 179,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "kui_xiangta",
+            "name": "夔吼象踏",
+            "type": "command",
+            "triggerRate": 1,
+            "tags": [
+              "damage",
+              "split"
+            ],
+            "desc": "战斗中，使自身进入分兵状态（伤害率60.0%），同时每回合对有效距离4以内的敌军单体发动一次策略攻击（伤害率70.2%，受谋略属性影响）",
+            "dimensions": [
+              "其他"
+            ]
+          },
+          "carries": [
+            {
+              "id": "hunshui_moyu",
+              "name": "浑水摸鱼",
+              "type": "active",
+              "triggerRate": 0.35,
+              "tags": [
+                "confusion"
+              ],
+              "desc": "1回合准备，使敌军群体陷入混乱状态，持续2回合",
+              "dimensions": [
+                "控制",
+                "主动·看发动率"
+              ]
+            },
+            {
+              "id": "gongqi_bubei",
+              "name": "攻其不备",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost"
+              ],
+              "desc": "战斗中，使敌军群体在每受到一次攻击的伤害后，其所受到的所有伤害就提高11.6%（受速度属性影响），此效果最多叠加5次",
+              "dimensions": [
+                "增伤"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "h23",
+          "position": "前锋",
+          "troopType": "cavalry",
+          "attackRange": 2,
+          "stats": {
+            "attack": 130,
+            "defense": 222,
+            "strategy": 252,
+            "speed": 137,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "weiwu_zhishi",
+            "name": "魏武之世",
+            "type": "command",
+            "triggerRate": 1,
+            "tags": [
+              "debuff_attack",
+              "debuff_defense",
+              "debuff_strategy",
+              "debuff_speed",
+              "range_buff"
+            ],
+            "desc": "在本场战斗中，使敌军全体攻击属性、防御属性、谋略属性、速度属性下降15.0%（受谋略属性影响），并使我军全体攻击距离+1",
+            "dimensions": [
+              "其他"
+            ]
+          },
+          "carries": [
+            {
+              "id": "fanji_zhence",
+              "name": "反计之策",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost",
+                "hesitation"
+              ],
+              "desc": "战斗开始后前3回合，使敌军群体发动主动战法时造成的伤害大幅下降，并在首回合有100.0%的几率使其陷入犹豫状态，无法发动主动战法",
+              "dimensions": [
+                "增伤",
+                "控制"
+              ]
+            },
+            {
+              "id": "yifudangguan",
+              "name": "一夫当关",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "cover",
+                "damage_reduce"
+              ],
+              "desc": "战斗开始后前2回合，援护友军全体，使自身受到攻击时的伤害降低50.0%（受防御属性影响），仅对自身处于前锋位置时生效",
+              "dimensions": [
+                "其他"
+              ]
+            }
+          ]
+        }
+      ],
+      "ablations": [
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "h683",
+          "slot": 0,
+          "skillId": "yiji_dangqian",
+          "label": "摘·曹彰携带1",
+          "p1": 0.36770833333333336,
+          "effFull": 10769.946175637393,
+          "lossNet": 17769.079077429982,
+          "avgNet": 15195.439583333333,
+          "games": 960,
+          "wins": 353,
+          "dP1": -0.352,
+          "dEff": 1231,
+          "dAvgNet": 2992,
+          "dLoss": -1278
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "h683",
+          "slot": 1,
+          "skillId": "lingwu_kongxuan",
+          "label": "摘·曹彰携带2",
+          "p1": 0.3802083333333333,
+          "effFull": 10881.238356164384,
+          "lossNet": 17693.04537815126,
+          "avgNet": 15103.139583333334,
+          "games": 960,
+          "wins": 365,
+          "dP1": -0.34,
+          "dEff": 1342,
+          "dAvgNet": 2900,
+          "dLoss": -1354
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "h452",
+          "slot": 0,
+          "skillId": "hunshui_moyu",
+          "label": "摘·木鹿大王携带1",
+          "p1": 0.61875,
+          "effFull": 11644.558922558923,
+          "lossNet": 21129.505464480873,
+          "avgNet": 15260.694791666667,
+          "games": 960,
+          "wins": 594,
+          "dP1": -0.101,
+          "dEff": 2106,
+          "dAvgNet": 3058,
+          "dLoss": 2082
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "h452",
+          "slot": 1,
+          "skillId": "gongqi_bubei",
+          "label": "摘·木鹿大王携带2",
+          "p1": 0.56875,
+          "effFull": 10239.505494505494,
+          "lossNet": 18560.176328502417,
+          "avgNet": 13827.794791666667,
+          "games": 960,
+          "wins": 546,
+          "dP1": -0.151,
+          "dEff": 701,
+          "dAvgNet": 1625,
+          "dLoss": -487
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "h23",
+          "slot": 0,
+          "skillId": "fanji_zhence",
+          "label": "摘·曹操携带1",
+          "p1": 0.615625,
+          "effFull": 11067.761421319798,
+          "lossNet": 21065.753387533874,
+          "avgNet": 14910.739583333334,
+          "games": 960,
+          "wins": 591,
+          "dP1": -0.104,
+          "dEff": 1529,
+          "dAvgNet": 2708,
+          "dLoss": 2018
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "h23",
+          "slot": 1,
+          "skillId": "yifudangguan",
+          "label": "摘·曹操携带2",
+          "p1": 0.6572916666666667,
+          "effFull": 11448.12678288431,
+          "lossNet": 20600.215805471125,
+          "avgNet": 14584.623958333334,
+          "games": 960,
+          "wins": 631,
+          "dP1": -0.063,
+          "dEff": 1909,
+          "dAvgNet": 2381,
+          "dLoss": 1553
+        },
+        {
+          "kind": "mispoint",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "错配加点(攻/谋互换)",
+          "p1": 0.5635416666666667,
+          "effFull": 10366.974121996303,
+          "lossNet": 19149.63723150358,
+          "avgNet": 14200.240625,
+          "games": 960,
+          "wins": 541,
+          "dP1": -0.156,
+          "dEff": 828,
+          "dAvgNet": 1997,
+          "dLoss": 102
+        },
+        {
+          "kind": "swapPos",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "大营↔前锋换位",
+          "p1": 0.44895833333333335,
+          "effFull": 10919.69373549884,
+          "lossNet": 22237.70132325142,
+          "avgNet": 17156.3875,
+          "games": 960,
+          "wins": 431,
+          "dP1": -0.271,
+          "dEff": 1381,
+          "dAvgNet": 4953,
+          "dLoss": 3190
+        }
+      ],
+      "critWin": {
+        "label": "摘·曹彰携带1",
+        "skillId": "yiji_dangqian",
+        "dP1": -0.352,
+        "dEff": 1231
+      },
+      "critEff": {
+        "label": "摘·木鹿大王携带1",
+        "skillId": "hunshui_moyu",
+        "dP1": -0.101,
+        "dEff": 2106
+      }
+    },
+    {
+      "marcherId": "t1-ganning-shiliu",
+      "note": "甘宁士气流氓",
+      "tier": "T1",
+      "archetype": "流氓·神赏增伤",
+      "baseWhite": {
+        "p1": 0.4322916666666667,
+        "effFull": 7509.8867469879515,
+        "lossNet": 14947.392660550458,
+        "avgNet": 11732.220833333333,
+        "games": 960,
+        "wins": 415
+      },
+      "baseRed": {
+        "p1": 0.5479166666666667,
+        "effFull": 7746.90494296578,
+        "lossNet": 13318.036866359447,
+        "avgNet": 10265.520833333334,
+        "games": 960,
+        "wins": 526
+      },
+      "dP1_fullred": 0.116,
+      "dEff_fullred": 237,
+      "dAvgNet_fullred": -1467,
+      "dossier": [
+        {
+          "heroId": "h34",
+          "position": "大营",
+          "troopType": "infantry",
+          "attackRange": 2,
+          "stats": {
+            "attack": 278,
+            "defense": 162,
+            "strategy": 97,
+            "speed": 72,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "qinlue_ruhuo",
+            "name": "侵掠如火",
+            "type": "passive",
+            "triggerRate": 1,
+            "tags": [
+              "damage_boost"
+            ],
+            "desc": "在战斗中可以优先行动，攻击类主动战法发动率提升20.0%，进行攻击时有30.0%的几率使本次攻击伤害提高50.0%",
+            "dimensions": [
+              "增伤"
+            ]
+          },
+          "carries": [
+            {
+              "id": "jifeng_ershi",
+              "name": "及锋而试",
+              "type": "active",
+              "triggerRate": 0.35,
+              "tags": [
+                "damage",
+                "morale_boost"
+              ],
+              "desc": "对敌军群体发动一次攻击（伤害率120.0%）并使其士气降低10.0，每次发动后伤害率增加40.0%",
+              "dimensions": [
+                "主动·看发动率"
+              ]
+            },
+            {
+              "id": "sishuiguan",
+              "name": "汜水关",
+              "type": "active",
+              "triggerRate": 0.3,
+              "tags": [
+                "damage",
+                "unrest"
+              ],
+              "desc": "【常规】立即触发目标敌军单体由汜水关带来的动摇效果。同时对其发动一次攻击（伤害率180.0%），并使其陷入动摇状态，每回合产生逃兵（伤害率130.0%），可生效3次 【追加】关羽发动此战法时，动摇生效时将同时移除目标的有益效果",
+              "dimensions": [
+                "主动·看发动率"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "h703",
+          "position": "中军",
+          "troopType": "infantry",
+          "attackRange": 3,
+          "stats": {
+            "attack": 108,
+            "defense": 166,
+            "strategy": 271,
+            "speed": 76,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "mouyi_hongtu",
+            "name": "谋议宏图",
+            "type": "command",
+            "triggerRate": 1,
+            "tags": [
+              "damage_reduce",
+              "morale_boost"
+            ],
+            "desc": "战斗开始后首回合，我军全体受到伤害降低30.0%（受谋略属性影响），该效果每回合开始时减少1/8；我军全体每回合开始时士气提升8.0",
+            "dimensions": [
+              "其他"
+            ]
+          },
+          "carries": [
+            {
+              "id": "shenbing_tianjiang",
+              "name": "神兵天降",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost"
+              ],
+              "desc": "战斗开始后前3回合，使敌军群体受到攻击和策略攻击时的伤害提高30.0%（受谋略属性影响）",
+              "dimensions": [
+                "增伤"
+              ]
+            },
+            {
+              "id": "dashang_sanjun",
+              "name": "大赏三军",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost"
+              ],
+              "desc": "战斗开始后前3回合，使我军群体进行攻击和策略攻击时的伤害提高30.0%（受谋略属性影响）",
+              "dimensions": [
+                "增伤"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "sunquan",
+          "position": "前锋",
+          "troopType": "archer",
+          "attackRange": 4,
+          "stats": {
+            "attack": 124,
+            "defense": 138,
+            "strategy": 248,
+            "speed": 101,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "jiuxi_huanglong",
+            "name": "九锡黄龙",
+            "type": "active",
+            "triggerRate": 0.35,
+            "tags": [
+              "immunity",
+              "evasion"
+            ],
+            "desc": "移除我军全体有害效果，并使其进入规避状态，免疫接下来受到的2次伤害",
+            "dimensions": [
+              "主动·看发动率"
+            ]
+          },
+          "carries": [
+            {
+              "id": "shiji",
+              "name": "始计",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost",
+                "insight"
+              ],
+              "desc": "战斗前4回合，在自身行动前，使我军大营下一次攻击或策略攻击时的伤害提高20.0%（受谋略属性影响），敌方兵力最多单体下一次攻击或策略攻击时的伤害降低30.0%（受谋略属性影响），并在自身受到攻击或策略攻击伤害后，于本回合内进入洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果",
+              "dimensions": [
+                "增伤"
+              ]
+            },
+            {
+              "id": "sanjun_zhizhong",
+              "name": "三军之众",
+              "type": "active",
+              "triggerRate": 0.45,
+              "tags": [
+                "heal"
+              ],
+              "desc": "1回合准备，使我军单体恢复4次兵力（恢复率151.0%，受谋略属性影响），每次目标独立判定",
+              "dimensions": [
+                "续航",
+                "主动·看发动率"
+              ]
+            }
+          ]
+        }
+      ],
+      "ablations": [
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "h34",
+          "slot": 0,
+          "skillId": "jifeng_ershi",
+          "label": "摘·甘宁携带1",
+          "p1": 0.115625,
+          "effFull": 8970.54054054054,
+          "lossNet": 14900.921083627798,
+          "avgNet": 14215.220833333333,
+          "games": 960,
+          "wins": 111,
+          "dP1": -0.317,
+          "dEff": 1461,
+          "dAvgNet": 2483,
+          "dLoss": -46
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "h34",
+          "slot": 1,
+          "skillId": "sishuiguan",
+          "label": "摘·甘宁携带2",
+          "p1": 0.051041666666666666,
+          "effFull": 9402.42857142857,
+          "lossNet": 14802.45883644347,
+          "avgNet": 14526.832291666668,
+          "games": 960,
+          "wins": 49,
+          "dP1": -0.381,
+          "dEff": 1893,
+          "dAvgNet": 2795,
+          "dLoss": -145
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "h703",
+          "slot": 0,
+          "skillId": "shenbing_tianjiang",
+          "label": "摘·司马炎携带1",
+          "p1": 0.3416666666666667,
+          "effFull": 8212.753048780487,
+          "lossNet": 14882.207278481013,
+          "avgNet": 12603.477083333333,
+          "games": 960,
+          "wins": 328,
+          "dP1": -0.091,
+          "dEff": 703,
+          "dAvgNet": 871,
+          "dLoss": -65
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "h703",
+          "slot": 1,
+          "skillId": "dashang_sanjun",
+          "label": "摘·司马炎携带2",
+          "p1": 0.271875,
+          "effFull": 7924.436781609195,
+          "lossNet": 14638.587982832618,
+          "avgNet": 12813.178125,
+          "games": 960,
+          "wins": 261,
+          "dP1": -0.16,
+          "dEff": 415,
+          "dAvgNet": 1081,
+          "dLoss": -309
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "sunquan",
+          "slot": 0,
+          "skillId": "shiji",
+          "label": "摘·孙权携带1",
+          "p1": 0.24479166666666666,
+          "effFull": 9142.812765957447,
+          "lossNet": 16956.39172413793,
+          "avgNet": 15043.692708333334,
+          "games": 960,
+          "wins": 235,
+          "dP1": -0.188,
+          "dEff": 1633,
+          "dAvgNet": 3311,
+          "dLoss": 2009
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "sunquan",
+          "slot": 1,
+          "skillId": "sanjun_zhizhong",
+          "label": "摘·孙权携带2",
+          "p1": 0.4010416666666667,
+          "effFull": 10433.618181818181,
+          "lossNet": 18018.572173913042,
+          "avgNet": 14976.689583333333,
+          "games": 960,
+          "wins": 385,
+          "dP1": -0.031,
+          "dEff": 2924,
+          "dAvgNet": 3244,
+          "dLoss": 3071
+        },
+        {
+          "kind": "mispoint",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "错配加点(攻/谋互换)",
+          "p1": 0.178125,
+          "effFull": 9595.795321637426,
+          "lossNet": 17507.00760456274,
+          "avgNet": 16097.822916666666,
+          "games": 960,
+          "wins": 171,
+          "dP1": -0.254,
+          "dEff": 2086,
+          "dAvgNet": 4366,
+          "dLoss": 2560
+        },
+        {
+          "kind": "swapPos",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "大营↔前锋换位",
+          "p1": 0.278125,
+          "effFull": 5733.850187265917,
+          "lossNet": 14845.492063492064,
+          "avgNet": 12311.316666666668,
+          "games": 960,
+          "wins": 267,
+          "dP1": -0.154,
+          "dEff": -1776,
+          "dAvgNet": 579,
+          "dLoss": -102
+        }
+      ],
+      "critWin": {
+        "label": "摘·甘宁携带2",
+        "skillId": "sishuiguan",
+        "dP1": -0.381,
+        "dEff": 1893
+      },
+      "critEff": {
+        "label": "摘·孙权携带2",
+        "skillId": "sanjun_zhizhong",
+        "dP1": -0.031,
+        "dEff": 2924
+      }
+    },
+    {
+      "marcherId": "t1-zhouyu-dudu",
+      "note": "周瑜嘟嘟",
+      "tier": "T1",
+      "archetype": "吴法·神赏火法",
+      "baseWhite": {
+        "p1": 0.41041666666666665,
+        "effFull": 9298.799492385786,
+        "lossNet": 21473.890459363956,
+        "avgNet": 16477.030208333334,
+        "games": 960,
+        "wins": 394
+      },
+      "baseRed": {
+        "p1": 0.5708333333333333,
+        "effFull": 9646.518248175182,
+        "lossNet": 23936.59223300971,
+        "avgNet": 15779.341666666667,
+        "games": 960,
+        "wins": 548
+      },
+      "dP1_fullred": 0.16,
+      "dEff_fullred": 348,
+      "dAvgNet_fullred": -698,
+      "dossier": [
+        {
+          "heroId": "zhouyu",
+          "position": "大营",
+          "troopType": "archer",
+          "attackRange": 4,
+          "stats": {
+            "attack": 118,
+            "defense": 144,
+            "strategy": 288,
+            "speed": 89,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "xuanwu_fuliu",
+            "name": "玄武洰流",
+            "type": "active",
+            "triggerRate": 0.35,
+            "tags": [
+              "damage",
+              "cowardice"
+            ],
+            "desc": "1回合准备，对敌军全体发动策略攻击（伤害率150.0%，受谋略属性影响），并使其陷入怯战状态，无法进行普通攻击，持续2回合",
+            "dimensions": [
+              "控制",
+              "主动·看发动率"
+            ]
+          },
+          "carries": [
+            {
+              "id": "yanfen_jizhen",
+              "name": "焰焚箕轸",
+              "type": "active",
+              "triggerRate": 0.5,
+              "tags": [
+                "damage",
+                "burning"
+              ],
+              "desc": "1回合准备，对敌军群体发动强力策略攻击（伤害率119.0%，受谋略属性影响），并使其陷入燃烧状态，每回合损失一定兵力（伤害率119.0%，受谋略属性影响），持续1回合",
+              "dimensions": [
+                "主动·看发动率"
+              ]
+            },
+            {
+              "id": "fengsheng_heli",
+              "name": "风声鹤唳",
+              "type": "active",
+              "triggerRate": 0.4,
+              "tags": [
+                "panic",
+                "damage_boost"
+              ],
+              "desc": "1回合准备，使敌军群体陷入恐慌状态，每回合损失较多兵力（伤害率130.0%，受谋略属性影响），并使其受到策略攻击时的伤害提高12.0%（受谋略属性影响），持续2回合",
+              "dimensions": [
+                "增伤",
+                "控制",
+                "主动·看发动率"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "lvmeng",
+          "position": "中军",
+          "troopType": "archer",
+          "attackRange": 4,
+          "stats": {
+            "attack": 151,
+            "defense": 179,
+            "strategy": 257,
+            "speed": 88,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "baiyi_dujiang",
+            "name": "白衣渡江",
+            "type": "command",
+            "triggerRate": 1,
+            "tags": [
+              "cowardice",
+              "damage"
+            ],
+            "desc": "战斗开始后前2回合，使敌军群体无法进行普通攻击，在此效果结束后，将对敌军全体发动一次强力策略攻击（伤害率215.0%，受谋略属性影响），造成的伤害无视规避",
+            "dimensions": [
+              "控制"
+            ]
+          },
+          "carries": [
+            {
+              "id": "fanji_zhence",
+              "name": "反计之策",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost",
+                "hesitation"
+              ],
+              "desc": "战斗开始后前3回合，使敌军群体发动主动战法时造成的伤害大幅下降，并在首回合有100.0%的几率使其陷入犹豫状态，无法发动主动战法",
+              "dimensions": [
+                "增伤",
+                "控制"
+              ]
+            },
+            {
+              "id": "heneishize",
+              "name": "河内世泽",
+              "type": "active",
+              "triggerRate": 0.35,
+              "tags": [
+                "damage",
+                "confusion",
+                "rampage",
+                "debuff_attack",
+                "debuff_strategy",
+                "panic",
+                "burning"
+              ],
+              "desc": "随机发动落雷、迷阵、溃堤、夹攻中的一种，并再次随机发动伐谋、雀伏、火辎、毒泉中的一种。发动的战法有效距离为4，并跳过准备回合，每个战法的效果与原战法在同等级下效果相同",
+              "dimensions": [
+                "控制",
+                "主动·看发动率"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "h478",
+          "position": "前锋",
+          "troopType": "infantry",
+          "attackRange": 2,
+          "stats": {
+            "attack": 114,
+            "defense": 177,
+            "strategy": 277,
+            "speed": 58,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "huoshi_fengwei",
+            "name": "火势风威",
+            "type": "active",
+            "triggerRate": 0.4,
+            "tags": [
+              "damage",
+              "burning",
+              "ignite"
+            ],
+            "desc": "1回合准备，对敌军全体发动策略攻击（伤害率111.0%，受谋略属性影响），并使其在受到下一次伤害时，会额外引发一次燃烧（伤害率221.0%，受谋略属性影响）",
+            "dimensions": [
+              "主动·看发动率"
+            ]
+          },
+          "carries": [
+            {
+              "id": "dashang_sanjun",
+              "name": "大赏三军",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost"
+              ],
+              "desc": "战斗开始后前3回合，使我军群体进行攻击和策略攻击时的伤害提高30.0%（受谋略属性影响）",
+              "dimensions": [
+                "增伤"
+              ]
+            },
+            {
+              "id": "shenbing_tianjiang",
+              "name": "神兵天降",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost"
+              ],
+              "desc": "战斗开始后前3回合，使敌军群体受到攻击和策略攻击时的伤害提高30.0%（受谋略属性影响）",
+              "dimensions": [
+                "增伤"
+              ]
+            }
+          ]
+        }
+      ],
+      "ablations": [
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "zhouyu",
+          "slot": 0,
+          "skillId": "yanfen_jizhen",
+          "label": "摘·周瑜携带1",
+          "p1": 0.328125,
+          "effFull": 9130.590476190477,
+          "lossNet": 21285.339534883722,
+          "avgNet": 17297.0625,
+          "games": 960,
+          "wins": 315,
+          "dP1": -0.082,
+          "dEff": -168,
+          "dAvgNet": 820,
+          "dLoss": -189
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "zhouyu",
+          "slot": 1,
+          "skillId": "fengsheng_heli",
+          "label": "摘·周瑜携带2",
+          "p1": 0.2791666666666667,
+          "effFull": 8670.548507462687,
+          "lossNet": 21007.945086705204,
+          "avgNet": 17563.755208333332,
+          "games": 960,
+          "wins": 268,
+          "dP1": -0.131,
+          "dEff": -628,
+          "dAvgNet": 1087,
+          "dLoss": -466
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "lvmeng",
+          "slot": 0,
+          "skillId": "fanji_zhence",
+          "label": "摘·吕蒙携带1",
+          "p1": 0.321875,
+          "effFull": 9876.15857605178,
+          "lossNet": 22643.666666666668,
+          "avgNet": 18534.125,
+          "games": 960,
+          "wins": 309,
+          "dP1": -0.089,
+          "dEff": 577,
+          "dAvgNet": 2057,
+          "dLoss": 1170
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "lvmeng",
+          "slot": 1,
+          "skillId": "heneishize",
+          "label": "摘·吕蒙携带2",
+          "p1": 0.2375,
+          "effFull": 10025.482456140351,
+          "lossNet": 21224.322404371585,
+          "avgNet": 18564.597916666666,
+          "games": 960,
+          "wins": 228,
+          "dP1": -0.173,
+          "dEff": 727,
+          "dAvgNet": 2088,
+          "dLoss": -250
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "h478",
+          "slot": 0,
+          "skillId": "dashang_sanjun",
+          "label": "摘·陆逊携带1",
+          "p1": 0.32916666666666666,
+          "effFull": 9654.57911392405,
+          "lossNet": 21506.5,
+          "avgNet": 17605.242708333335,
+          "games": 960,
+          "wins": 316,
+          "dP1": -0.081,
+          "dEff": 356,
+          "dAvgNet": 1128,
+          "dLoss": 33
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "h478",
+          "slot": 1,
+          "skillId": "shenbing_tianjiang",
+          "label": "摘·陆逊携带2",
+          "p1": 0.325,
+          "effFull": 9841.503205128205,
+          "lossNet": 21512.20524691358,
+          "avgNet": 17719.227083333335,
+          "games": 960,
+          "wins": 312,
+          "dP1": -0.085,
+          "dEff": 543,
+          "dAvgNet": 1242,
+          "dLoss": 38
+        },
+        {
+          "kind": "mispoint",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "错配加点(攻/谋互换)",
+          "p1": 0.19166666666666668,
+          "effFull": 9584.239130434782,
+          "lossNet": 21463.83762886598,
+          "avgNet": 19186.914583333335,
+          "games": 960,
+          "wins": 184,
+          "dP1": -0.219,
+          "dEff": 285,
+          "dAvgNet": 2710,
+          "dLoss": -10
+        },
+        {
+          "kind": "swapPos",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "大营↔前锋换位",
+          "p1": 0.38229166666666664,
+          "effFull": 8832.514986376022,
+          "lossNet": 21821.60033726813,
+          "avgNet": 16855.98125,
+          "games": 960,
+          "wins": 367,
+          "dP1": -0.028,
+          "dEff": -466,
+          "dAvgNet": 379,
+          "dLoss": 348
+        }
+      ],
+      "critWin": {
+        "label": "摘·吕蒙携带2",
+        "skillId": "heneishize",
+        "dP1": -0.173,
+        "dEff": 727
+      },
+      "critEff": {
+        "label": "摘·吕蒙携带2",
+        "skillId": "heneishize",
+        "dP1": -0.173,
+        "dEff": 727
+      }
+    },
+    {
+      "marcherId": "t1-machao-caidao",
+      "note": "马超菜刀",
+      "tier": "T1",
+      "archetype": "菜刀·神赏物理",
+      "baseWhite": {
+        "p1": 0.3958333333333333,
+        "effFull": 10869.75,
+        "lossNet": 21316.13448275862,
+        "avgNet": 17181.107291666667,
+        "games": 960,
+        "wins": 380
+      },
+      "baseRed": {
+        "p1": 0.5833333333333334,
+        "effFull": 10830.583928571428,
+        "lossNet": 22062.2625,
+        "avgNet": 15510.45,
+        "games": 960,
+        "wins": 560
+      },
+      "dP1_fullred": 0.188,
+      "dEff_fullred": -39,
+      "dAvgNet_fullred": -1671,
+      "dossier": [
+        {
+          "heroId": "h13",
+          "position": "大营",
+          "troopType": "cavalry",
+          "attackRange": 3,
+          "stats": {
+            "attack": 305,
+            "defense": 163,
+            "strategy": 65,
+            "speed": 152,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "xuejian_huangsha",
+            "name": "血溅黄砂",
+            "type": "passive",
+            "triggerRate": 1,
+            "tags": [
+              "damage_boost"
+            ],
+            "desc": "以无法发动主动战法为代价，使自身进行攻击时的伤害提高120.0%",
+            "dimensions": [
+              "增伤"
+            ]
+          },
+          "carries": [
+            {
+              "id": "yiji_dangqian",
+              "name": "一骑当千",
+              "type": "active",
+              "triggerRate": 0.3,
+              "tags": [
+                "damage"
+              ],
+              "desc": "1回合准备，对敌军全体发动一次猛烈攻击（伤害率280.0%）",
+              "dimensions": [
+                "主动·看发动率"
+              ]
+            },
+            {
+              "id": "jishi",
+              "name": "击势",
+              "type": "passive",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost",
+                "ignore_def"
+              ],
+              "desc": "战斗中，每回合自身行动时有65.0%几率获得以下效果：自身攻击时的伤害提升50.0%，持续1回合；自身攻击时无视敌方60.0%防御属性，持续1回合。每个效果独立判断",
+              "dimensions": [
+                "增伤"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "h27",
+          "position": "中军",
+          "troopType": "cavalry",
+          "attackRange": 3,
+          "stats": {
+            "attack": 237,
+            "defense": 183,
+            "strategy": 124,
+            "speed": 251,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "qiji_rufeng",
+            "name": "其疾如风",
+            "type": "command",
+            "triggerRate": 1,
+            "tags": [
+              "combo",
+              "speed_buff"
+            ],
+            "desc": "战斗开始后前3回合，使我军全体速度属性提高41.0（受谋略属性影响），并使其每回合有70.0%的几率可以进行两次普通攻击",
+            "dimensions": [
+              "其他"
+            ]
+          },
+          "carries": [
+            {
+              "id": "gongqi_bubei",
+              "name": "攻其不备",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost"
+              ],
+              "desc": "战斗中，使敌军群体在每受到一次攻击的伤害后，其所受到的所有伤害就提高11.6%（受速度属性影响），此效果最多叠加5次",
+              "dimensions": [
+                "增伤"
+              ]
+            },
+            {
+              "id": "fanji_zhence",
+              "name": "反计之策",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost",
+                "hesitation"
+              ],
+              "desc": "战斗开始后前3回合，使敌军群体发动主动战法时造成的伤害大幅下降，并在首回合有100.0%的几率使其陷入犹豫状态，无法发动主动战法",
+              "dimensions": [
+                "增伤",
+                "控制"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "h23",
+          "position": "前锋",
+          "troopType": "cavalry",
+          "attackRange": 2,
+          "stats": {
+            "attack": 130,
+            "defense": 222,
+            "strategy": 252,
+            "speed": 137,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "weiwu_zhishi",
+            "name": "魏武之世",
+            "type": "command",
+            "triggerRate": 1,
+            "tags": [
+              "debuff_attack",
+              "debuff_defense",
+              "debuff_strategy",
+              "debuff_speed",
+              "range_buff"
+            ],
+            "desc": "在本场战斗中，使敌军全体攻击属性、防御属性、谋略属性、速度属性下降15.0%（受谋略属性影响），并使我军全体攻击距离+1",
+            "dimensions": [
+              "其他"
+            ]
+          },
+          "carries": [
+            {
+              "id": "dashang_sanjun",
+              "name": "大赏三军",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost"
+              ],
+              "desc": "战斗开始后前3回合，使我军群体进行攻击和策略攻击时的伤害提高30.0%（受谋略属性影响）",
+              "dimensions": [
+                "增伤"
+              ]
+            },
+            {
+              "id": "shenbing_tianjiang",
+              "name": "神兵天降",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost"
+              ],
+              "desc": "战斗开始后前3回合，使敌军群体受到攻击和策略攻击时的伤害提高30.0%（受谋略属性影响）",
+              "dimensions": [
+                "增伤"
+              ]
+            }
+          ]
+        }
+      ],
+      "ablations": [
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "h13",
+          "slot": 0,
+          "skillId": "yiji_dangqian",
+          "label": "摘·马超携带1",
+          "p1": 0.016666666666666666,
+          "effFull": 12453.375,
+          "lossNet": 21445.674788135595,
+          "avgNet": 21295.803125,
+          "games": 960,
+          "wins": 16,
+          "dP1": -0.379,
+          "dEff": 1584,
+          "dAvgNet": 4115,
+          "dLoss": 130
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "h13",
+          "slot": 1,
+          "skillId": "jishi",
+          "label": "摘·马超携带2",
+          "p1": 0.334375,
+          "effFull": 11015.040498442368,
+          "lossNet": 21333.776212832552,
+          "avgNet": 17883.448958333334,
+          "games": 960,
+          "wins": 321,
+          "dP1": -0.061,
+          "dEff": 145,
+          "dAvgNet": 702,
+          "dLoss": 18
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "h27",
+          "slot": 0,
+          "skillId": "gongqi_bubei",
+          "label": "摘·张辽携带1",
+          "p1": 0.27291666666666664,
+          "effFull": 10665.965648854963,
+          "lossNet": 21102.64183381089,
+          "avgNet": 18254.298958333333,
+          "games": 960,
+          "wins": 262,
+          "dP1": -0.123,
+          "dEff": -204,
+          "dAvgNet": 1073,
+          "dLoss": -213
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "h27",
+          "slot": 1,
+          "skillId": "fanji_zhence",
+          "label": "摘·张辽携带2",
+          "p1": 0.303125,
+          "effFull": 12733.625429553265,
+          "lossNet": 22163.70254110613,
+          "avgNet": 19305.210416666665,
+          "games": 960,
+          "wins": 291,
+          "dP1": -0.093,
+          "dEff": 1864,
+          "dAvgNet": 2124,
+          "dLoss": 848
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "h23",
+          "slot": 0,
+          "skillId": "dashang_sanjun",
+          "label": "摘·曹操携带1",
+          "p1": 0.29270833333333335,
+          "effFull": 12210.946619217082,
+          "lossNet": 21117.324005891016,
+          "avgNet": 18510.353125,
+          "games": 960,
+          "wins": 281,
+          "dP1": -0.103,
+          "dEff": 1341,
+          "dAvgNet": 1329,
+          "dLoss": -199
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "h23",
+          "slot": 1,
+          "skillId": "shenbing_tianjiang",
+          "label": "摘·曹操携带2",
+          "p1": 0.3385416666666667,
+          "effFull": 11981.396923076923,
+          "lossNet": 21069.92440944882,
+          "avgNet": 17993.079166666666,
+          "games": 960,
+          "wins": 325,
+          "dP1": -0.057,
+          "dEff": 1112,
+          "dAvgNet": 812,
+          "dLoss": -246
+        },
+        {
+          "kind": "mispoint",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "错配加点(攻/谋互换)",
+          "p1": 0.19166666666666668,
+          "effFull": 11251.78804347826,
+          "lossNet": 21796.39819587629,
+          "avgNet": 19775.347916666666,
+          "games": 960,
+          "wins": 184,
+          "dP1": -0.204,
+          "dEff": 382,
+          "dAvgNet": 2594,
+          "dLoss": 480
+        },
+        {
+          "kind": "swapPos",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "大营↔前锋换位",
+          "p1": 0.32708333333333334,
+          "effFull": 9834.75796178344,
+          "lossNet": 22241.978328173376,
+          "avgNet": 18183.783333333333,
+          "games": 960,
+          "wins": 314,
+          "dP1": -0.069,
+          "dEff": -1035,
+          "dAvgNet": 1003,
+          "dLoss": 926
+        }
+      ],
+      "critWin": {
+        "label": "摘·马超携带1",
+        "skillId": "yiji_dangqian",
+        "dP1": -0.379,
+        "dEff": 1584
+      },
+      "critEff": {
+        "label": "摘·张辽携带2",
+        "skillId": "fanji_zhence",
+        "dP1": -0.093,
+        "dEff": 1864
+      }
+    },
+    {
+      "marcherId": "bench-lvbu-zhangchunhua-zhenluo",
+      "note": "敌方·吕布张春华甄洛",
+      "tier": "T0",
+      "archetype": "T0基准",
+      "baseWhite": {
+        "p1": 0.26666666666666666,
+        "effFull": 4788.58984375,
+        "lossNet": 11593.579545454546,
+        "avgNet": 9778.915625,
+        "games": 960,
+        "wins": 256
+      },
+      "baseRed": {
+        "p1": 0.4010416666666667,
+        "effFull": 4823.490909090909,
+        "lossNet": 10631.311304347826,
+        "avgNet": 8302.133333333333,
+        "games": 960,
+        "wins": 385
+      },
+      "dP1_fullred": 0.134,
+      "dEff_fullred": 35,
+      "dAvgNet_fullred": -1477,
+      "dossier": [
+        {
+          "heroId": "h479",
+          "position": "大营",
+          "troopType": "archer",
+          "attackRange": 4,
+          "stats": {
+            "attack": 258,
+            "defense": 145,
+            "strategy": 43,
+            "speed": 132,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "yuanmen_sheji",
+            "name": "辕门射戟",
+            "type": "active",
+            "triggerRate": 0.35,
+            "tags": [
+              "damage",
+              "damage_boost"
+            ],
+            "desc": "对敌军群体发动二次无视兵种相克的攻击（伤害率140.0%），并使第一次受击的敌军进行攻击的伤害大幅度降低，持续1回合，每次攻击的目标独立选择",
+            "dimensions": [
+              "增伤",
+              "主动·看发动率"
+            ]
+          },
+          "carries": [
+            {
+              "id": "jifeng_ershi",
+              "name": "及锋而试",
+              "type": "active",
+              "triggerRate": 0.35,
+              "tags": [
+                "damage",
+                "morale_boost"
+              ],
+              "desc": "对敌军群体发动一次攻击（伤害率120.0%）并使其士气降低10.0，每次发动后伤害率增加40.0%",
+              "dimensions": [
+                "主动·看发动率"
+              ]
+            },
+            {
+              "id": "sishuiguan",
+              "name": "汜水关",
+              "type": "active",
+              "triggerRate": 0.3,
+              "tags": [
+                "damage",
+                "unrest"
+              ],
+              "desc": "【常规】立即触发目标敌军单体由汜水关带来的动摇效果。同时对其发动一次攻击（伤害率180.0%），并使其陷入动摇状态，每回合产生逃兵（伤害率130.0%），可生效3次 【追加】关羽发动此战法时，动摇生效时将同时移除目标的有益效果",
+              "dimensions": [
+                "主动·看发动率"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "h29",
+          "position": "中军",
+          "troopType": "archer",
+          "attackRange": 3,
+          "stats": {
+            "attack": 125,
+            "defense": 85,
+            "strategy": 142,
+            "speed": 156,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "qiangshi",
+            "name": "强势",
+            "type": "active",
+            "triggerRate": 0.4,
+            "tags": [
+              "damage_boost",
+              "hesitation"
+            ],
+            "desc": "使敌军群体进行攻击时的伤害降低48.0%（受谋略属性影响），并使其陷入犹豫状态，无法发动主动战法，持续2回合",
+            "dimensions": [
+              "增伤",
+              "控制",
+              "主动·看发动率"
+            ]
+          },
+          "carries": [
+            {
+              "id": "shiji",
+              "name": "始计",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost",
+                "insight"
+              ],
+              "desc": "战斗前4回合，在自身行动前，使我军大营下一次攻击或策略攻击时的伤害提高20.0%（受谋略属性影响），敌方兵力最多单体下一次攻击或策略攻击时的伤害降低30.0%（受谋略属性影响），并在自身受到攻击或策略攻击伤害后，于本回合内进入洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果",
+              "dimensions": [
+                "增伤"
+              ]
+            },
+            {
+              "id": "hunshui_moyu",
+              "name": "浑水摸鱼",
+              "type": "active",
+              "triggerRate": 0.35,
+              "tags": [
+                "confusion"
+              ],
+              "desc": "1回合准备，使敌军群体陷入混乱状态，持续2回合",
+              "dimensions": [
+                "控制",
+                "主动·看发动率"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "h15",
+          "position": "前锋",
+          "troopType": "archer",
+          "attackRange": 3,
+          "stats": {
+            "attack": 116,
+            "defense": 125,
+            "strategy": 184,
+            "speed": 75,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "luoshui_jiaren",
+            "name": "洛水佳人",
+            "type": "command",
+            "triggerRate": 1,
+            "tags": [
+              "heal"
+            ],
+            "desc": "本场战斗中，使我军全体每回合都有80.0%的几率恢复一定兵力（恢复率90.0%，受谋略属性影响）",
+            "dimensions": [
+              "续航"
+            ]
+          },
+          "carries": [
+            {
+              "id": "fanji_zhence",
+              "name": "反计之策",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost",
+                "hesitation"
+              ],
+              "desc": "战斗开始后前3回合，使敌军群体发动主动战法时造成的伤害大幅下降，并在首回合有100.0%的几率使其陷入犹豫状态，无法发动主动战法",
+              "dimensions": [
+                "增伤",
+                "控制"
+              ]
+            },
+            {
+              "id": "zhanbi_duanjin",
+              "name": "战必断金",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "cowardice"
+              ],
+              "desc": "战斗开始后前3回合，使敌军群体每回合都有90.0%的几率陷入怯战状态，无法进行普通攻击",
+              "dimensions": [
+                "控制"
+              ]
+            }
+          ]
+        }
+      ],
+      "ablations": [
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "h479",
+          "slot": 0,
+          "skillId": "jifeng_ershi",
+          "label": "摘·吕布携带1",
+          "p1": 0.146875,
+          "effFull": 4082.4893617021276,
+          "lossNet": 11560.931623931623,
+          "avgNet": 10462.535416666668,
+          "games": 960,
+          "wins": 141,
+          "dP1": -0.12,
+          "dEff": -706,
+          "dAvgNet": 684,
+          "dLoss": -33
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "h479",
+          "slot": 1,
+          "skillId": "sishuiguan",
+          "label": "摘·吕布携带2",
+          "p1": 0.10729166666666666,
+          "effFull": 4826.378640776699,
+          "lossNet": 11504.905484247374,
+          "avgNet": 10788.355208333332,
+          "games": 960,
+          "wins": 103,
+          "dP1": -0.159,
+          "dEff": 38,
+          "dAvgNet": 1009,
+          "dLoss": -89
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "h29",
+          "slot": 0,
+          "skillId": "shiji",
+          "label": "摘·张春华携带1",
+          "p1": 0.22083333333333333,
+          "effFull": 5577.179245283019,
+          "lossNet": 13443.122994652407,
+          "avgNet": 11706.060416666667,
+          "games": 960,
+          "wins": 212,
+          "dP1": -0.046,
+          "dEff": 789,
+          "dAvgNet": 1927,
+          "dLoss": 1850
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "h29",
+          "slot": 1,
+          "skillId": "hunshui_moyu",
+          "label": "摘·张春华携带2",
+          "p1": 0.215625,
+          "effFull": 5777.961352657005,
+          "lossNet": 14951.972111553785,
+          "avgNet": 12973.826041666667,
+          "games": 960,
+          "wins": 207,
+          "dP1": -0.051,
+          "dEff": 989,
+          "dAvgNet": 3195,
+          "dLoss": 3358
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "h15",
+          "slot": 0,
+          "skillId": "fanji_zhence",
+          "label": "摘·甄洛携带1",
+          "p1": 0.22708333333333333,
+          "effFull": 5019.862385321101,
+          "lossNet": 14520.766846361186,
+          "avgNet": 12363.269791666668,
+          "games": 960,
+          "wins": 218,
+          "dP1": -0.04,
+          "dEff": 231,
+          "dAvgNet": 2584,
+          "dLoss": 2927
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "h15",
+          "slot": 1,
+          "skillId": "zhanbi_duanjin",
+          "label": "摘·甄洛携带2",
+          "p1": 0.19479166666666667,
+          "effFull": 8396.122994652407,
+          "lossNet": 15172.652005174645,
+          "avgNet": 13852.640625,
+          "games": 960,
+          "wins": 187,
+          "dP1": -0.072,
+          "dEff": 3608,
+          "dAvgNet": 4074,
+          "dLoss": 3579
+        },
+        {
+          "kind": "mispoint",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "错配加点(攻/谋互换)",
+          "p1": 0.2,
+          "effFull": 5230.75,
+          "lossNet": 12315.364583333334,
+          "avgNet": 10898.441666666668,
+          "games": 960,
+          "wins": 192,
+          "dP1": -0.067,
+          "dEff": 442,
+          "dAvgNet": 1120,
+          "dLoss": 722
+        },
+        {
+          "kind": "swapPos",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "大营↔前锋换位",
+          "p1": 0.14895833333333333,
+          "effFull": 5222.20979020979,
+          "lossNet": 14343.804161566708,
+          "avgNet": 12985.066666666668,
+          "games": 960,
+          "wins": 143,
+          "dP1": -0.118,
+          "dEff": 434,
+          "dAvgNet": 3206,
+          "dLoss": 2750
+        }
+      ],
+      "critWin": {
+        "label": "摘·吕布携带2",
+        "skillId": "sishuiguan",
+        "dP1": -0.159,
+        "dEff": 38
+      },
+      "critEff": {
+        "label": "摘·甄洛携带2",
+        "skillId": "zhanbi_duanjin",
+        "dP1": -0.072,
+        "dEff": 3608
+      }
+    },
+    {
+      "marcherId": "t1-wangyi-fadao",
+      "note": "王异法刀",
+      "tier": "T1",
+      "archetype": "法刀·神赏",
+      "baseWhite": {
+        "p1": 0.09375,
+        "effFull": 10145.644444444444,
+        "lossNet": 18487.51609195402,
+        "avgNet": 17705.465625,
+        "games": 960,
+        "wins": 90
+      },
+      "baseRed": {
+        "p1": 0.19895833333333332,
+        "effFull": 10021.507853403142,
+        "lossNet": 18162.919375812744,
+        "avgNet": 16543.117708333335,
+        "games": 960,
+        "wins": 191
+      },
+      "dP1_fullred": 0.105,
+      "dEff_fullred": -124,
+      "dAvgNet_fullred": -1162,
+      "dossier": [
+        {
+          "heroId": "h28",
+          "position": "大营",
+          "troopType": "archer",
+          "attackRange": 4,
+          "stats": {
+            "attack": 143,
+            "defense": 85,
+            "strategy": 256,
+            "speed": 87,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "shichou",
+            "name": "世仇",
+            "type": "pursuit",
+            "triggerRate": 0.6,
+            "tags": [
+              "damage",
+              "siege"
+            ],
+            "desc": "普通攻击后，对攻击目标再次发动策略攻击（伤害率233.0%，受谋略属性影响），并使其陷入围困状态，持续2回合",
+            "dimensions": [
+              "控制"
+            ]
+          },
+          "carries": [
+            {
+              "id": "shimian_maifu",
+              "name": "十面埋伏",
+              "type": "active",
+              "triggerRate": 0.4,
+              "tags": [
+                "damage",
+                "damage_boost"
+              ],
+              "desc": "1回合准备，对敌军全体发动一次策略攻击（伤害率130.0%，受谋略属性影响），并随机使敌军群体1-2目标造成的所有伤害大幅度降低，持续1回合",
+              "dimensions": [
+                "增伤",
+                "主动·看发动率"
+              ]
+            },
+            {
+              "id": "bugong",
+              "name": "不攻",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "cowardice",
+                "damage_boost",
+                "damage"
+              ],
+              "desc": "在战斗中无法进行普通攻击，使自身发动策略攻击时造成的伤害提高25.0%，并在每回合都会对有效距离5以内的敌军单体发动一次策略攻击（伤害率83.0%，受谋略属性影响）",
+              "dimensions": [
+                "增伤",
+                "控制"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "lvmeng",
+          "position": "中军",
+          "troopType": "archer",
+          "attackRange": 4,
+          "stats": {
+            "attack": 151,
+            "defense": 179,
+            "strategy": 257,
+            "speed": 88,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "baiyi_dujiang",
+            "name": "白衣渡江",
+            "type": "command",
+            "triggerRate": 1,
+            "tags": [
+              "cowardice",
+              "damage"
+            ],
+            "desc": "战斗开始后前2回合，使敌军群体无法进行普通攻击，在此效果结束后，将对敌军全体发动一次强力策略攻击（伤害率215.0%，受谋略属性影响），造成的伤害无视规避",
+            "dimensions": [
+              "控制"
+            ]
+          },
+          "carries": [
+            {
+              "id": "fanji_zhence",
+              "name": "反计之策",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost",
+                "hesitation"
+              ],
+              "desc": "战斗开始后前3回合，使敌军群体发动主动战法时造成的伤害大幅下降，并在首回合有100.0%的几率使其陷入犹豫状态，无法发动主动战法",
+              "dimensions": [
+                "增伤",
+                "控制"
+              ]
+            },
+            {
+              "id": "daoxing_xianzu",
+              "name": "道行险阻",
+              "type": "active",
+              "triggerRate": 0.4,
+              "tags": [
+                "debuff_defense",
+                "debuff_strategy",
+                "damage"
+              ],
+              "desc": "使敌军单体防御属性降低50.0（受攻击属性影响）、谋略属性降低50.0（受谋略属性影响），持续1回合，同时在目标下一次行动前对其发动一次策略攻击（伤害率150.0%，受谋略属性影响）和一次攻击（伤害率150.0%）",
+              "dimensions": [
+                "主动·看发动率"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "h23",
+          "position": "前锋",
+          "troopType": "cavalry",
+          "attackRange": 2,
+          "stats": {
+            "attack": 130,
+            "defense": 222,
+            "strategy": 252,
+            "speed": 137,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "weiwu_zhishi",
+            "name": "魏武之世",
+            "type": "command",
+            "triggerRate": 1,
+            "tags": [
+              "debuff_attack",
+              "debuff_defense",
+              "debuff_strategy",
+              "debuff_speed",
+              "range_buff"
+            ],
+            "desc": "在本场战斗中，使敌军全体攻击属性、防御属性、谋略属性、速度属性下降15.0%（受谋略属性影响），并使我军全体攻击距离+1",
+            "dimensions": [
+              "其他"
+            ]
+          },
+          "carries": [
+            {
+              "id": "shenbing_tianjiang",
+              "name": "神兵天降",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost"
+              ],
+              "desc": "战斗开始后前3回合，使敌军群体受到攻击和策略攻击时的伤害提高30.0%（受谋略属性影响）",
+              "dimensions": [
+                "增伤"
+              ]
+            },
+            {
+              "id": "dashang_sanjun",
+              "name": "大赏三军",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost"
+              ],
+              "desc": "战斗开始后前3回合，使我军群体进行攻击和策略攻击时的伤害提高30.0%（受谋略属性影响）",
+              "dimensions": [
+                "增伤"
+              ]
+            }
+          ]
+        }
+      ],
+      "ablations": [
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "h28",
+          "slot": 0,
+          "skillId": "shimian_maifu",
+          "label": "摘·王异携带1",
+          "p1": 0.021875,
+          "effFull": 10953.714285714286,
+          "lossNet": 21065.592119275825,
+          "avgNet": 20844.394791666666,
+          "games": 960,
+          "wins": 21,
+          "dP1": -0.072,
+          "dEff": 808,
+          "dAvgNet": 3139,
+          "dLoss": 2578
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "h28",
+          "slot": 1,
+          "skillId": "bugong",
+          "label": "摘·王异携带2",
+          "p1": 0.1875,
+          "effFull": 9552.177777777777,
+          "lossNet": 18460.82051282051,
+          "avgNet": 16790.45,
+          "games": 960,
+          "wins": 180,
+          "dP1": 0.094,
+          "dEff": -593,
+          "dAvgNet": -915,
+          "dLoss": -27
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "lvmeng",
+          "slot": 0,
+          "skillId": "fanji_zhence",
+          "label": "摘·吕蒙携带1",
+          "p1": 0.07604166666666666,
+          "effFull": 10642.520547945205,
+          "lossNet": 20400.07328072153,
+          "avgNet": 19658.092708333334,
+          "games": 960,
+          "wins": 73,
+          "dP1": -0.018,
+          "dEff": 497,
+          "dAvgNet": 1953,
+          "dLoss": 1913
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "lvmeng",
+          "slot": 1,
+          "skillId": "daoxing_xianzu",
+          "label": "摘·吕蒙携带2",
+          "p1": 0.019791666666666666,
+          "effFull": 10182.947368421053,
+          "lossNet": 19014.122210414454,
+          "avgNet": 18839.338541666668,
+          "games": 960,
+          "wins": 19,
+          "dP1": -0.074,
+          "dEff": 37,
+          "dAvgNet": 1134,
+          "dLoss": 527
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "h23",
+          "slot": 0,
+          "skillId": "shenbing_tianjiang",
+          "label": "摘·曹操携带1",
+          "p1": 0.04375,
+          "effFull": 11262.952380952382,
+          "lossNet": 18948.71350762527,
+          "avgNet": 18612.461458333335,
+          "games": 960,
+          "wins": 42,
+          "dP1": -0.05,
+          "dEff": 1117,
+          "dAvgNet": 907,
+          "dLoss": 461
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "h23",
+          "slot": 1,
+          "skillId": "dashang_sanjun",
+          "label": "摘·曹操携带2",
+          "p1": 0.03958333333333333,
+          "effFull": 10655.657894736842,
+          "lossNet": 18905.370932754882,
+          "avgNet": 18578.819791666665,
+          "games": 960,
+          "wins": 38,
+          "dP1": -0.054,
+          "dEff": 510,
+          "dAvgNet": 873,
+          "dLoss": 418
+        },
+        {
+          "kind": "mispoint",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "错配加点(攻/谋互换)",
+          "p1": 0.019791666666666666,
+          "effFull": 11163.631578947368,
+          "lossNet": 19971.429330499468,
+          "avgNet": 19797.108333333334,
+          "games": 960,
+          "wins": 19,
+          "dP1": -0.074,
+          "dEff": 1018,
+          "dAvgNet": 2092,
+          "dLoss": 1484
+        },
+        {
+          "kind": "swapPos",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "大营↔前锋换位",
+          "p1": 0.020833333333333332,
+          "effFull": 9003.65,
+          "lossNet": 19677.243617021275,
+          "avgNet": 19454.877083333333,
+          "games": 960,
+          "wins": 20,
+          "dP1": -0.073,
+          "dEff": -1142,
+          "dAvgNet": 1749,
+          "dLoss": 1190
+        }
+      ],
+      "critWin": {
+        "label": "摘·吕蒙携带2",
+        "skillId": "daoxing_xianzu",
+        "dP1": -0.074,
+        "dEff": 37
+      },
+      "critEff": {
+        "label": "摘·曹操携带1",
+        "skillId": "shenbing_tianjiang",
+        "dP1": -0.05,
+        "dEff": 1117
+      }
+    },
+    {
+      "marcherId": "t1-huanggai-fadao",
+      "note": "黄盖法刀",
+      "tier": "T1",
+      "archetype": "法刀·神赏",
+      "baseWhite": {
+        "p1": 0.084375,
+        "effFull": 11387.111111111111,
+        "lossNet": 19655.439135381115,
+        "avgNet": 18957.798958333333,
+        "games": 960,
+        "wins": 81
+      },
+      "baseRed": {
+        "p1": 0.18333333333333332,
+        "effFull": 11008.693181818182,
+        "lossNet": 20137.45280612245,
+        "avgNet": 18463.846875,
+        "games": 960,
+        "wins": 176
+      },
+      "dP1_fullred": 0.099,
+      "dEff_fullred": -378,
+      "dAvgNet_fullred": -494,
+      "dossier": [
+        {
+          "heroId": "h783",
+          "position": "大营",
+          "troopType": "infantry",
+          "attackRange": 2,
+          "stats": {
+            "attack": 156,
+            "defense": 164,
+            "strategy": 228,
+            "speed": 75,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "liehuo_fenzhou",
+            "name": "烈火焚舟",
+            "type": "pursuit",
+            "triggerRate": 1,
+            "tags": [
+              "burning"
+            ],
+            "desc": "普通攻击后，使攻击目标陷入燃烧状态（伤害率150.0%，受谋略属性影响），持续2回合；若目标已处于烈火焚舟的燃烧状态，则立即引发目标剩余的燃烧伤害，并使其和相邻的敌军士气降低10.0，并陷入燃烧状态（伤害率270.0%，受谋略属性影响），持续1回合",
+            "dimensions": [
+              "其他"
+            ]
+          },
+          "carries": [
+            {
+              "id": "shimian_maifu",
+              "name": "十面埋伏",
+              "type": "active",
+              "triggerRate": 0.4,
+              "tags": [
+                "damage",
+                "damage_boost"
+              ],
+              "desc": "1回合准备，对敌军全体发动一次策略攻击（伤害率130.0%，受谋略属性影响），并随机使敌军群体1-2目标造成的所有伤害大幅度降低，持续1回合",
+              "dimensions": [
+                "增伤",
+                "主动·看发动率"
+              ]
+            },
+            {
+              "id": "bugong",
+              "name": "不攻",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "cowardice",
+                "damage_boost",
+                "damage"
+              ],
+              "desc": "在战斗中无法进行普通攻击，使自身发动策略攻击时造成的伤害提高25.0%，并在每回合都会对有效距离5以内的敌军单体发动一次策略攻击（伤害率83.0%，受谋略属性影响）",
+              "dimensions": [
+                "增伤",
+                "控制"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "lvmeng",
+          "position": "中军",
+          "troopType": "archer",
+          "attackRange": 4,
+          "stats": {
+            "attack": 151,
+            "defense": 179,
+            "strategy": 257,
+            "speed": 88,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "baiyi_dujiang",
+            "name": "白衣渡江",
+            "type": "command",
+            "triggerRate": 1,
+            "tags": [
+              "cowardice",
+              "damage"
+            ],
+            "desc": "战斗开始后前2回合，使敌军群体无法进行普通攻击，在此效果结束后，将对敌军全体发动一次强力策略攻击（伤害率215.0%，受谋略属性影响），造成的伤害无视规避",
+            "dimensions": [
+              "控制"
+            ]
+          },
+          "carries": [
+            {
+              "id": "fanji_zhence",
+              "name": "反计之策",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost",
+                "hesitation"
+              ],
+              "desc": "战斗开始后前3回合，使敌军群体发动主动战法时造成的伤害大幅下降，并在首回合有100.0%的几率使其陷入犹豫状态，无法发动主动战法",
+              "dimensions": [
+                "增伤",
+                "控制"
+              ]
+            },
+            {
+              "id": "daoxing_xianzu",
+              "name": "道行险阻",
+              "type": "active",
+              "triggerRate": 0.4,
+              "tags": [
+                "debuff_defense",
+                "debuff_strategy",
+                "damage"
+              ],
+              "desc": "使敌军单体防御属性降低50.0（受攻击属性影响）、谋略属性降低50.0（受谋略属性影响），持续1回合，同时在目标下一次行动前对其发动一次策略攻击（伤害率150.0%，受谋略属性影响）和一次攻击（伤害率150.0%）",
+              "dimensions": [
+                "主动·看发动率"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "weiguan",
+          "position": "前锋",
+          "troopType": "infantry",
+          "attackRange": 2,
+          "stats": {
+            "attack": 151,
+            "defense": 144,
+            "strategy": 186,
+            "speed": 142,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "chijie_zhenxi",
+            "name": "持节镇西",
+            "type": "command",
+            "triggerRate": 1,
+            "tags": [
+              "attack_buff",
+              "defense_buff",
+              "strategy_buff"
+            ],
+            "desc": "使友军全体在每次造成攻击伤害前，攻击提高22.0（受攻击属性影响），可叠加4次，持续1回合；每次造成策略攻击伤害前，谋略提高22.0（受谋略属性影响），可叠加4次，持续1回合；每次受到伤害前，防御提高22.0（受防御属性影响），可叠加4次，持续1回合",
+            "dimensions": [
+              "增伤",
+              "减伤/护盾"
+            ]
+          },
+          "carries": [
+            {
+              "id": "shenbing_tianjiang",
+              "name": "神兵天降",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost"
+              ],
+              "desc": "战斗开始后前3回合，使敌军群体受到攻击和策略攻击时的伤害提高30.0%（受谋略属性影响）",
+              "dimensions": [
+                "增伤"
+              ]
+            },
+            {
+              "id": "dashang_sanjun",
+              "name": "大赏三军",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost"
+              ],
+              "desc": "战斗开始后前3回合，使我军群体进行攻击和策略攻击时的伤害提高30.0%（受谋略属性影响）",
+              "dimensions": [
+                "增伤"
+              ]
+            }
+          ]
+        }
+      ],
+      "ablations": [
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "h783",
+          "slot": 0,
+          "skillId": "shimian_maifu",
+          "label": "摘·黄盖携带1",
+          "p1": 0.016666666666666666,
+          "effFull": 11398.8125,
+          "lossNet": 21524.063559322032,
+          "avgNet": 21355.309375,
+          "games": 960,
+          "wins": 16,
+          "dP1": -0.068,
+          "dEff": 12,
+          "dAvgNet": 2398,
+          "dLoss": 1869
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "h783",
+          "slot": 1,
+          "skillId": "bugong",
+          "label": "摘·黄盖携带2",
+          "p1": 0.014583333333333334,
+          "effFull": 8833.5,
+          "lossNet": 20014.11733615222,
+          "avgNet": 19851.066666666666,
+          "games": 960,
+          "wins": 14,
+          "dP1": -0.07,
+          "dEff": -2554,
+          "dAvgNet": 893,
+          "dLoss": 359
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "lvmeng",
+          "slot": 0,
+          "skillId": "fanji_zhence",
+          "label": "摘·吕蒙携带1",
+          "p1": 0.06458333333333334,
+          "effFull": 11827.677419354839,
+          "lossNet": 21214.838530066816,
+          "avgNet": 20608.584375,
+          "games": 960,
+          "wins": 62,
+          "dP1": -0.02,
+          "dEff": 441,
+          "dAvgNet": 1651,
+          "dLoss": 1559
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "lvmeng",
+          "slot": 1,
+          "skillId": "daoxing_xianzu",
+          "label": "摘·吕蒙携带2",
+          "p1": 0.005208333333333333,
+          "effFull": 15173.4,
+          "lossNet": 19931.894240837697,
+          "avgNet": 19907.110416666666,
+          "games": 960,
+          "wins": 5,
+          "dP1": -0.079,
+          "dEff": 3786,
+          "dAvgNet": 949,
+          "dLoss": 276
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "weiguan",
+          "slot": 0,
+          "skillId": "shenbing_tianjiang",
+          "label": "摘·卫瓘携带1",
+          "p1": 0.051041666666666666,
+          "effFull": 12091.285714285714,
+          "lossNet": 19845.43798024149,
+          "avgNet": 19449.653125,
+          "games": 960,
+          "wins": 49,
+          "dP1": -0.033,
+          "dEff": 704,
+          "dAvgNet": 492,
+          "dLoss": 190
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "weiguan",
+          "slot": 1,
+          "skillId": "dashang_sanjun",
+          "label": "摘·卫瓘携带2",
+          "p1": 0.05,
+          "effFull": 12853.583333333334,
+          "lossNet": 19790.916666666668,
+          "avgNet": 19444.05,
+          "games": 960,
+          "wins": 48,
+          "dP1": -0.034,
+          "dEff": 1466,
+          "dAvgNet": 486,
+          "dLoss": 135
+        },
+        {
+          "kind": "mispoint",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "错配加点(攻/谋互换)",
+          "p1": 0.010416666666666666,
+          "effFull": 11488.7,
+          "lossNet": 20706.684210526317,
+          "avgNet": 20610.663541666665,
+          "games": 960,
+          "wins": 10,
+          "dP1": -0.074,
+          "dEff": 102,
+          "dAvgNet": 1653,
+          "dLoss": 1051
+        },
+        {
+          "kind": "swapPos",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "大营↔前锋换位",
+          "p1": 0.03958333333333333,
+          "effFull": 10174.157894736842,
+          "lossNet": 19631.45119305857,
+          "avgNet": 19257.1,
+          "games": 960,
+          "wins": 38,
+          "dP1": -0.045,
+          "dEff": -1213,
+          "dAvgNet": 299,
+          "dLoss": -24
+        }
+      ],
+      "critWin": {
+        "label": "摘·吕蒙携带2",
+        "skillId": "daoxing_xianzu",
+        "dP1": -0.079,
+        "dEff": 3786
+      },
+      "critEff": {
+        "label": "摘·吕蒙携带2",
+        "skillId": "daoxing_xianzu",
+        "dP1": -0.079,
+        "dEff": 3786
+      }
+    },
+    {
+      "marcherId": "t1-zhangfei-liumang",
+      "note": "张飞流氓",
+      "tier": "T1",
+      "archetype": "流氓·物理爆发",
+      "baseWhite": {
+        "p1": 0.041666666666666664,
+        "effFull": 6074.875,
+        "lossNet": 10270.095652173914,
+        "avgNet": 10095.294791666667,
+        "games": 960,
+        "wins": 40
+      },
+      "baseRed": {
+        "p1": 0.12916666666666668,
+        "effFull": 4140.758064516129,
+        "lossNet": 8589.216507177034,
+        "avgNet": 8014.623958333334,
+        "games": 960,
+        "wins": 124
+      },
+      "dP1_fullred": 0.088,
+      "dEff_fullred": -1934,
+      "dAvgNet_fullred": -2081,
+      "dossier": [
+        {
+          "heroId": "h22",
+          "position": "大营",
+          "troopType": "cavalry",
+          "attackRange": 2,
+          "stats": {
+            "attack": 307,
+            "defense": 153,
+            "strategy": 65,
+            "speed": 115,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "changban_zhihou",
+            "name": "长坂之吼",
+            "type": "active",
+            "triggerRate": 0.75,
+            "tags": [
+              "damage"
+            ],
+            "desc": "2回合准备，对敌军群体2-3目标发动一次无视兵种相克的猛烈攻击（伤害率450.0%）",
+            "dimensions": [
+              "主动·看发动率"
+            ]
+          },
+          "carries": [
+            {
+              "id": "yiji_dangqian",
+              "name": "一骑当千",
+              "type": "active",
+              "triggerRate": 0.3,
+              "tags": [
+                "damage"
+              ],
+              "desc": "1回合准备，对敌军全体发动一次猛烈攻击（伤害率280.0%）",
+              "dimensions": [
+                "主动·看发动率"
+              ]
+            },
+            {
+              "id": "jishi",
+              "name": "击势",
+              "type": "passive",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost",
+                "ignore_def"
+              ],
+              "desc": "战斗中，每回合自身行动时有65.0%几率获得以下效果：自身攻击时的伤害提升50.0%，持续1回合；自身攻击时无视敌方60.0%防御属性，持续1回合。每个效果独立判断",
+              "dimensions": [
+                "增伤"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "h526",
+          "position": "中军",
+          "troopType": "archer",
+          "attackRange": 3,
+          "stats": {
+            "attack": 127,
+            "defense": 160,
+            "strategy": 252,
+            "speed": 89,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "jinkui_yaolue",
+            "name": "金匮要略",
+            "type": "command",
+            "triggerRate": 1,
+            "tags": [
+              "damage_reduce",
+              "first_aid",
+              "heal"
+            ],
+            "desc": "战斗开始后前3回合，使我军全体受到的所有伤害降低20.4%（受谋略属性影响），同时使我军全体受到伤害时，有50.0%的几率能恢复一定兵力（恢复率80.0%，受谋略属性影响）",
+            "dimensions": [
+              "续航"
+            ]
+          },
+          "carries": [
+            {
+              "id": "leishi_yingji",
+              "name": "垒实迎击",
+              "type": "passive",
+              "triggerRate": 1,
+              "tags": [
+                "heal",
+                "evasion",
+                "immunity",
+                "cover"
+              ],
+              "desc": "受到普通攻击伤害时，有50.0%几率使自身恢复一定兵力（恢复率200.0%）；有50.0%几率移除自身由主动及追击战法带来的负面效果；使自身进入规避状态，有50.0%几率免疫下1次受到的伤害。同时当自身位于中军及前锋时，每回合开始时有50.0%几率援护友军全体，持续1回合",
+              "dimensions": [
+                "续航"
+              ]
+            },
+            {
+              "id": "hunshui_moyu",
+              "name": "浑水摸鱼",
+              "type": "active",
+              "triggerRate": 0.35,
+              "tags": [
+                "confusion"
+              ],
+              "desc": "1回合准备，使敌军群体陷入混乱状态，持续2回合",
+              "dimensions": [
+                "控制",
+                "主动·看发动率"
+              ]
+            }
+          ]
+        },
+        {
+          "heroId": "sunquan",
+          "position": "前锋",
+          "troopType": "archer",
+          "attackRange": 4,
+          "stats": {
+            "attack": 124,
+            "defense": 138,
+            "strategy": 248,
+            "speed": 101,
+            "maxTroops": 9000
+          },
+          "main": {
+            "id": "jiuxi_huanglong",
+            "name": "九锡黄龙",
+            "type": "active",
+            "triggerRate": 0.35,
+            "tags": [
+              "immunity",
+              "evasion"
+            ],
+            "desc": "移除我军全体有害效果，并使其进入规避状态，免疫接下来受到的2次伤害",
+            "dimensions": [
+              "主动·看发动率"
+            ]
+          },
+          "carries": [
+            {
+              "id": "shiji",
+              "name": "始计",
+              "type": "command",
+              "triggerRate": 1,
+              "tags": [
+                "damage_boost",
+                "insight"
+              ],
+              "desc": "战斗前4回合，在自身行动前，使我军大营下一次攻击或策略攻击时的伤害提高20.0%（受谋略属性影响），敌方兵力最多单体下一次攻击或策略攻击时的伤害降低30.0%（受谋略属性影响），并在自身受到攻击或策略攻击伤害后，于本回合内进入洞察状态，免疫混乱、犹豫、怯战、暴走和挑衅效果",
+              "dimensions": [
+                "增伤"
+              ]
+            },
+            {
+              "id": "sanjun_zhizhong",
+              "name": "三军之众",
+              "type": "active",
+              "triggerRate": 0.45,
+              "tags": [
+                "heal"
+              ],
+              "desc": "1回合准备，使我军单体恢复4次兵力（恢复率151.0%，受谋略属性影响），每次目标独立判定",
+              "dimensions": [
+                "续航",
+                "主动·看发动率"
+              ]
+            }
+          ]
+        }
+      ],
+      "ablations": [
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "h22",
+          "slot": 0,
+          "skillId": "yiji_dangqian",
+          "label": "摘·张飞携带1",
+          "p1": 0,
+          "effFull": null,
+          "lossNet": 10921.51875,
+          "avgNet": 10921.51875,
+          "games": 960,
+          "wins": 0,
+          "dP1": -0.042,
+          "dEff": null,
+          "dAvgNet": 826,
+          "dLoss": 651
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 0,
+          "heroId": "h22",
+          "slot": 1,
+          "skillId": "jishi",
+          "label": "摘·张飞携带2",
+          "p1": 0,
+          "effFull": null,
+          "lossNet": 10623.845833333333,
+          "avgNet": 10623.845833333333,
+          "games": 960,
+          "wins": 0,
+          "dP1": -0.042,
+          "dEff": null,
+          "dAvgNet": 529,
+          "dLoss": 354
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "h526",
+          "slot": 0,
+          "skillId": "leishi_yingji",
+          "label": "摘·张机携带1",
+          "p1": 0.03958333333333333,
+          "effFull": 7743.4473684210525,
+          "lossNet": 12523.010845986984,
+          "avgNet": 12333.819791666667,
+          "games": 960,
+          "wins": 38,
+          "dP1": -0.002,
+          "dEff": 1669,
+          "dAvgNet": 2239,
+          "dLoss": 2253
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 1,
+          "heroId": "h526",
+          "slot": 1,
+          "skillId": "hunshui_moyu",
+          "label": "摘·张机携带2",
+          "p1": 0.0375,
+          "effFull": 8667.611111111111,
+          "lossNet": 13591.541125541125,
+          "avgNet": 13406.89375,
+          "games": 960,
+          "wins": 36,
+          "dP1": -0.004,
+          "dEff": 2593,
+          "dAvgNet": 3312,
+          "dLoss": 3321
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "sunquan",
+          "slot": 0,
+          "skillId": "shiji",
+          "label": "摘·孙权携带1",
+          "p1": 0.005208333333333333,
+          "effFull": 15295.8,
+          "lossNet": 12109.534031413612,
+          "avgNet": 12126.129166666668,
+          "games": 960,
+          "wins": 5,
+          "dP1": -0.036,
+          "dEff": 9221,
+          "dAvgNet": 2031,
+          "dLoss": 1839
+        },
+        {
+          "kind": "remove_carry",
+          "hero": 2,
+          "heroId": "sunquan",
+          "slot": 1,
+          "skillId": "sanjun_zhizhong",
+          "label": "摘·孙权携带2",
+          "p1": 0.030208333333333334,
+          "effFull": 7146.827586206897,
+          "lossNet": 13607.921589688507,
+          "avgNet": 13412.742708333333,
+          "games": 960,
+          "wins": 29,
+          "dP1": -0.011,
+          "dEff": 1072,
+          "dAvgNet": 3317,
+          "dLoss": 3338
+        },
+        {
+          "kind": "mispoint",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "错配加点(攻/谋互换)",
+          "p1": 0.009375,
+          "effFull": 8512.444444444445,
+          "lossNet": 13527.995793901157,
+          "avgNet": 13480.975,
+          "games": 960,
+          "wins": 9,
+          "dP1": -0.032,
+          "dEff": 2438,
+          "dAvgNet": 3386,
+          "dLoss": 3258
+        },
+        {
+          "kind": "swapPos",
+          "hero": -1,
+          "heroId": "全队",
+          "skillId": "",
+          "label": "大营↔前锋换位",
+          "p1": 0.17395833333333333,
+          "effFull": 4937.976047904192,
+          "lossNet": 10900.958385876418,
+          "avgNet": 9863.647916666667,
+          "games": 960,
+          "wins": 167,
+          "dP1": 0.132,
+          "dEff": -1137,
+          "dAvgNet": -232,
+          "dLoss": 631
+        }
+      ],
+      "critWin": {
+        "label": "摘·张飞携带1",
+        "skillId": "yiji_dangqian",
+        "dP1": -0.042,
+        "dEff": null
+      },
+      "critEff": {
+        "label": "摘·孙权携带1",
+        "skillId": "shiji",
+        "dP1": -0.036,
+        "dEff": 9221
+      }
+    }
+  ]
+}
