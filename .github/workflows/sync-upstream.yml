@@ -46,6 +46,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DRY_RUN: ${{ inputs.dry_run }}
           AHEAD: ${{ steps.mirror.outputs.ahead }}
+          COMPARE_URL: ${{ github.server_url }}/${{ github.repository }}/compare/main...upstream-main?expand=1
         run: |
           set -euo pipefail
           if [ "${DRY_RUN:-false}" = "true" ]; then
@@ -78,9 +79,26 @@ jobs:
             echo "- resolve AGENTS.md if flagged (both sides append to it)"
             echo "- confirm same seed still reproduces the same battle"
           } > pr_body.md
-          gh pr create --base main --head upstream-main \
-            --title "chore: sync upstream battle engine" \
-            --body-file pr_body.md
+          if gh pr create --base main --head upstream-main \
+              --title "chore: sync upstream battle engine" \
+              --body-file pr_body.md; then
+            echo "sync PR opened"
+            exit 0
+          fi
+          echo "PR creation blocked: falling back to an issue notice"
+          {
+            cat pr_body.md
+            echo ""
+            echo "### Manual PR"
+            echo "Automatic PR creation is blocked. Open it here:"
+            echo "$COMPARE_URL"
+            echo ""
+            echo "To enable automatic PRs: Settings > Actions > General > Workflow permissions >"
+            echo "check 'Allow GitHub Actions to create and approve pull requests'."
+          } > issue_body.md
+          EXIST=$(gh issue list --state open --search 'upstream sync available in:title' --json number --jq 'length')
+          if [ "$EXIST" -gt 0 ]; then echo "notice issue already open"; exit 0; fi
+          gh issue create --title "upstream sync available" --body-file issue_body.md
 
   notify:
     needs: sync
