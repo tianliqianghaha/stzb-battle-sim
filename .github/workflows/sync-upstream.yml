@@ -1,0 +1,100 @@
+name: sync upstream (PR only)
+
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Check upstream only, do not open a PR'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: upstream-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout fork main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Mirror upstream/main
+        id: mirror
+        run: |
+          set -euo pipefail
+          git remote add upstream https://github.com/ybytlai78-dev/stzb-battle-sim.git || true
+          git fetch upstream main
+          git push --force origin FETCH_HEAD:refs/heads/upstream-main
+          AHEAD=$(git rev-list --count HEAD..upstream/main)
+          echo "ahead=$AHEAD" >> "$GITHUB_OUTPUT"
+          echo "upstream ahead by $AHEAD commit(s)"
+
+      - name: Open sync PR
+        if: steps.mirror.outputs.ahead != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          AHEAD: ${{ steps.mirror.outputs.ahead }}
+        run: |
+          set -euo pipefail
+          if [ "${DRY_RUN:-false}" = "true" ]; then
+            echo "dry run: upstream ahead by $AHEAD, skipping PR"
+            exit 0
+          fi
+          OPEN=$(gh pr list --head upstream-main --base main --state open --json number --jq 'length')
+          if [ "$OPEN" -gt 0 ]; then
+            echo "sync PR already open ($OPEN), nothing to do"
+            exit 0
+          fi
+          BASE=$(git merge-base HEAD upstream/main)
+          {
+            echo "Automated upstream sync. Review engine diffs before merging."
+            echo ""
+            echo "Upstream ahead by $AHEAD commit(s)."
+            echo ""
+            echo "### Engine diff (src/ tests/ web/)"
+            echo '```'
+            git diff --stat "$BASE"..upstream/main -- src/ tests/ web/
+            echo '```'
+            echo ""
+            echo "### Upstream commits"
+            echo '```'
+            git log --oneline --no-merges HEAD..upstream/main | head -20
+            echo '```'
+            echo ""
+            echo "### Merge checklist"
+            echo "- run full test suite and golden snapshots"
+            echo "- resolve AGENTS.md if flagged (both sides append to it)"
+            echo "- confirm same seed still reproduces the same battle"
+          } > pr_body.md
+          gh pr create --base main --head upstream-main \
+            --title "chore: sync upstream battle engine" \
+            --body-file pr_body.md
+
+  notify:
+    needs: sync
+    if: failure()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - name: Report failure once
+        run: |
+          set -euo pipefail
+          EXIST=$(gh issue list --state open --search 'upstream sync workflow failed in:title' --json number --jq 'length')
+          if [ "$EXIST" -gt 0 ]; then echo "failure issue already open"; exit 0; fi
+          gh issue create --title "upstream sync workflow failed" \
+            --body "Sync run failed: $RUN_URL"
