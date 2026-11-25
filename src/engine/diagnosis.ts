@@ -109,6 +109,7 @@ export const STATUS_META: Record<StatusType, { name: string; kind: EffectKind }>
   heal_low_troops: { name: '低兵力恢复', kind: '增益' },
   treasure_extra_pursuit_target: { name: '追击额外目标', kind: '增益' },
   treasure_basic_sweep: { name: '普攻横扫', kind: '增益' },
+  treasure_strike_count: { name: '攻击伤害计次（穿影）', kind: '增益' },
   cowardice_immune: { name: '免疫怯战', kind: '增益' },
   siege: { name: '围困', kind: '减益' },
   sorcery: { name: '妖术', kind: '减益' },
@@ -199,7 +200,11 @@ export interface DamageLedger {
   actual: number;
   /** 反解基线：无增减伤/无克制时的应有伤害（可作用分量 = base + main 的还原值） */
   baseline: number;
-  /** 无归因路径的伤害（一类指挥预存 delayedOutput 等：不吃增减伤，无法反解） */
+  /**
+   * 无归因路径的伤害 = 事件里**没有** `modifiers` 字段的扣兵（玉玺结转 / 直接结算等，无法反解）。
+   * ⚠️ 一类指挥预存 `delayedOutput`（白衣渡江等）自 2026-11-08 起在打出时现算增减伤并写 `modifiers`，
+   * 不再落进这一桶 —— 旧注释「预先结算不吃增减伤」已随口径变更作废。
+   */
   unattributed: number;
   /** 兵力基础分量（不参与增减伤，单列以便核对） */
   troopBase: number;
@@ -996,7 +1001,8 @@ function analyzeSide(tl: Timeline, report: BattleReport, side: Side, label: stri
     ledger.actual += total;
     ledger.troopBase += rec.breakdown.troopBase;
     if (rawTotal > total) ledger.cappedLoss += rawTotal - total;
-    // 「无归因路径」= 事件根本没带 modifiers 字段（一类指挥预存 delayedOutput 等，预先结算不吃增减伤）；
+    // 「无归因路径」= 事件根本没带 modifiers 字段（玉玺结转 / 直接结算等未走乘区的扣兵）；
+    // 一类指挥预存 delayedOutput 自 2026-11-08 起现算乘区并写 modifiers，不再落这一桶。
     // 带空 modifiers 数组的 = 该次伤害没有任何增减伤/克制（mult = 1），照常进入账本（基线 = 实际）
     const hasModsField = rec.modifiers !== undefined;
     const led = ledgerOf(rec);
@@ -1757,7 +1763,7 @@ export function diagnoseBattle(report: BattleReport, opts: DiagnosisOptions = {}
     notes.push(`触底（增减伤净额 ≤ −90%，按 10% 结算）事件 ${my.ledger.clampedHits + enemy.ledger.clampedHits} 条：账本按比例分摊，单项占比为近似值`);
   }
   if (my.ledger.unattributed + enemy.ledger.unattributed > 0) {
-    notes.push(`无增减伤归因的伤害 ${Math.round(my.ledger.unattributed + enemy.ledger.unattributed).toLocaleString()}（一类指挥预存 delayedOutput 等不吃增减伤，已单列）`);
+    notes.push(`无增减伤归因的伤害 ${Math.round(my.ledger.unattributed + enemy.ledger.unattributed).toLocaleString()}（事件未带归因字段的扣兵，如结转/直接结算，已单列）`);
   }
 
   return {

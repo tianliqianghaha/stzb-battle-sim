@@ -18,6 +18,25 @@
   --red-soft: #3a221e;
   --blue: #2a4a7c;
   --blue-soft: #1e2a3a;
+  /* ── 三段兵力条（伤兵可视化）统一调色：实色=剩余 / 浅色=伤兵池 / 暗灰=已阵亡 ──
+   *   后续按参考截图校色只改这一组变量，不动结构。 */
+  --tb-red-solid: #8f3328;
+  --tb-red-wounded-a: #6e4a44;
+  --tb-red-wounded-b: #8a5f58;
+  --tb-blue-solid: #33507c;
+  --tb-blue-wounded-a: #44546c;
+  --tb-blue-wounded-b: #5a6c88;
+  --tb-dead: #4a4a44;
+  --tb-wounded-opacity: .35;
+  --tb-dead-opacity: .55;
+  /* 武将卡数值块（兵力=实色底 / 伤兵=同色相浅一档底）：这里只做上游别名，
+   * 真正的色值仍由上面那一组 --tb-* 决定 —— 换色改上面，这里一行都不用动。 */
+  --tb-card-red-main: var(--tb-red-solid);
+  --tb-card-red-wounded: var(--tb-red-wounded-b);
+  --tb-card-blue-main: var(--tb-blue-solid);
+  --tb-card-blue-wounded: var(--tb-blue-wounded-b);
+  /* 数值块字色：实色/浅色底上都用暖白（阵亡卡降到 --text-dim，配合整卡灰化） */
+  --tb-card-text: var(--ink);
   --green: #3a6b4a;
   /* 战报详情里的武将名分色：红方（我方）偏珊瑚红，蓝方（敌方）偏薄荷绿（用户口径） */
   --hero-red: #e08b84;
@@ -151,6 +170,10 @@ header.app .pool-search input[type="text"]:focus { outline: none; border-color: 
 }
 /* 米黄实心按钮：原来是纯文字链接，与深色顶栏糊在一起、看不出可点 */
 .nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   background: var(--beige);
   color: var(--beige-ink);
   border: 1px solid var(--beige-line);
@@ -159,6 +182,7 @@ header.app .pool-search input[type="text"]:focus { outline: none; border-color: 
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 3px;
+  line-height: 1;
   padding: 6px 14px;
   cursor: pointer;
   transition: background .12s, border-color .12s, color .12s;
@@ -251,6 +275,7 @@ main {
 .btn.ghost.team-clear {
   width: auto;
   flex-shrink: 0;
+  min-height: 26px;
   background: var(--beige);
   color: var(--beige-ink);
   border: 1px solid var(--beige-line);
@@ -258,7 +283,8 @@ main {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1px;
-  padding: 3px 9px;
+  line-height: 1;
+  padding: 0 9px;
 }
 .btn.ghost.team-bonus:hover,
 .btn.ghost.team-save-preset:hover,
@@ -995,36 +1021,61 @@ main {
 .control-bar input[type="number"]:focus, .control-bar select:focus { outline: none; border-color: var(--color-gold); }
 .control-bar #start { padding: 6px 34px; font-size: 14px; letter-spacing: 4px; font-family: var(--font-kai); }
 
+/**
+ * ── 按钮系统（统一几何 + 变体层级；颜色沿用现有 token，不换皮肤）──
+ * 基类 .btn：inline-flex 居中 + gap 6px + 统一 min-height 34px + 圆角 6px + 楷体 600 + 图标槽。
+ * 变体只改「底色 / 字色 / 字重」，不再各写各的 padding 造成尺寸不齐。
+ * 层级：.primary 绯红（每屏唯一主操作）＞ 默认金底（强调动作）＞ .beige 米黄（中性 / 面板动作）
+ *       ＞ .ghost 透明文字（三级动作）＞ .danger 破坏性。
+ * 尺寸：.btn-sm(28) / 默认(34) / .btn-lg(44)；.btn.icon = 34px 正方纯图标。
+ * ⚠️ 只收敛「按钮」；筛选 chip(.filter-tag) / 回合 tab(.rtab/.rbtn) / ±步进(.pt-btn/.cs-alloc-btn)
+ *    是另一类组件，不在本次范围。
+ */
 .btn {
-  background: var(--color-gold);
-  color: var(--color-bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 0 18px;
   border: 1px solid var(--color-gold);
   border-radius: 6px;
-  padding: 7px 20px;
-  font-size: 13px;
-  letter-spacing: 2px;
-  cursor: pointer;
-  font-weight: 600;
+  background: var(--color-gold);
+  color: var(--color-bg);
   font-family: var(--font-kai);
-  transition: background .12s, border-color .12s, color .12s;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background .12s, border-color .12s, color .12s, box-shadow .12s;
 }
-.btn:hover { background: var(--gold-bright); border-color: var(--gold-bright); }
+.btn:hover { background: var(--gold-bright); border-color: var(--gold-bright); color: var(--color-bg); }
+.btn:active { transform: translateY(1px); }
 .btn:disabled { opacity: .35; cursor: not-allowed; }
-.btn:focus-visible { outline: 1px solid var(--color-gold); outline-offset: 2px; }
-/* 次要操作：文字按钮，不与「开始模拟」抢主色块 */
+.btn:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 3px var(--gold-bright); }
+/* 按钮内图标：统一 1.6px 圆头线条（code-drawn，currentColor 继承文字色） */
+.btn svg, .nav-link svg {
+  width: 15px; height: 15px; flex-shrink: 0;
+  stroke: currentColor; fill: none; stroke-width: 1.6;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* 三级动作：透明文字（仍是 34px 目标，不再是 4px/10px 小字） */
 .btn.ghost, .btn.done {
   background: transparent;
+  border-color: transparent;
   color: var(--color-gold);
-  border: none;
   font-weight: 500;
-  padding: 4px 10px;
 }
 .btn.ghost:hover, .btn.done:hover {
-  background: transparent;
-  border: none;
+  background: var(--panel-2);
+  border-color: transparent;
   color: var(--gold-bright);
 }
-/** 主 CTA（#start / .btn.primary）：套2 绯红，非鎏金 */
+
+/* 主 CTA（#start / .btn.primary）：绯红，每屏唯一主操作 */
 .btn.primary,
 #start {
   background: var(--color-crimson);
@@ -1040,20 +1091,15 @@ main {
 }
 .btn.primary:focus-visible,
 #start:focus-visible {
-  outline: 1px solid var(--color-focus, var(--color-gold));
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 3px var(--color-crimson);
 }
 
-/**
- * 项目按键标准：米黄实心按钮（与顶栏导航 / 部队加成 / 清空本队同一套）。
- * 用户口径：「凡是我说做成按键的，都要按照项目按键标准来」——
- * 即"看得出是个按钮"：有底色、有描边、与深褐背景强区分，不要裸文字。
- * 用法：class="btn beige"（不要与 .btn.ghost / .btn.done 同时用在需要实心的地方）。
- */
+/* 项目按键标准：米黄实心（中性 / 面板动作） */
 .btn.beige {
   background: var(--beige);
   color: var(--beige-ink);
-  border: 1px solid var(--beige-line);
+  border-color: var(--beige-line);
   font-weight: 700;
 }
 .btn.beige:hover {
@@ -1062,6 +1108,28 @@ main {
   color: var(--beige-ink);
 }
 .btn.beige:disabled { background: var(--beige); color: var(--beige-ink); }
+
+/* 破坏性动作：默认透明不喧哗，hover 转绯红 tint（破坏 ≠ 高亮） */
+.btn.danger {
+  background: transparent;
+  border-color: var(--line-strong);
+  color: var(--red);
+  font-weight: 600;
+}
+.btn.danger:hover {
+  background: var(--red-soft);
+  border-color: var(--red);
+  color: #e08b84;
+}
+
+/* 尺寸档 */
+.btn-sm { min-height: 28px; padding: 0 12px; font-size: 12px; letter-spacing: 1px; gap: 4px; }
+.btn-sm svg { width: 13px; height: 13px; }
+.btn-lg { min-height: 44px; padding: 0 26px; font-size: 15px; letter-spacing: 3px; }
+.btn-lg svg { width: 17px; height: 17px; }
+/* 纯图标正方按钮 */
+.btn.icon { width: 34px; padding: 0; }
+.btn.icon.btn-sm { width: 28px; }
 
 /* 页内提示（替代系统 alert） */
 .app-notice {
@@ -1593,7 +1661,7 @@ main {
 .sum-side .ss-nums { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
 .sum-side .ss-nums b { color: var(--ink); font-size: 13.5px; }
 
-/* 总兵力条：实色剩余 + 浅色损失 */
+/* 总兵力条三段：实色剩余 + 浅色伤兵 + 暗灰已阵亡（颜色见 :root 的 --tb-* 变量，一处调色） */
 .troopbar {
   display: flex;
   height: 22px;
@@ -1601,12 +1669,14 @@ main {
   overflow: hidden;
 }
 .troopbar .tb-left { transition: width .3s; }
-.troopbar .tb-lost { opacity: .45; }
-.troopbar.bar-red .tb-left { background: linear-gradient(90deg, #8f3328, var(--red)); }
-.troopbar.bar-red .tb-lost { background: linear-gradient(90deg, #6e4a44, #8a5f58); }
-.troopbar.bar-blue .tb-left { background: linear-gradient(90deg, #33507c, var(--blue)); }
-.troopbar.bar-blue .tb-lost { background: linear-gradient(90deg, #44546c, #5a6c88); }
-.troopbar.bar-dead .tb-left { background: #4a4a44; }
+.troopbar .tb-wounded { transition: width .3s; opacity: var(--tb-wounded-opacity); }
+.troopbar .tb-dead { transition: width .3s; background: var(--tb-dead); opacity: var(--tb-dead-opacity); }
+.troopbar.bar-red .tb-left { background: linear-gradient(90deg, var(--tb-red-solid), var(--red)); }
+.troopbar.bar-red .tb-wounded { background: linear-gradient(90deg, var(--tb-red-wounded-a), var(--tb-red-wounded-b)); }
+.troopbar.bar-blue .tb-left { background: linear-gradient(90deg, var(--tb-blue-solid), var(--blue)); }
+.troopbar.bar-blue .tb-wounded { background: linear-gradient(90deg, var(--tb-blue-wounded-a), var(--tb-blue-wounded-b)); }
+/* 保留 .bar-dead（历史兼容：整条灰色底） */
+.troopbar.bar-dead .tb-left { background: var(--tb-dead); }
 
 /* 结果印章：金属书法字（胜金 / 败铜 / 平银），黑底 PNG 用 screen 抠黑 */
 .stamp {
@@ -1747,9 +1817,42 @@ main {
   margin: 4px 0 3px;
   flex-shrink: 0;
 }
-.sum-hero .sh-troops { font-size: 12px; color: var(--text-dim); margin-top: 3px; flex-shrink: 0; }
+/* 数值区：两块并排 —— 兵力（实色底）+ 伤兵（同色相浅一档底），对齐官方战报口径。
+ * 阵亡只做整卡灰化（.sum-hero.dead），伤兵数照常显示、不参与任何清零逻辑。
+ * 换色只改 :root 的 --tb-card-* 四行（它们指回 --tb-red-* / --tb-blue-* 兵力条调色组）。
+ * 卡窄时允许折行（flex-wrap），两块各自 nowrap —— 宁可两行，也不把数字压出列宽。 */
+.sum-hero .sh-troops {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2px 3px;
+  min-width: 0;
+  margin-top: 3px;
+  font-size: 12px;
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+.sum-hero .sh-troop {
+  min-width: 0;
+  max-width: 100%;
+  padding: 1px 5px;
+  border-radius: 2px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--tb-card-text);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .55);
+}
+.sum-hero .sh-troops.tb-red .sh-troop-main { background: var(--tb-card-red-main); }
+.sum-hero .sh-troops.tb-red .sh-troop-wounded { background: var(--tb-card-red-wounded); }
+.sum-hero .sh-troops.tb-blue .sh-troop-main { background: var(--tb-card-blue-main); }
+.sum-hero .sh-troops.tb-blue .sh-troop-wounded { background: var(--tb-card-blue-wounded); }
+.sum-hero .sh-troop-dead { white-space: nowrap; }
 .sum-hero .troopbar { height: 12px; flex-shrink: 0; }
 .sum-hero.dead {
+  --tb-card-text: var(--text-dim);
   filter: grayscale(1) brightness(.72);
 }
 .sum-hero.dead .sh-name, .sum-hero.dead .sh-troops, .sum-hero.dead .sh-meta { color: #8a8a80; }
@@ -1833,20 +1936,39 @@ main {
 }
 .report-dock .btn-back:hover { color: var(--gold-bright); }
 
-/* ── 战报「统计胜率」弹窗：200 场快速模拟 → 胜 / 平 / 负 概率 ── */
-.wr-modal { width: min(460px, 92vw); }
+/* ── 战报「统计胜率」弹窗：200 场快速模拟 → 四档判定 + 战损比 ──
+ * 四档配色（用户 2026-11-06 口径）：胜利 / 优势平 = 暖金系（亮金 → 暗金），
+ * 劣势平 / 失败 = 暗红系（斜纹暗红 → 实心红）。四档各配一个左侧色块，扫一眼就能分辨。 */
+.wr-modal { width: min(480px, 92vw); }
 .wr-sub { font-size: 12px; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 12px; }
 .wr-live { padding: 2px 0 4px; }
 .wr-live .wr-track { height: 10px; margin-bottom: 9px; }
 .wr-live .wr-track i { background: linear-gradient(90deg, var(--gold), var(--gold-bright)); }
-.wr-rows { display: flex; flex-direction: column; gap: 11px; margin: 2px 0 14px; }
+.wr-rows { display: flex; flex-direction: column; gap: 10px; margin: 2px 0 10px; }
 .wr-row {
   display: grid;
-  grid-template-columns: 34px 58px minmax(0, 1fr) 56px;
+  grid-template-columns: minmax(54px, auto) 58px minmax(0, 1fr) 56px;
   align-items: center;
   gap: 9px;
 }
-.wr-label { font-size: 13px; letter-spacing: 1px; color: var(--color-text-muted); }
+.wr-label {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+/* 档位色块：颜色取 label 的 currentColor，四档各一条 */
+.wr-label::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  flex: 0 0 auto;
+  background: currentColor;
+}
 .wr-pct {
   font-family: var(--font-kai);
   font-size: 17px;
@@ -1854,6 +1976,7 @@ main {
   color: var(--color-text);
   font-variant-numeric: tabular-nums;
 }
+.wr-n { font-size: 12px; color: var(--color-text-muted); text-align: right; font-variant-numeric: tabular-nums; }
 .wr-track {
   height: 8px;
   background: var(--panel-2);
@@ -1862,14 +1985,57 @@ main {
   overflow: hidden;
 }
 .wr-track i { display: block; height: 100%; width: 0; transition: width .25s ease; }
-.wr-row.win .wr-label,
-.wr-row.win .wr-pct { color: var(--gold-bright); }
-.wr-row.win .wr-track i { background: linear-gradient(90deg, var(--gold), var(--gold-bright)); }
-.wr-row.draw .wr-track i { background: var(--text-weak); }
-.wr-row.loss .wr-label,
-.wr-row.loss .wr-pct { color: color-mix(in srgb, var(--red) 55%, var(--color-text)); }
-.wr-row.loss .wr-track i { background: var(--red); }
-.wr-n { font-size: 12px; color: var(--color-text-muted); text-align: right; font-variant-numeric: tabular-nums; }
+/* 胜利：亮暖金（最高亮度） */
+.wr-row.wr-victory .wr-label { color: var(--gold-bright); }
+.wr-row.wr-victory .wr-pct { color: var(--gold-bright); }
+.wr-row.wr-victory .wr-track i { background: linear-gradient(90deg, #8a6620, var(--gold-bright)); }
+/* 优势平：暗暖金（与胜利同色相、低一档亮度） */
+.wr-row.wr-edge .wr-label { color: #c9a45c; }
+.wr-row.wr-edge .wr-pct { color: #e3c894; }
+.wr-row.wr-edge .wr-track i { background: linear-gradient(90deg, #6b5122, #a9853f); }
+/* 劣势平：斜纹暗红（暗红系里最暗的一个，纹理也是暗的） */
+.wr-row.wr-deficit .wr-label { color: #b0706a; }
+.wr-row.wr-deficit .wr-pct { color: #d5a09a; }
+.wr-row.wr-deficit .wr-track i {
+  background: repeating-linear-gradient(135deg, #4d1f1c 0 6px, #6b2b26 6px 12px);
+}
+/* 失败：实心暗红（暗红系里最实、最亮的一个） */
+.wr-row.wr-defeat .wr-label { color: #d98b82; }
+.wr-row.wr-defeat .wr-pct { color: #efb2a9; }
+.wr-row.wr-defeat .wr-track i { background: linear-gradient(90deg, #5e1d1c, #b8423a); }
+.wr-rule { font-size: 12px; line-height: 1.7; color: var(--text-dim); margin: 0 0 9px; }
+/* 战损比块：主数字独立成块，避免和四行百分比混淆 */
+.wr-ratio {
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  border-radius: 8px;
+  padding: 9px 12px;
+  margin: 0 0 10px;
+}
+.wr-ratio-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.wr-ratio-label { font-size: 13px; letter-spacing: 1px; color: var(--color-text-muted); }
+.wr-ratio-value {
+  font-family: var(--font-kai);
+  font-size: 26px;
+  line-height: 1.1;
+  color: var(--gold-bright);
+  font-variant-numeric: tabular-nums;
+}
+.wr-ratio-hint { font-size: 11px; color: var(--text-weak); }
+.wr-ratio-note { font-size: 11px; color: var(--color-text-muted); line-height: 1.65; margin-top: 4px; }
+/* 口径说明折叠：桌面默认展开（见 resultHtml 的 open），手机端折起来给四行让位 */
+.wr-notes { border-top: 1px dashed var(--line); padding-top: 4px; }
+.wr-notes > summary {
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: .5px;
+  padding: 3px 0;
+  list-style: none;
+}
+.wr-notes > summary::-webkit-details-marker { display: none; }
+.wr-notes > summary::before { content: '▸ '; }
+.wr-notes[open] > summary::before { content: '▾ '; }
 .wr-note { font-size: 12px; color: var(--color-text-muted); line-height: 1.8; }
 .wr-meta { font-size: 12px; color: var(--text-weak); line-height: 1.8; margin-top: 6px; }
 
@@ -2755,6 +2921,57 @@ main {
 .hd-tab:hover { color: var(--gold-bright); }
 .hd-tab.on { color: var(--gold-bright); border-bottom-color: var(--gold); }
 
+/* 板块 4 · 方案：武将配置存档（用户 2026-11-05：一键切换不同队伍的战法/加点/宝物/红度） */
+.hd-plans { display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+.hp-bar { display: flex; align-items: center; gap: 10px; }
+.hp-title {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--font-kai);
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--gold-bright);
+}
+.hp-hint { font-family: inherit; font-size: 11px; letter-spacing: 0; color: var(--text-weak); }
+.hp-count { font-size: 11.5px; color: var(--text-dim); font-variant-numeric: tabular-nums; }
+.hp-bar .hp-save { margin-left: auto; padding: 4px 12px; font-size: 12px; }
+.hp-cur {
+  font-size: 12px;
+  color: var(--text-dim);
+  border-left: 2px solid var(--line);
+  padding-left: 8px;
+  line-height: 1.5;
+}
+.hp-cur.tip { color: var(--text-weak); }
+.hp-list { display: flex; flex-direction: column; gap: 8px; overflow-y: auto; min-height: 0; }
+.hd-plan {
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.22);
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.hd-plan:hover { border-color: rgba(198, 160, 86, 0.55); }
+.hp-head { display: flex; align-items: baseline; gap: 10px; }
+.hp-name { font-family: var(--font-kai); font-size: 13px; letter-spacing: 1px; color: var(--ink); }
+.hp-time { margin-left: auto; font-size: 11px; color: var(--text-weak); font-variant-numeric: tabular-nums; }
+.hp-sum { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+.hp-acts { display: flex; gap: 8px; }
+.hp-acts .btn { padding: 3px 14px; font-size: 12px; }
+.hd-plan-empty {
+  border: 1px dashed var(--line);
+  padding: 18px 14px;
+  text-align: center;
+  color: var(--text-weak);
+  font-size: 12.5px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.hd-plan-empty span { font-size: 11.5px; color: var(--text-dim); line-height: 1.6; }
+
 /* 板块 1 · 详情：兵种 / 攻击距离 */
 .hd-meta-row { display: flex; flex-wrap: wrap; gap: 4px 18px; margin: 2px 0 6px; }
 .hd-meta { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text); }
@@ -3216,7 +3433,36 @@ main {
   gap: 12px;
   min-height: 58vh;
 }
+/* 左列 = 切换器 + 列表：一次只看一组（热门预设 / 我的预设，用户 2026-11-05 口径），
+   切换器沿用武将详情的下划线页签语言（.hd-tab），右侧小牌是各组条数。 */
+.preset-col { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+.preset-tabs {
+  display: flex; gap: 2px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 6px;
+}
+.preset-tabs[hidden] { display: none; }
+.preset-tab {
+  flex: 1 1 0;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  background: none; border: none; border-bottom: 2px solid transparent;
+  color: var(--color-text-muted);
+  font-family: var(--font-kai); font-size: 13.5px; font-weight: 600; letter-spacing: 2px;
+  padding: 6px 8px; cursor: pointer;
+}
+.preset-tab:hover { color: var(--gold-bright); }
+.preset-tab.on { color: var(--gold-bright); border-bottom-color: var(--gold); }
+.preset-tab .pt-n {
+  font-family: var(--font-sans); font-size: 10.5px; font-weight: 400; letter-spacing: 0;
+  line-height: 16px; padding: 0 5px; color: var(--text-weak);
+  border: 1px solid var(--line); background: var(--panel);
+}
+.preset-tab.on .pt-n {
+  color: var(--gold-bright); border-color: var(--line-strong); background: rgba(196, 154, 54, .14);
+}
 .preset-list {
+  flex: 1 1 auto;
+  min-height: 0;
   border: 1px solid var(--line);
   background: var(--panel-2);
   overflow-y: auto;
@@ -3254,13 +3500,6 @@ main {
 }
 .pi-side.red { color: #d88b7e; border-color: #6c3a32; background: rgba(143, 44, 44, .18); }
 .pi-side.blue { color: #8fb2dd; border-color: #34507c; background: rgba(42, 74, 124, .22); }
-/* 左列表的两个分组标题（热门预设 / 我的预设） */
-.preset-group {
-  font-size: 11px; color: var(--text-weak); letter-spacing: 2px;
-  padding: 2px 4px 5px; margin: 2px 0 6px;
-  border-bottom: 1px solid var(--line);
-}
-.preset-group:not(:first-child) { margin-top: 14px; }
 /* 内置热门条目标签（固定层：删不掉、改不了，只能上场 / 另存为我的预设） */
 .preset-item .pi-tag,
 .preset-detail .pi-tag {
@@ -3789,4 +4028,518 @@ main {
     max-width: 100%; padding-right: 0; font-size: 12px; white-space: nowrap;
     overflow: hidden; text-overflow: ellipsis;
   }
+}
+
+/* ─── 赛季下拉 + 北伐副本副将（2026-11-05） ─── */
+header.app .season-pick {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+  padding: 3px 6px 3px 8px;
+  background: var(--panel-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  color: var(--gold-bright);
+  font-family: var(--font-kai);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+header.app .season-pick .season-label { color: var(--text-dim); letter-spacing: 0; font-size: 12px; }
+header.app .season-pick select {
+  background: var(--panel);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  padding: 3px 6px;
+  cursor: pointer;
+}
+header.app .season-pick select:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 1px; }
+
+/* 槽位卡：副将标记（主将 70% + 副将 30% 生效期间一直可见） */
+.slot-meta .sm-deputy {
+  margin-left: 6px;
+  padding: 0 5px;
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  color: var(--gold-bright);
+  font-size: 11px;
+  white-space: nowrap;
+}
+/* 槽位卡战法条：副将主战法（第二格）用虚线描边区分 */
+.slot-skill.deputy { outline: 1px dashed var(--gold); outline-offset: 1px; }
+
+/* 武将详情：副将行 / 第二战法格 */
+.hd-deputy-tag {
+  margin-left: 8px; font-size: 11px; color: var(--gold-bright);
+  font-family: var(--font-sans); letter-spacing: 0;
+}
+.skill-slot-row.deputy { border: 1px dashed var(--gold); cursor: pointer; }
+.skill-slot-row.deputy .sslot-type { color: var(--gold-bright); }
+.hd-deputy-row { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+.hd-deputy-btn {
+  padding: 5px 12px; border-radius: 6px; cursor: pointer;
+  background: var(--beige); color: var(--beige-ink);
+  border: 1px solid var(--beige-line);
+  font-family: var(--font-kai); font-size: 13px; letter-spacing: 1px;
+}
+.hd-deputy-btn:hover { background: var(--beige-hi); border-color: var(--beige-hi); }
+.hd-deputy-btn.ghost { background: transparent; color: #d8c9a8; border-color: var(--line-strong); }
+.hd-deputy-btn.ghost:hover { color: var(--ink); border-color: var(--gold); }
+
+/* 副将详情 / 副将选择器 */
+.deputy-tip {
+  margin: 4px 0 10px;
+  padding: 6px 10px;
+  border-left: 2px solid var(--gold);
+  background: var(--panel-2);
+  color: var(--text-dim);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.hd-deputy-badge {
+  margin-left: 6px; padding: 0 5px; border-radius: 4px;
+  background: var(--gold); color: #241c0e; font-size: 11px; font-family: var(--font-sans);
+}
+.pt-mix {
+  margin-left: 6px; font-size: 11px; color: var(--gold-bright);
+  border: 1px solid var(--line-strong); border-radius: 4px; padding: 0 4px;
+}
+.deputy-search {
+  width: 100%; margin-bottom: 10px; padding: 7px 10px;
+  background: var(--panel-2); color: var(--text);
+  border: 1px solid var(--line); border-radius: 6px; font-size: 13px;
+}
+.deputy-search:focus { outline: none; border-color: var(--gold); }
+.deputy-grid {
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 7px; padding: 2px; min-height: 220px; max-height: 52vh;
+  overflow-y: auto; align-content: start; grid-auto-rows: min-content;
+}
+.deputy-empty { grid-column: 1 / -1; padding: 24px; text-align: center; color: var(--text-dim); font-size: 13px; }
+
+/* 宝物弹窗：词条池未解出的补录宝物提示 */
+.tp-empty {
+  margin: 0 0 10px;
+  padding: 9px 12px;
+  border: 1px dashed rgba(201, 168, 106, 0.45);
+  border-radius: 6px;
+  color: #c9b98f;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ══ 武将详情页·全屏仿游戏版式（2026-11-07 二次改版） ══
+   全屏覆盖：左侧全身大图 cover 铺满，右栏浮动面板；标题栏取消，
+   详情/配点/兵种/方案 页签落在右栏顶部；左缘竖排 势力 / 名字 / 星级；
+   宝物卡并入战法栏第 4 格。无大图的武将用 470×592 卡面 cover 铺满（不再小图居中）。 */
+.hero-detail-full.modal-mask { padding: 0; background: #080706; align-items: stretch; justify-content: stretch; }
+.hero-detail-full .hero-detail-modal {
+  width: 100vw; height: 100dvh; max-width: none; max-height: none;
+  border: 0; border-radius: 0; background: #080706; box-shadow: none;
+  display: block; position: relative; overflow: hidden;
+}
+
+/* 顶栏：只留页签 + 关闭，绝对浮在右栏上方 */
+.hero-detail-full .hero-detail-modal .m-head {
+  position: absolute; top: 0; right: 0; z-index: 7;
+  width: min(46vw, 680px); margin: 0;
+  display: flex; align-items: center; justify-content: flex-end; gap: 12px;
+  padding: 14px 20px 0; background: transparent; border: 0;
+}
+.hero-detail-full .hero-detail-modal .m-head h3 { display: none; }
+.hero-detail-full .hero-detail-modal .m-head .hd-tabs-slot { margin: 0; }
+
+/* 右栏改为浅灰底（用户 2026-11-08 口径）：「右边背景不要纯黑色，用浅灰色」。
+   作用域内重定义主题变量，文字 / 卡片 / 分割线整体翻转为深色系，暗色区域只保留左侧大图。 */
+.hero-detail-full .hero-detail-modal {
+  --panel: #1e1f24;
+  --panel-2: #26272d;
+  --panel-3: #17181c;
+  --line: rgba(255, 255, 255, .10);
+  --line-strong: rgba(255, 255, 255, .20);
+  --ink: #efe9dc;
+  --text: #e8e2d5;
+  --text-dim: #a9a49a;
+  --text-weak: #9a948a;
+  --gold: #cbbd90;
+  --gold-bright: #e2d3a4;
+  --red: #d99a92;
+  --red-soft: #45302c;
+  --blue-soft: #2a3644;
+  --green: #9fbf86;
+}
+
+.hero-detail-full .hero-detail-modal .hd-body { position: absolute; inset: 0; padding: 0; overflow: hidden; }
+.hero-detail-full .hero-detail-modal .hd-split { display: block; position: relative; height: 100%; min-height: 0; }
+
+/* 左侧：铺满的大图层 */
+.hero-detail-full .hd-side { position: absolute; inset: 0; display: block; }
+.hero-detail-full .hd-stage {
+  position: absolute; inset: 0; border: 0; min-height: 0; overflow: hidden;
+  background: radial-gradient(120% 80% at 28% 8%, #2a231b 0%, #14110e 52%, #080706 100%);
+  box-shadow: none;
+}
+.hero-detail-full .hd-bigfill {
+  position: absolute; inset: -4%; z-index: 0;
+  background-repeat: no-repeat; background-position: center; background-size: cover;
+  filter: blur(36px) brightness(.30) saturate(1.15);
+}
+.hero-detail-full .hd-bigart {
+  position: absolute; inset: 0; z-index: 1;
+  background-repeat: no-repeat; background-position: 18% bottom; background-size: auto 100%;
+  filter: saturate(1.06) brightness(1.07) drop-shadow(0 12px 40px rgba(0,0,0,.7));
+}
+
+.hero-detail-full .hd-veil {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(12,12,16,0) 38%, rgba(12,12,16,.28) 50%, rgba(14,14,18,.55) 62%, rgba(14,14,18,.66) 100%);
+}
+/* 场景大卡（带战场背景的全身图）：整块铺满，有它就不用透明大图 */
+.hero-detail-full .hd-scene-fill {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-repeat: no-repeat; background-position: center 28%; background-size: cover;
+  filter: blur(56px) brightness(.32) saturate(.85);
+  transform: scale(1.14);
+}
+/* 主图不做裁切：整张显示（contain），不足的空白由上面的模糊底填 */
+.hero-detail-full .hd-scene {
+  position: absolute; inset: 0; z-index: 1;
+  background-repeat: no-repeat; background-position: left center; background-size: contain;
+  /* 图的右缘按「contain 后实际边界」渐隐：边界 = min(100vw,100vh)，提前 320px 开始化开 */
+  -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(min(100vw, 100vh) - 320px), transparent calc(min(100vw, 100vh)));
+  mask-image: linear-gradient(90deg, #000 0, #000 calc(min(100vw, 100vh) - 320px), transparent calc(min(100vw, 100vh)));
+}
+/* 左缘竖排标签的底部渐隐，保证亮背景上可读 */
+.hero-detail-full .hd-stage .hd-side-labels::before {
+  content: ''; position: absolute; inset: -24px -78px -24px -28px; z-index: -1;
+  background: linear-gradient(90deg, rgba(8,7,6,.90) 0%, rgba(8,7,6,.72) 52%, rgba(8,7,6,0) 100%);
+}
+.hero-detail-full .hd-stage.has-scene .hd-bigfill,
+.hero-detail-full .hd-stage.has-scene .hd-bigart { display: none; }
+
+/* 左缘竖排：势力 / 名字 / 星级 */
+.hero-detail-full .hd-stage .hd-side-labels {
+  position: absolute; left: 24px; top: 20px; bottom: 20px; z-index: 5;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
+}
+.hero-detail-full .hd-stage .hd-side-name {
+  writing-mode: vertical-rl; text-orientation: upright;
+  font-size: 27px; line-height: 1.15; letter-spacing: 7px; color: #fff6e2;
+  text-shadow: 0 2px 18px rgba(0,0,0,.95);
+}
+.hero-detail-full .hd-stage .hd-stars {
+  position: static; writing-mode: vertical-rl;
+  font-size: 15px; letter-spacing: 5px; padding: 0; background: none; text-align: center;
+  color: #f0c860; text-shadow: 0 2px 12px rgba(0,0,0,.9);
+}
+
+/* 右栏面板：淡入黑底，内容可滚 */
+.hero-detail-full .hero-detail-modal .hd-main {
+  position: absolute; top: 0; right: 0; bottom: 64px; z-index: 4;
+  width: min(46vw, 680px);
+  padding: 62px 28px 24px;
+  overflow-y: auto; overflow-x: hidden;
+  display: flex; flex-direction: column;
+  /* 内容不超高时居中；一旦超高就退回顶部（safe center），否则两侧同时被裁、还能看到内容叠到画像上
+     （2026-11-08 安卓横屏报障：矮视口 + 系统大字号 ⇒ 内容溢出，居中后顶部行被切、叠在大图上） */
+  justify-content: center;
+  justify-content: safe center;
+  background: linear-gradient(90deg, rgba(18,18,22,0) 0%, rgba(18,18,22,.34) 5%, rgba(18,18,22,.80) 13%, rgba(18,18,22,.92) 22%, rgba(18,18,22,.94) 100%);
+}
+.hero-detail-full .hero-detail-modal .m-foot {
+  position: absolute; right: 0; bottom: 0; z-index: 6;
+  width: min(46vw, 680px); margin: 0;
+  display: flex; align-items: center; justify-content: flex-end; gap: 10px;
+  padding: 12px 20px 15px; border: 0;
+  background: linear-gradient(0deg, rgba(18,18,22,.98) 62%, rgba(18,18,22,.90) 100%);
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+/* 浅灰右栏下仍写死暗底的局部元素，逐个翻亮 */
+.hero-detail-full .hd-treasure { background: rgba(38,39,45,.88); }
+.hero-detail-full .hd-treasure .ts-img { background: #14151a; }
+.hero-detail-full .hd-treasure .ts-rarity { color: #eddb9c; }
+.hero-detail-full .hd-treasure .ts-rarity i { color: #a8c2da; }
+.hero-detail-full .hd-cs { background: rgba(255, 255, 255, .07); }
+.hero-detail-full .hd-cs.filled { background: linear-gradient(180deg, rgba(216, 186, 118, .18), rgba(255, 255, 255, .06)); }
+.hero-detail-full .hd-cs .cs-flag { color: #b9d6a8; border-color: #7d9a70; }
+
+/* 顶行（等级 / 携带兵力 / 陈寿）不许掉行，「等级」不被折成两行 */
+.hero-detail-full .hd-level-row { flex-wrap: nowrap; gap: 8px; }
+.hero-detail-full .hd-level-row .lbl { white-space: nowrap; flex: 0 0 auto; }
+.hero-detail-full .hd-level-row input[type="number"] { width: 62px; flex: 0 0 auto; }
+.hero-detail-full .hd-level-row .hd-troops { white-space: nowrap; }
+@media (max-width: 1280px) {
+  .hero-detail-full .hd-level-row .tip { display: none; }
+}
+
+/* 战法栏：3 格战法 + 宝物第 4 格等宽 */
+.hero-detail-full .skills-row { display: flex; gap: 8px; align-items: stretch; }
+.hero-detail-full .skills-row > * { flex: 1 1 0; min-width: 0; }
+.hero-detail-full .skills-row .hd-treasure-wrap {
+  position: relative; flex: 1 1 0; min-width: 0; height: auto; min-height: 96px; align-self: stretch;
+}
+.hero-detail-full .skills-row .hd-treasure {
+  position: absolute; inset: 0; width: 100%; height: 100%; max-height: none;
+}
+.hero-detail-full .hd-side-col { display: none; }
+
+/* 面板内容不许被纵向挤扁：一律按自身高度排，超出就走滚动 */
+.hero-detail-full .hero-detail-modal .hd-main > * { flex: 0 0 auto; }
+
+/* ══ 宽屏五五开分屏（用户 2026-11-08 口径） ══
+   用户原话：「左右分屏正确了，但是应该是 55 开比例，左边大图的」。
+   旧版是「全屏大图 + 右栏 min(46vw,680px) 浮动面板」，1320 宽时左侧只露出约 22%（其余被面板的横向渐变吃掉）。
+   现改成左列 50% / 右列 50% 两栏硬分：左半屏只放立绘（模糊铺底仍铺满左半屏、立绘 contain 完整不裁、垂直居中），
+   右半屏从 50% 起铺到屏右，页签贴顶、按钮贴底。
+   ⚠️ 只按宽度命中（2026-11-09 用户报障后改）：旧版带 and (min-height: 481px) 下限（为保住 844×390 基线而加）。
+   但矮横屏正是真机横屏的常态（CSS 视口高度普遍 360~414，如 dpr=3 的 2640×1216 → 880×405）：
+   加高度门槛会让真机横屏全部落回 22% 窄条（用户 2026-11-09 报障现场），故只按宽度命中 ——
+   844×390 这类矮横屏从此也是五五开，这是预期行为；右列高度不够就靠下面 max-height 档压字号 / 内距解决，
+   不要再把高度门槛加回来。 */
+@media (min-width: 761px) {
+  /* 左列收到半屏；舞台（含模糊铺底）跟着只铺左半屏 */
+  .hero-detail-full .hd-side { right: auto; width: 50%; }
+  .hero-detail-full .hd-stage { border-right: 1px solid rgba(255, 255, 255, .06); }
+  /* 立绘：contain 撑满左半屏高度、水平居中，整张可见（旧版按整屏 contain + 右缘遮罩，等于被面板切掉一半） */
+  .hero-detail-full .hd-bigart,
+  .hero-detail-full .hd-scene {
+    background-size: contain;
+    background-position: center center;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  /* 左半屏内的压暗只在右缘一窄条，别把人物压黑 */
+  .hero-detail-full .hd-veil {
+    background: linear-gradient(90deg, rgba(12,12,16,0) 64%, rgba(14,14,18,.30) 88%, rgba(14,14,18,.58) 100%);
+  }
+  /* contain 后上下（或左右）会留白，模糊铺底稍微提亮，让留白读作氛围而不是空黑 */
+  .hero-detail-full .hd-scene-fill { filter: blur(56px) brightness(.46) saturate(.95); }
+  .hero-detail-full .hd-bigfill { filter: blur(36px) brightness(.42) saturate(1.15); }
+  /* 右列：页签 / 面板 / 底栏统一从 50% 起铺到屏右 */
+  .hero-detail-full .hero-detail-modal .m-head,
+  .hero-detail-full .hero-detail-modal .hd-main,
+  .hero-detail-full .hero-detail-modal .m-foot {
+    left: 50%; right: 0; width: auto;
+  }
+  /* 面板左缘只留一小段过渡（原本要化开压在图上的一整条，现在两栏已分开） */
+  .hero-detail-full .hero-detail-modal .hd-main {
+    background: linear-gradient(90deg, rgba(18,18,22,.72) 0%, rgba(18,18,22,.92) 5%, rgba(18,18,22,.95) 100%);
+  }
+}
+
+/* 矮视口（安卓横屏 / 小窗口）：收紧间距与字号，让一屏装得下 */
+@media (max-height: 700px) {
+  .hero-detail-full .hero-detail-modal .hd-main { padding: 52px 22px 22px; }
+  .hero-detail-full .hd-stage .hd-side-name { font-size: 22px; letter-spacing: 5px; }
+  .hero-detail-full .hd-attr-grid { gap: 6px; }
+  .hero-detail-full .skills-row .hd-treasure-wrap { min-height: 84px; }
+}
+/* 极端矮视口（手机横屏 + 浏览器地址栏）：先让位非关键元素，剩下交给滚动 */
+/* 矮视口可滚动提示：底部内阴影（不随内容滚） */
+@media (max-height: 640px) {
+  .hero-detail-full .hero-detail-modal .hd-main { box-shadow: inset 0 -18px 18px -18px rgba(0,0,0,.85); }
+}
+
+@media (max-height: 480px) {
+  .hero-detail-full .hd-cs { display: none; }
+  .hero-detail-full .hd-main { padding-top: 42px; }
+  /* 矮屏幕把战法/宝物格压扁，尽量一屏装完 */
+  .hero-detail-full .skills-row .hd-treasure-wrap { min-height: 62px; }
+  .hero-detail-full .skill-slot-row { min-height: 62px; padding: 6px 8px; gap: 6px; }
+  .hero-detail-full .skill-slot-row .sk-icon { width: 34px; height: 34px; }
+  .hero-detail-full .hd-stats { gap: 5px; }
+  .hero-detail-full .hd-stats > * { padding: 5px 8px; }
+}
+@media (max-height: 560px) {
+  .hero-detail-full .hero-detail-modal .hd-main { padding: 46px 18px 20px; }
+  .hero-detail-full .hd-stage .hd-side-name { font-size: 19px; letter-spacing: 3px; }
+  .hero-detail-full .hd-stage .hd-stars { font-size: 12px; letter-spacing: 3px; }
+  .hero-detail-full .hd-level-row { gap: 6px; }
+}
+
+/* 窄屏（手机竖屏）：保持「左画像 / 右详情」双列
+   —— 与桌面共用同一套绝对定位骨架，只把左右分界从固定的 min(46vw,680px) 换成随视口收缩的
+   clamp(124px,33vw,172px)（390→129 / 430→142 / 760→172）：左列只放竖排姓名/星级 + contain 立绘
+   （模糊铺底保留），右列吃掉剩余宽度、页签贴顶、按钮贴底、内容自己滚。
+   宽屏那套「不超高才居中」的 safe center 口径不适用于竖屏 —— 窄屏一律顶对齐，避免中部留白。 */
+@media (max-width: 760px) {
+  .hero-detail-full { --hd-left-w: clamp(124px, 33vw, 172px); }
+
+  /* 左列：舞台本身收成一条竖栏（原来铺满整屏再被面板盖住，等于多混了一层半透明） */
+  .hero-detail-full .hd-side { right: auto; width: var(--hd-left-w); }
+  .hero-detail-full .hd-stage { border-right: 1px solid rgba(255, 255, 255, .07); }
+  /* 立绘 contain 不裁切：给元素本身一个「与画幅同比例」的小盒子（不是铺满整列），
+     竖栏里就成了一张带边框的人物卡 —— 上下左右都不会硬切画心。
+     场景卡 1008×1008 是方图，人物立绘 470×592，两套比例分开写。 */
+  .hero-detail-full .hd-bigart,
+  .hero-detail-full .hd-scene {
+    left: 8px; right: 8px; top: 44%; bottom: auto; transform: translateY(-50%);
+    height: auto; background-size: contain; background-position: center;
+    border: 1px solid rgba(203, 189, 144, .28); border-radius: 10px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, .62);
+    -webkit-mask-image: none; mask-image: none;
+  }
+  .hero-detail-full .hd-bigart { aspect-ratio: 470 / 592; }
+  .hero-detail-full .hd-scene { aspect-ratio: 1; }
+  /* 竖栏很窄：横向渐变会把立绘右半压黑，改成只压顶部（给竖排姓名让出对比度） */
+  .hero-detail-full .hd-veil {
+    background: linear-gradient(180deg, rgba(12,12,16,.55) 0%, rgba(12,12,16,.12) 26%, rgba(12,12,16,0) 54%, rgba(14,14,18,.24) 88%, rgba(14,14,18,.52) 100%);
+  }
+  /* 竖栏本身就是一整条背景：模糊铺底略微提亮，否则整列接近纯黑、只剩一张小卡浮着 */
+  .hero-detail-full .hd-scene-fill { filter: blur(34px) brightness(.46) saturate(.92); }
+  .hero-detail-full .hd-bigfill { filter: blur(28px) brightness(.40) saturate(1.08); }
+  .hero-detail-full .hd-stage .hd-side-labels { left: 10px; top: 12px; bottom: auto; gap: 8px; }
+  .hero-detail-full .hd-stage .hd-side-name { font-size: 19px; letter-spacing: 4px; }
+  .hero-detail-full .hd-stage .hd-stars { font-size: 12px; letter-spacing: 3px; }
+
+  /* 右列：详情面板从「左列右缘」起铺到屏右，自己纵向滚 */
+  .hero-detail-full .hero-detail-modal .hd-main {
+    left: var(--hd-left-w); right: 0; top: 0; bottom: 64px;
+    width: auto; height: auto; padding: 46px 12px 16px;
+    justify-content: flex-start;
+    background: linear-gradient(180deg, #1d1d22 0%, #18181d 64%, #141418 100%);
+  }
+  /* 顶幕是给「面板压在整屏大图上」准备的；双列后左列已是独立竖栏，不再需要 */
+  .hero-detail-full .hero-detail-modal .hd-main::before { display: none; }
+  .hero-detail-full .hero-detail-modal .m-head { left: var(--hd-left-w); right: 0; width: auto; padding: 8px 10px 0; background: transparent; }
+  .hero-detail-full .hero-detail-modal .m-foot { left: var(--hd-left-w); right: 0; width: auto; padding: 8px 10px 10px; gap: 8px; }
+  /* 页签：右列只剩 ~250px，收紧内距让四个仍在一行 */
+  .hero-detail-full .hd-tabs { gap: 0; }
+  .hero-detail-full .hd-tab { padding: 5px 9px; font-size: 13px; letter-spacing: 1px; }
+  /* 陈寿特性格：max-height:480 那一档为省高度把它藏了，但双列后右列有富余 ——
+     小机型横屏（667×375 / 736×414）仍要能设特性。只在双列口径里恢复，宽屏口径不受影响 */
+  .hero-detail-full .hd-cs { display: flex; }
+  /* 行内容器允许换行：宁可多一行，也别顶出右列被裁掉 */
+  .hero-detail-full .hd-level-row { flex-wrap: wrap; gap: 6px 8px; }
+  .hero-detail-full .hd-redness { flex-wrap: wrap; gap: 4px 8px; }
+  /* 四格属性：保留两列，收字号/内距换宽度，保证 攻/防/谋/速 都在首屏 */
+  .hero-detail-full .hd-stats { gap: 4px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-detail-full .hd-stats > * { padding: 4px 6px; gap: 5px; }
+  .hero-detail-full .hd-stats .k { width: 24px; font-size: 11px; letter-spacing: 1px; }
+  .hero-detail-full .hd-stats .v { font-size: 14px; }
+  .hero-detail-full .hd-stats .g { font-size: 10px; }
+  .hero-detail-full .skills-row { gap: 6px; }
+  .hero-detail-full .hd-meta-row { gap: 4px 10px; }
+}
+
+/* 极窄（≤430px，主流手机竖屏）：右列再省一档字号与内距，
+   免得 4 个战法格 + 四格属性把「速度」挤出首屏 */
+@media (max-width: 430px) {
+  .hero-detail-full .hero-detail-modal .hd-main { padding: 44px 10px 14px; }
+  .hero-detail-full .hero-detail-modal .m-head { padding: 6px 8px 0; }
+  .hero-detail-full .hero-detail-modal .m-foot { padding: 8px 8px 9px; gap: 6px; }
+  .hero-detail-full .hd-tab { padding: 4px 7px; font-size: 12.5px; letter-spacing: 0; }
+  .hero-detail-full .hd-stage .hd-side-name { font-size: 17px; letter-spacing: 3px; }
+  .hero-detail-full .hd-stats .v { font-size: 13px; }
+  .hero-detail-full .hd-stats .g { font-size: 9.5px; }
+  .hero-detail-full .skills-row .hd-treasure-wrap { min-height: 78px; }
+  .hero-detail-full .skill-slot-row { padding: 6px 4px 5px; }
+}
+
+/* 极窄（≤380px，如 360×640 的老安卓；必须排在 ≤430 档之后，否则页签内距被它盖回去）：右列只剩 ~210px，两列排不下四格属性
+   （数值列会被裁），退成一列四行 —— 纵向多 60px，仍在首屏内 */
+@media (max-width: 380px) {
+  .hero-detail-full .hd-stats { grid-template-columns: 1fr; }
+  .hero-detail-full .hd-stats .k { width: 30px; }
+  /* 四个页签 + 关闭键在这一档会打架，页签再收一格 */
+  .hero-detail-full .hero-detail-modal .m-head { gap: 8px; }
+  .hero-detail-full .hd-tab { padding: 4px 4px; font-size: 12px; letter-spacing: 0; }
+}
+
+/* ===== 武将外观 · 动态皮肤（2026-11-17） =====
+   素材来自客户端 card_2d_videos/big_<hid>_<n>.nbs（VP9），解成 webm 放 public/skins/。 */
+/* 左栏：选中皮肤时改用视频铺满，压掉原立绘的「贴底 + 提亮」定位与滤镜 */
+.hero-detail-full .hd-bigart.has-skin { background: none; filter: none; }
+.hero-detail-full .hd-stage.has-scene .hd-bigart.has-skin { display: block; }
+.hero-detail-full .hd-skin-video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 30%;
+  background: #0b0a0c;
+}
+
+/* 配将页槽位卡：立绘位置换成同名动效（56px 宽，用 216×314 的小尺寸 webm） */
+.slot-card .slot-art-video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+  display: block;
+}
+
+/* 战报页武将卡：复用 .sh-art 的定位（absolute/inset/object-fit 已在 .sum-hero .sh-art 里） */
+.sum-hero .sh-art { background: #0b0a0c; }
+
+/* 右栏 · 外观板块 */
+.hd-skin { display: flex; flex-direction: column; gap: 12px; }
+.hd-skin-title { font-size: 15px; color: #e8dfcc; letter-spacing: .06em; }
+.hd-skin-title .hs-hint { margin-left: 10px; font-size: 12px; color: #8c857a; letter-spacing: 0; }
+.hd-skin-list {
+  display: flex; gap: 12px; overflow-x: auto; overflow-y: hidden;
+  padding: 2px 2px 10px; scrollbar-width: thin; scroll-behavior: smooth;
+}
+.hd-skin-card {
+  flex: 0 0 auto; width: 118px; padding: 6px 6px 8px;
+  display: flex; flex-direction: column; align-items: center; gap: 5px;
+  background: rgba(24, 22, 20, .72); border: 1px solid rgba(255, 255, 255, .10);
+  border-radius: 4px; cursor: pointer; transition: border-color .15s, transform .15s;
+  font: inherit; color: inherit;
+}
+.hd-skin-card:hover { border-color: rgba(200, 165, 91, .55); transform: translateY(-2px); }
+.hd-skin-card.on {
+  border-color: #c8a55b;
+  box-shadow: inset 0 0 0 1px rgba(200, 165, 91, .45), 0 6px 18px rgba(0, 0, 0, .5);
+}
+.hd-skin-thumb {
+  width: 100%; aspect-ratio: 3 / 4; overflow: hidden;
+  border-radius: 3px; background: #12100f;
+}
+.hd-skin-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hd-skin-name { font-size: 12px; color: #ddd3c0; text-align: center; line-height: 1.3; }
+.hd-skin-cost { font-size: 11px; color: #c8a55b; }
+.hd-skin-live {
+  font-size: 10px; padding: 1px 5px; border-radius: 2px;
+  border: 1px solid rgba(200, 165, 91, .6); color: #c8a55b;
+}
+.hd-skin-note { font-size: 12px; color: #8c857a; }
+.hd-skin-cg {
+  margin-left: 8px; padding: 2px 9px; font: inherit; font-size: 11px; cursor: pointer;
+  background: rgba(200, 165, 91, .1); color: #c8a55b;
+  border: 1px solid rgba(200, 165, 91, .45); border-radius: 2px; transition: background .16s;
+}
+.hd-skin-cg:hover { background: rgba(200, 165, 91, .22); }
+.hd-skin-empty { padding: 44px 0; text-align: center; color: #8c857a; font-size: 13px; line-height: 2; }
+.hd-skin-empty span { font-size: 12px; opacity: .75; }
+
+/* 皮肤 CG 弹层（横版 1024×576） */
+.hd-cg-mask {
+  position: fixed; inset: 0; z-index: 10020; display: grid; place-items: center;
+  background: rgba(6, 5, 8, .88); backdrop-filter: blur(3px); animation: hd-cg-in .18s ease;
+}
+@keyframes hd-cg-in { from { opacity: 0; } to { opacity: 1; } }
+.hd-cg-box {
+  position: relative; width: min(1024px, 92vw);
+  border: 1px solid rgba(200, 165, 91, .35); background: #08070a;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .7);
+}
+.hd-cg-box video { display: block; width: 100%; height: auto; }
+.hd-cg-cap {
+  position: absolute; left: 14px; bottom: 10px; font-size: 12px; color: #cbbfa6;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, .9); pointer-events: none;
+}
+.hd-cg-close {
+  position: absolute; right: -14px; top: -14px; width: 30px; height: 30px; line-height: 1;
+  font-size: 20px; color: #e8dfcc; cursor: pointer; border-radius: 50%;
+  background: rgba(20, 18, 22, .92); border: 1px solid rgba(200, 165, 91, .4);
+}
+.hd-cg-close:hover { color: #fff; border-color: rgba(200, 165, 91, .8); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hd-skin-card { transition: none; }
+  .hero-detail-full .hd-skin-video { display: none; }   /* 关动效时退回封面静态图 */
+  .slot-card .slot-art-video { display: none; }         /* 同上：槽位卡退回封面 */
+  .sum-hero video.sh-art { display: none; }             /* 战报卡退回封面（底色由 .sh-art 的 background 兜底） */
 }

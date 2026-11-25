@@ -42,9 +42,15 @@ export interface TreasureBuildCtx {
 /** 单个词条 → 状态模板（value 已按等级/自选数值算好） */
 type Mechanic = (value: number, effect: TreasureEffectDef, ctx: TreasureBuildCtx) => CreateStatus[];
 
-/** 攻击/防御/谋略/速度：数值型属性提升 */
-const attr = (type: 'attack_buff' | 'defense_buff' | 'strategy_buff' | 'speed_buff', percent = false) =>
-  (v: number): CreateStatus[] => [{ type, amount: v, ...(percent ? { percent: true } : {}), duration: FOREVER } as CreateStatus];
+/** 攻击/防御/谋略/速度：属性提升。
+ *  「是不是百分比」只能取自数据 `effect.unit` —— 同一个词条名在不同宝物上量纲不同
+ *  （天资：仁风三阶 = 谋略 8.0%；天问二阶 = 谋略 2.5 点），一律按百分比会把点数条目放大成百分比。
+ *  显式传参优先，供 OVERRIDES 保留已有明确意图的写法。 */
+const attr = (type: 'attack_buff' | 'defense_buff' | 'strategy_buff' | 'speed_buff', percent?: boolean) =>
+  (v: number, effect?: TreasureEffectDef): CreateStatus[] => {
+    const asPercent = percent ?? (effect?.unit === 'percent');
+    return [{ type, amount: v, ...(asPercent ? { percent: true } : {}), duration: FOREVER } as CreateStatus];
+  };
 
 /** 造成伤害提高（可按 来源/战法类型/伤害类型/DoT 类型 限定） */
 const boost = (
@@ -236,6 +242,37 @@ const MECHANICS: Record<string, Mechanic> = {
     { type: 'no_attack', duration: 1 } as CreateStatus,
     { type: 'treasure_basic_sweep', duration: FOREVER } as CreateStatus,
   ],
+  // 虎啸（山君 1126 三阶）：行动时，主战法每为自身提供 30.0% 的攻击伤害提升，本回合追击战法发动率 +1%
+  // 包内：40012901 eff 122 → 41012901 eff 131（-1000004 追击）/ precondition 7030（攻击伤害提升）/ rounds 1，
+  // add_count_max 0 = 不叠层 → 每个行动回合按当时的面板合计重算，只覆盖本回合（见 triggerTreasureActStart）。
+  // （无需准备阶段状态：数值在每次行动开始时现算，见 `triggerTreasureActStart`）
+  虎啸: () => [],
+  // 观星（天问 1129 三阶）：自身首次发动主战法施加的犹豫效果有 40% 几率额外持续 1 回合
+  // 包内：40012801 eff 122 prob 40/40 → 41012801 eff 405（持续回合+1）condition 35011（犹豫）+ 41012802 eff 152（移除）
+  观星: (v) => [
+    {
+      type: 'control_extend',
+      charges: 1,
+      chance: v / 100,
+      onlyTypes: ['hesitation'],
+      mainSkillOnly: true,
+      duration: FOREVER,
+    } as CreateStatus,
+  ],
+  // 奋武（奋髯 1135 三阶）：自身普通攻击伤害提升效果 > 250.0% 时，普通攻击无视规避
+  // 包内：40013001 eff 122 calc_pos 993 condition 36250 → 41013001 eff 515（无视规避）
+  奋武: (v) => [{ type: 'ignore_evasion', requireBasicBoostOver: v / 100, duration: FOREVER } as CreateStatus],
+  // 穿影（镂影 1132 三阶）：自身每对敌军造成 4 次攻击伤害 → 下次行动前对 3 距离内敌军单体发动 1 次攻击（伤害率 20%）
+  // 包内：40013101 eff 151（计次 4）→ 41213101 eff 301 const 20（伤害率 20%，intel 0 无成长）
+  穿影: (v, effect) => [
+    {
+      type: 'treasure_strike_count',
+      every: effect.numbers[0] ?? 4,
+      rate: v,
+      maxDistance: effect.numbers[1] ?? 3,
+      duration: FOREVER,
+    } as CreateStatus,
+  ],
   // 威势（锻造词条）：受到初始统率值低于自身武将的所有伤害降低（按当前伤害来源统率判定）
   威势: (v) => [
     { type: 'damage_reduce', rate: v / 100, duration: FOREVER, enemyCostBelowSelf: true } as CreateStatus,
@@ -259,6 +296,12 @@ const OVERRIDES: Record<string, Mechanic> = {
   '1060:2': (v) => boost({ damageSource: 'basic' }, 4)(v),
   // 天资：仁风为「谋略属性提高 8.0%」（百分比）
   '1054:3': attr('strategy_buff', true),
+  // 骁锐：山君二阶为「攻击属性提高 1.0%」（百分比；与 1066 等的点数型同名不同义）
+  '1126:2': attr('attack_buff', true),
+  // 英才：镂影二阶为「攻击、谋略属性提高 1.0」（点数，与铭鸿/神锋同型）
+  '1132:2': (v) => [...attr('attack_buff')(v), ...attr('strategy_buff')(v)],
+  // 不移：奋髯二阶为「受所有伤害降低 1.0%」（不限攻击伤害）
+  '1135:2': reduce({}),
 };
 
 /** 尚未落地的词条（分档见方案 §3.2）；键 = 词条名，值 = 需要的机制 */

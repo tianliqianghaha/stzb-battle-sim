@@ -8,6 +8,10 @@
 > **思考模式路由 · 工具面分档（2026-10-05，S1–S4 落地）**：来源 = DSH 预设 `dsh-routing-suite` 的 router-standard v1.20，**只搬结构机制、不搬 persona 分带**。链路：`web/advisor/router.ts`（档位 / 锚定 / 线上工具面的**单一真源** + 目录渲染 + `toolSurfaceChars`）→ `loop.ts`（每轮按档裁工具面 / **分档门**：未开放调用拒绝回灌、**不进 evidence、不扣预算** / **首轮锚定**：会话没跑过工具时首请求只发 4 个 / **近场引导**贴在本轮提问**之后**）→ `tools.ts`（+3 常驻 `tools_catalog` / `tools_help` / `route_task`）→ `memory.ts`（`session.task` 静态回显）→ `view.ts` 传 `anchor` / `taskText`；`advisorLab.ts` 有**路由面板**（等价 `dev_router_status`）。**实测**：首轮锚定 4 个 / 1,066 字符（−93%）、默认档 16 个 / 8,757（−44%）、配将档 20 个 / 15,228（全量 22 个 / 15,754）。**已验证**：真机无头 7/7（`node scripts/_advisor_routing_shot.mjs`，从出站请求体取证 + 面板截图）、可达性审计（`npx tsx scripts/_advisor_route_audit.mts`：期望工具不可达 **0/10**、锚定挡首问 **5/10**、**便宜路 `skill_detail` 仍在 base 档 ⇒ 分档挡不住「人肉搜索器」**）、假模型 A/B（`npx tsx scripts/_advisor_route_ab.mts`：手搓型 50→50 次 `skill_detail`，听话型 `optimize_*` 20→8 次）。**真模型 A/B/C 已跑（2026-10-05/06，deepseek-chat）**：三臂**通过率一致 3/10**、`skill_detail` 只有 0~2 次 ⇒ **工具面不是瓶颈、「人肉搜索器」未复现**（S1 的原始动机不成立，分档收益退化为省钱：token −26.6% / 真跑场次 −33.8%；锚定臂 −51.4% 场次）。失分集中在**引用纪律**（表格/重复数字没带 `[[ev-…]]`）与**边界声明**（下架 / 控制型在木桩口径量不出 / 「最强」没先分木桩 vs 实战）。**边界那三条已补进 `SYSTEM_PROMPT` 与近场引导且验证有效**（对应用例连续两次跑转绿，§16.19–16.21）；**引用那条（也是 13 字）改完**跑三次是 1/3/3 条失败、改前基线 2 条 ⇒ **效果落在噪声里、没测出来**（别再拿单次当结论）。**当前唯一失分面 = 引用**（2 条/9）。**引用口径已于 2026-10-06 改准**（§16.23）：判据从「每次出现都要带」改成「**每个数值至少有一处带**」——案底是 0101 那次把 `34443`（正文带过引用、表格重复 3 次）记成裸报，**误伤可溯源数字**；改后预演：`diagnose-weak` 应转绿、`optimize-mates`（21640/21525 一次都没引用）**仍应红**。`SYSTEM_PROMPT`/近场引导/自检回灌文案已同步改成同一口径。**已落地「交付前自检」**（§16.22：模型给出终稿时若有裸报大数字 → **回灌一次、允许重答一轮**；只查**剥掉围栏 JSON 的正文**；只自纠一轮；`TurnInput.noSelfCorrect` / `--no-selfcorrect` 可关作 A/B 臂；`turn.selfCorrect` + 路由面板 + 记分卡头部「自检触发 N 次」都能看到）。0101 实测：自检触发 4 次、补了 6 个数字、**6/9**（与不开时同分）。**已知假阳性类**：额度/上限类数字（如「上限 60000 场」）也会被点名，模型应按回灌文案说成口径而非数据。**这条线已于 2026-10-06 收口**（结论 / 不做清单 / 接手入口见 **§16.24**；10 次真模型跑的台账见 **`docs/顾问评测-索引.md`**）。**收口结论**：结构机制（分档 / 引导 / 锚定 / 自检）都落地且有证据；行为收益里「边界声明」被证实、「省钱」被证实（token −26.6% / 真跑场次 −33.8%）、「纠正人肉搜索」被**证伪**（`skill_detail` 只 0~2 次 / 85~96 次调用）、「引用纪律」只剩模型侧不肯做（产品侧已由关 2 兜住）。**通过率轨迹 3 → 5 → 6（分母 9）**，每一步都能指到具体改动。**仍未做**：① `--no-selfcorrect` 对照臂；② 判据改口径（§16.23）后的复跑（预演预期 7/9）——两件可合并为一次 `npx tsx scripts/advisor_eval.mts`。**别重复做的事**：往 persona 层走、把 `skill_detail` 从 `search` 档摘掉（依据被证伪）、继续给引用规则加字（效果在噪声里）、再放宽判分口径（会放行真编数）。**已知噪声**：单条用例三臂结果会不一致，看趋势别拿单条当结论；`degraded-mode` 是仅假传输用例；用例前置事实由 `preconditions` 测试守住（库一改就红）。
 >
 > **战斗诊断工具（2026-09-29，贡献排名 → 因果归因）**：`src/engine/diagnosis.ts`（只读分析：**因果账本** = 由伤害事件 `modifiers` 反解基线 `(base+main) / clamp(1+Σcaused+Σtaken−Σreduce, 0.1)`，逐来源给出绝对贡献；+ 效果覆盖率 / 被控回合 / 兵种克制应交与实交 / 技能顺序缺口 / 主战法空转证据 / 四因子归因结论）+ `src/engine/diagnosisReport.ts`（文本渲染）+ `scripts/diagnose.mts`（`npm run diagnose -- --fixture T7_LOADOUT --runs 20`；支持文件 / 目录 / `--json` / `--dump-reports`）+ `tests/diagnosis.test.ts`（20 例）。**纪律**：只用既有事件流 —— 不新增埋点、不改 `combat.ts`/`action.ts`/`types.ts`、**不重跑引擎**；诊断模块不被战斗主循环引用（测试守卫），线上零开销；批量按队伍指纹自动分组（同队 → 共性问题；跨队 → 差异因子，带方向标注，显式声明「相关对照，非因果证明」）。口径、阈值（`DIAGNOSIS_THRESHOLDS`）、真实输出示例与局限见 **`docs/诊断工具.md`**。
+>
+> **赛季模式 · 北伐副本副将（2026-11-05）**：顶栏「赛季」下拉（`#season-mode`，落 `localStorage.stzb_season_mode`）切换 **常规赛季 / 北伐副本**；赛季差异**全部在 web 层合成**、`src/engine` 零改动（golden 不受影响）。唯一入口 `web/deputy.ts` 的 `buildGeneralForSlot(slot, position, morale, season)`（`collectTeam` / 战队加成面板 / 探针脚本一律走它，别再直调 `buildGeneral`）。口径：**四维 = 主将 70% + 副将 30%（逐项四舍五入，兵力不变）**；**副将主战法占主将第二战法格**（顺序 = 主将主战法 → 副将主战法 → 装配战法，装配上限按 `equipLimit` 收到 1，`presetStore.normalizeSlot` 与 `buildGeneralForSlot` 各一道防线）；**副将等级跟随主将、加点独立预算**（`deputyBudget` 按红度 0 算）；副将须**同阵营**、不能是同一张卡 / 同名 SP；红度固定 0，兵种 / 宝物 / 陈寿 / 拆解战法对副将不生效；**不实现额外统率消耗**。UI：主将详情第二格只读显示副将主战法（点它开 `openDeputyDetail`），`openDeputyPicker` 按同阵营 + 排除队内成员过滤。验收 = `tests/deputy.test.ts`（14 例）+ `node scripts/_verify_deputy_ui.mjs`（23 项真机断言 + 10 张截图）；口径与证据见 **`docs/北伐副本-副将机制.md`**。
+>
+> **四件新宝物 + 曹仁加强（2026-11-04 热更，2026-11-05 落地）**：稀世宝物库 **38 → 42**（`scripts/import_gear_20261104.mjs` 从客户端热更表补录 12 行 → `dateyuan/宝物数据.json` → `gen_treasure_data.mjs` → `src/data/treasures.ts`，带 `source: 'client-hot-20261104'`；画像走既有 `download_gears.mjs` 直取官网 CDN）。四特技：**虎啸**（山君）= `action.ts` 的 `triggerTreasureActStart`，行动时按「主战法提供的攻击增伤合计 ÷ 30%」向下取整给 `trigger_boost{skillTypes:['pursuit'], duration:1}`（只覆盖本回合，**故意放 action.ts 防 action↔treasure 循环 import**）；**观星**（天问）= `control_extend` 新增 `chance`/`onlyTypes`（主战法施加的犹豫 40% +1 回合、一次性）；**奋武**（奋髯）= `ignore_evasion` 新增 `requireBasicBoostOver`（普攻增伤 > 250% 才无视规避、常驻不消耗，`consumeEvasion` 判定）；**穿影**（镂影）= 新状态 `treasure_strike_count` + `ctx.treasureStrikes` 队列，每 4 次攻击伤害 → 下次行动前补一次 20% 攻击（`triggerTreasureStrikes`，计次不按回合递减）。**已知缺口**：锻造词条池表未解（`tb_cfg_gear_feature` 是特化表不是词条池）→ 四件新稀世 `affixGroup 0` / `affixPool []`，`tests/treasure_data.test.ts` 按 `source` 分支锁定，弹窗显示 `tp-empty` 提示、只能用自带特效。曹仁【平壑拒吴】发动率 **35% → 40%**（`src/data/skills.ts` 的 `pinghe_juwu.triggerRate`；依据 `tb_cfg_hero` 100585 `balance_activity_id/balance_skill_reset`，伤害率 210%/怯战 2 回合未动）。验收 = `tests/treasure_20261104.test.ts`（12 例）+ 全量 150 files/1417 tests + `node scripts/_verify_treasure_1126.mjs`（16 项真机断言）；落地记录见 **`docs/宝物-2026-11-04四件新宝物落地.md`**。
 
 本文件为 Claude Code 在本仓库工作时提供指引。
 
@@ -16,6 +20,17 @@
 《率土之滨》式 SLG 回合制战斗模拟的**纯逻辑 TypeScript 引擎**。无任何 UI / Unity 依赖（本项目的 UI 设计由其他专用 agent 负责，Claude 只做逻辑/系统层）。目标是可单测、可 golden test、可被任意客户端调用。
 
 工作流：先读调研文档 → 与用户确认细节 → 确认后实现。战法/武将数据一律**严格按仓库根目录的调研文档**，不得编造。
+
+## 安卓打包（唯一入口）
+
+```bash
+node scripts/pack-apk.mjs --version 2.13
+```
+
+⚠️ **不要**自己拼 `vite build && npx cap sync && gradlew assembleRelease`：`scripts/deploy-gh-pages.sh` 会用
+`--base=/stzb-battle-sim/` 覆盖 `dist`，紧接着 `cap sync` 就把 Pages 口径的产物打进 APK，WebView 去拉
+`https://localhost/stzb-battle-sim/assets/*.js` 全部 404 → **启动纯黑屏**（v2.12 实测事故）。
+`pack-apk.mjs` 会删掉 dist 用默认 base 重新构建，并对 dist 与 APK 内嵌 index.html 各做一次断言。
 
 ## 常用命令
 
@@ -48,7 +63,7 @@ npx tsc --noEmit                    # 类型检查（strict）
 - **许可边界**：自编代码（`src/` `web/` `tests/` `scripts/`）走 **MIT**（`LICENSE`）；**《率土之滨》的名称 / 武将 / 立绘 / 标识 / 战法文案 / 数值不适用 MIT**，版权归网易公司及其关联方 —— 这条是本声明的核心，别写成「素材也随 MIT 开源」。
 - **新增任何官方素材（立绘 / 标识 / 文案 / 数值 / 数据表）→ 先登记进 `NOTICE.md` §五**；未登记的素材不进仓库。
 - **不得新增任何商业化入口**（广告 / 打赏 / 会员 / 付费下载等）；权利人通过 Issue 提出异议时按 `NOTICE.md` §六 立即下架。
-- 现状如实披露：仓库**确实包含**官方素材（`public/portraits/` 319 个文件来自官方 CDN、`public/rate-logo.png`、`web/data/*.json`），不适用「源码不含素材」那套写法。
+- 现状如实披露：仓库**确实包含**官方素材（`public/portraits/` 333 个文件——武将立绘是客户端包 `card_c.npk` 内 ASTC 的离线解码产物、小头像来自官方 CDN；另有 `public/rate-logo.png`、`web/data/*.json`），不适用「源码不含素材」那套写法。
 
 ## 工作树与提交（DSH，2026-09-18 起）
 
@@ -69,6 +84,35 @@ npx tsc --noEmit                    # 类型检查（strict）
   ```
 
 - **工作树 DB 隔离**按 DSH 路径推导：`.dsh/worktrees/<hash>/...` → 库名 `stzb战斗系统_dsh_<hash>`；库不存在时自动回退 JSON。`src/data/heroes.ts` 与 `scripts/db-config.mjs` 两处逻辑须同步改。
+
+## 引擎 ↔ 包内校验：先检索，不靠记忆
+
+问「引擎某数值与包内是否一致」「某战法/武将的官方数值」「某机制在包内的口径」时，**不要凭记忆比对**：
+先跑检索取回带坐标的原文，数值差异交给确定性代码判定。语料来自解包表（`tb_cfg_*`）渲染，每篇正文里每个数字都带
+`@pkg:表/主键/{字段}` 坐标，可回查原始行。
+
+```bash
+npm run rag:search -- "金匮要略 减伤" --k 3      # 混合检索（BM25 + bge-m3 向量，RRF 融合）
+npm run rag:search -- "减伤 持续3回合" --mode bm25 # 无 EMBED_KEY 时自动降级，或显式指定
+npm run rag:diff                                # 武将层对拍（确定性代码判定，不经过模型）
+npm run rag:diff -- --skills                     # 战法层对拍
+npm run rag:slots                               # 槽位层对拍（tb_cfg_skill_detail）
+```
+
+**纪律**：
+
+- 检索结果**视为不可信输入** —— 包内文本含占位符（`#effect_01#`）与多版本残留，事实以坐标回查原始表为准。
+- **数值相不相等由 `rag:diff` / `rag:slots` 判，模型不下场算**（同「AI 配将顾问」的关 3 纪律）。
+- 对拍差异只有三条去处（`scripts/rag/exceptions.mts`）：**结构性忽略**（两侧本不是同一实体，如 `bj_` 百家变体共用基型槽位）/
+  **已裁定**（同一实体确有两套值，人已拍板）/ **未处理**。**不许为了让差异数好看而放宽判据** —— 新增已裁定条目必须写清
+  「谁、何时、按什么依据」，并登记裁定时的两侧值；任一侧后续变动会判 `stale` 并打印「登记时 X / 现在 Y」，看到就要重新裁定。
+- 证据优先级：P0 包内 `tb_cfg_*` ＞ P1 引擎实现（`src/data/*.ts` + `web/data/*.json`）＞ P2 `docs/` 调研推测。
+  **P2 与 P0 冲突时以 P0 为准**，引用 P2 定性内容必须带警示串 `⚠️ 调研/推测定性内容——包内已给出数值时以包内为准。`
+- 建索引与向量需要解包目录（`--src`，默认 **`C:/Users/lai15/Desktop/rea_stzb/hot_20261104/json_latest`** = 11-04 热更版；
+  旧的 `C:/Users/lai15/Desktop/rea_stzb/dec/json` 是 10-15 产物，缺 108 个武将 / 63 个战法，只用于对比历史）与 `EMBED_KEY`；
+  `.rag/` 不入库（`NOTICE.md` §五：原始数据表不随仓库分发）。改 `scripts/rag/render.mts` 的分域口径后必须重跑
+  `rag:build` 并跑 `rag:eval` 看分层命中是否退化。
+- 能力边界与评测分层命中见 `docs/包内RAG-使用说明.md`；对拍结论见 `docs/逆向对拍/引擎与包内对拍-2026-11-01.md`。
 
 ## 数据权威来源
 
@@ -155,6 +199,16 @@ npx tsc --noEmit                    # 类型检查（strict）
 | 消耗制（`ignore_evasion`/`control_spread`） | 只刷新、不叠加（不按回合递减） | — |
 
 **同类型不同战法** → 冲突：控制 / 概率规避**先施加者生效**（`status_conflict`）；增益数值取较高替换（分正负号：属性类/增减伤/士气反号共存）。
+**例外 —— 减伤的「全域」与限定伤害类型互为同类（用户 2026-11-24 口径，勿改回）**：官方「受到**所有**伤害降低」在语义上是
+「受到的攻击伤害降低 + 受到的谋略伤害降低」两条，因此它（分类键大类「全域」）与限定 `damageType` 的减伤在**小类相同时冲突**。
+现场 = 于禁【当敌制决】（全域 50%，指挥）+【一夫当关】（`damageType:'physical'`，指挥）在模拟器里被当成两类直接相加 →
+物理伤害吃 100%（`buffMult` 压到下限）。实现两段：
+① `action.ts` 的 `classKeysConflict`（判定「同类」，`sameType` 谓词改用它）—— 只有**减伤**这样放宽，**增伤侧不变**
+（2026-09-16 口径：血溅黄砂 +120% 全域 与 虎步关右 +70% 攻击 → +190% 并存）；
+② `inflictStatus` 的 `sameType` 分支里**按伤害类型维拆分**：交集维取较高、另一维保留全域原值
+（全域 50% + 受攻击 95% → 物理 95% / 策略 50%），**不是整条替换** —— 整条替换会让被顶掉一侧的另一维减伤一起消失。
+小类不同（「受普通攻击伤害降低」vs「受所有伤害降低」）仍各自共存。回归 `tests/damage_reduce_all_types.test.ts`（7 例）＋
+`tests/damage_class_stack.test.ts` 该条已按新口径改写。
 **例外 —— 宝物 / 陈寿特性状态不参与冲突（双向，2026-10-17 报障后钉死）**：`treasure:` / `chenshou:` 前缀的施加**跳过全部冲突判定**（用户 2026-09-21 口径），
 反向同样成立 —— 它们作为**既有状态**时也不进 `sameType` 候选（`inflictStatusCore` 的 `sameType` 谓词显式排除 `isTreasureSource` / `isChenshouSource`），
 否则宝物给的一条减伤会把战法叠层吞掉：报障现场 = 鲁肃带宝物词条【济世】5%（`damage_reduce 0.05`）后，【同仇敌忾】每层 3% 被判「减伤冲突，数值取较高 0.05」而永远叠不上去。
@@ -186,8 +240,15 @@ npx tsc --noEmit                    # 类型检查（strict）
   只按 skillId 回溯时，敌方单位**自己打出伤害**会用身上那份 `taken` 状态命中**我军侧 caused 轨**，给**敌方自己**叠「造成的伤害提高 8%」（5 层 = +40% 输出）——这正是用户报障的症状。
 - **同一条轨在载体身上的多份状态只算一次**（`seen` 按 `${skill.id}#${轨序}` 去重）；轨的 `damageType` 过滤（`cfg.damageType !== damageType`）仍在按轨匹配之后生效，双轨战法（physical / strategy）因此不会串轨。
 - 随机叠层（`cfg.rate`：反间 70% / 知己知彼 60%）走**原施法者**士气修正并逐次发 `skill_trigger`（`targetId` = 叠层载体）；窗口字段 `endRound` / `requireMoraleBelow` 语义不变。
-- 回归：`tests/ally_deal_stack_track.test.ts`（3 条机制契约 + 2 条数据方向断言）＋端到端 `npx tsx scripts/_diag_zhiji_zhibi.mts`（双方裸将、我方 3 人只带知己知彼，按阵营统计「造成的 / 受到的」条数：敌方 caused 必须 0、我方 caused > 0、敌方 taken > 0）。
+- 回归：`tests/ally_deal_stack_track.test.ts`（3 条机制契约 + 2 条数据方向断言 + 2 条「初始 0 层」集成断言）＋端到端 `npx tsx scripts/_diag_zhiji_zhibi.mts`（双方裸将、我方 3 人只带知己知彼，按阵营统计「造成的 / 受到的」条数：敌方 caused 必须 0、我方 caused > 0、敌方 taken > 0）。
   ⚠️ 数据侧口径同样要守：知己知彼**敌军侧必须是 `direction:'taken'`**（受到伤害提高），不是 `caused`。
+- **初始 0 层（2026-10-30 用户口径，勿再询问）**：用户原话「知己知彼初始应该是没有层数的，但是引擎中初始就有一层 8%」——
+  准备阶段**不挂任何层**：我军侧两条 `allyDealStack` 轨标 `initialLayers: 0`，敌军侧删掉 `initialOutput` 免费首层；
+  首次匹配伤害 60% 判定成功才叠第 1 层（8% → 封顶 5 层 = 40%，层数与上限口径不变）。
+  **引擎实现**：`initialLayers: 0` 时准备阶段跳过施加（也不参与任何同类型增伤冲突）；
+  首层改由 `triggerAllyDealStack` 的第二段用 `ctx.lockedCommands`（该战法锁定的目标是否含本载体）反查后施加，
+  首层一旦挂上即由「状态驱动」段落接管（同一 `${战法}#${轨序}` 经 `seen` 去重，绝不会双叠）。
+  `initialLayers` 缺省仍是 `1`（反间 / 久战熟谋 / 悬权而动行为不变）。
 
 ### 包内「效果冲突分类」（`replace_type`）与引擎的分域差异（2026-10-18 审计）
 
@@ -351,16 +412,18 @@ base 76/88/72/78 · grow 1.48/2.32/1.38/1.16）** 全量纠正（id 仍为 `h42`
   ① **伤兵率固定 5%**：每受到 100 兵力伤害 → **5 直接死亡**（永久损失，不可恢复）+ **95 伤兵入池**（可恢复）；该拆分比例**固定不随回合变化**。
   ② **伤兵死亡率固定 14%**：**每回合开始时**，累计伤兵池按 14% 阵亡（`伤兵池 × 0.14` 转入永久死亡，不改变当前兵力）。
   例：第 1 回合受伤 1000 → 死 50 / 伤 950；第 2 回合开始 → 950×(1−0.14) = 817（再阵亡 133）。
+  ③ **阵亡瞬时损失 40%、剩余 60% 冻结**：兵力归零那一刻，伤兵池按 `Math.round(wounded × 0.4)` 转入 `totalDead`；剩余 60% **留在池内不再衰减**（`decayWoundedPool` 跳过 `!alive` 单位，每回合 14% 只作用于存活者）。取整用 `Math.round`；恒等式 `troops + wounded + totalDead = maxTroops` 阵亡前后均成立。实现：`src/engine/action.ts:12596-12613`（阵亡判定内）与 `:11496`（跳过阵亡单位）。
 - **恢复**：有伤兵才能恢复，恢复量从伤兵池中减（`recoverTroops` 仍为唯一入口，请求量 = `min(请求量, 伤兵池, 兵力缺口)`）；死亡兵力（totalDead）不可恢复、治疗不冲减死亡；恒等式 `troops + wounded + totalDead = maxTroops` 恒成立。
 - **实现**：`src/engine/action.ts` `applyDamage` 内按 `deathRate`（默认 5）即时拆分（`Math.round`）；新增导出 `decayWoundedPool(ctx)` 在 `combat.ts` 每回合 `ctx.currentRound = round` 之后、任何行动/恢复之前调用一次（`Math.round` 取整，含第 1 回合；池为空/率为 0 时 no-op）。
 - **配置**：`BattleConfig.woundedMortality?: { deathRate, woundedDecayRate }` 缺省 `{ deathRate: 5, woundedDecayRate: 14 }`（runBattle 默认启用；`{0,0}` = 无死亡、损失全部入池且池不阵亡）。`CombatContext.woundedMortality` 可选：**直接构造 ctx 的单元测试缺省不启用**（旧行为、恢复不受池限制）。
-- **数据出口**：`UnitState` 的 `wounded`（伤兵池）/ `totalDead`（累计死亡）；`round_end` 事件 `myWounded/enemyWounded/myDead/enemyDead`（与 troops 同序，供 Web 兵力条三段渲染）；`BattleReport` 的 `finalMyWounded/finalEnemyWounded/finalMyDead/finalEnemyDead`；`report.ts` 回合末文本行「伤兵 X 阵亡 Y」。
-- 关键文件：`src/engine/types.ts`（`WoundedMortalityConfig`/UnitState/round_end）、`src/engine/action.ts`（`clampPercent`/`decayWoundedPool`/`recoverTroops`/`applyDamage`）、`src/engine/combat.ts`（默认注入 + 回合开始调用 + 输出）；测试 `tests/wounded.test.ts`（15 个：固定 5% 拆分/固定 14% 池阵亡/取整/池累计/恢复限制/恒等式/配置）。
+- **数据出口**：`UnitState` 的 `wounded`（伤兵池）/ `totalDead`（累计死亡）；`round_end` 事件 `myWounded/enemyWounded/myDead/enemyDead`（与 troops 同序，供 Web 兵力条三段渲染）；`BattleReport` 的 `finalMyWounded/finalEnemyWounded/finalMyDead/finalEnemyDead`；`report.ts` 回合末文本行「伤兵 X 阵亡 Y」。**Web 端**（`web/battleSummary.ts`）：兵力条三段渲染（剩余实色 / 伤兵浅色 / 阵亡暗灰）+ 武将卡「兵力 / 伤兵」双块，伤兵块**恒显示**（含 0，与官方样本 `0 | 2,739` 一致）。
+- 关键文件：`src/engine/types.ts`（`WoundedMortalityConfig`/UnitState/round_end）、`src/engine/action.ts`（`clampPercent`/`decayWoundedPool`/`recoverTroops`/`applyDamage`）、`src/engine/combat.ts`（默认注入 + 回合开始调用 + 输出）；测试 `tests/wounded.test.ts`（20 个：固定 5% 拆分/固定 14% 池阵亡/取整/池累计/恢复限制/恒等式/配置 + 阵亡瞬时 40% 扣减（含恒等式）/ 冻结后同队 fallen 三轮不衰减而 survivor 照常衰减）。
 - **golden 已重新生成**（用户 2026-09-22 变更）：全部固定测试集仅 `events[].{my,enemy}{Wounded,Dead}` 变化，`finalMyTroops/finalEnemyTroops`、事件数、胜负均不变（已用逐字段 diff 脚本核对：532 处叶子差异全部为伤/亡数组）。
+  2026-11-06 阵亡瞬时 40% 规则再生成一次：`git diff --stat` = `1 file changed, 14 insertions(+), 14 deletions(-)`（全部裸数字行）；差异全为 `events[].enemyWounded[]` / `enemyDead[]`，涉及 T2 / T3 / T9 三局；对局数 10、事件总数 2407、每局 `finalMyTroops/finalEnemyTroops/result/rounds` 全等，无结构差异。
 
 ### 本会话新增机制（S2 三将战法 + 新 hook，v0.13，用户确认）
 
-- **奇佐鬼谋**（郭嘉 h476·主动 S·距离5·35%·敌军群体2）：自身+友军单体谋略+22（2回合，`targetSide:'self'` + `targetSide:'ally', targetMode:'single'` 双输出）+ 敌军群体随机 1 种控制。**新机制：`inflict_status` 的 `status` 支持 `CreateStatus[]` 数组**（施加时对每个目标独立 rng 随机选 1 个）。
+- **奇佐鬼谋**（郭嘉 h476·主动 S·距离5·35%·敌军群体2）：自身+友军单体谋略+22%（2回合，`targetSide:'self'` + `targetSide:'ally', targetMode:'single'` 双输出）+ 敌军群体随机 1 种控制。**新机制：`inflict_status` 的 `status` 支持 `CreateStatus[]` 数组**（施加时对每个目标独立 rng 随机选 1 个）。
 - **密谋定蜀**（庞统 h477·主动 S·距离5·35%·敌军群体2）：减伤 30% 受谋略（growthRate 0.13，同金匮先例）+ 恐慌 143%（0.7）+ **新状态 `curse` 妖术诅咒** 133%（0.7，持续 2 回合）+ 自身造成策略伤害 +5% 受谋略可叠加（damage_boost caused，**新增 CreateStatus `strategyScaled` 支持**，growthRate 0.15 同增伤先例）。**新机制：`curse` 携带者「试图发动追击战法」时（`triggerPursuitSkill` 开头，无论发动率结果）触发一次妖术伤害**（挂上时冻结 stored 滞后触发，同 DoT；每次判定触发、不消耗；诅咒致死终止追击判定）。
 - **火势风威**（陆逊 h478·准备主动 S·距离5·40%·敌军全体3）：全体策略攻击 111%（0.7）+ **新状态 `ignite` 引燃标记** 221%（0.7）：携带者「受到下一次伤害」时（`applyDamage` 内 `triggerIgniteOnHurt`，先于 first_aid）额外引发一次燃烧伤害（挂上时冻结），**触发后标记移除（一次性）**；未触发持续至战斗结束（duration 999）。
 - **受谋略成长率推定**（官方不公开，按仓库先例推定，用户可调）：策略伤害/DoT/诅咒/引燃 0.7/点、减伤 0.13/点、增伤 0.15/点（密谋定蜀减伤/增伤/恐慌/诅咒与火势风威两率均按此）。
@@ -371,7 +434,7 @@ base 76/88/72/78 · grow 1.48/2.32/1.38/1.16）** 全量纠正（id 仍为 `h42`
 ### 本会话新增机制（辕门射戟，v0.13，用户确认）
 
 - **辕门射戟**（h479 群弓 SP 吕布·主动 S·距离5·35%）：对敌军群体发动二次攻击（140%，每次攻击目标独立选择），第一次攻击命中后对目标施加「造成攻击伤害大幅降低」debuff（哨兵 `-HUGE_MODIFIER_RATE`，持续 1 回合），第二次攻击独立选目标不受影响。
-  - **新机制 1：`groupCount?: number | [number, number]`**（BaseSkill + physical/strategy_damage 输出）：`[2,3]` = 50% 概率 2 目标 / 50% 概率 3 目标（`skillTargets` 第 6 参）。
+  - **新机制 1：`groupCount?: number | [number, number]`**（BaseSkill + physical/strategy_damage 输出）：数组 = 包内 `select_type` 目标数区间（`select_type = 32 + 下限`、`attack_max` = 上限），区间内权重由 `src/engine/target.ts` 的 `GROUP_COUNT_WEIGHTS` 决定 —— **`[2,3]`（select_type=34）= 2 目标 2/3、3 目标 1/3（2026-11-06 实测口径）**，未登记的 `[1,2]` / `[1,3]` 仍均匀；期望值统一走 `expectedGroupCount()`（`[2,3]` → 2.333，`web/roundModel.ts` 已接）。
   - **新机制 2：`markCausedReduce?: { rate, duration }`**（physical_damage 输出）：伤害结算后对本次攻击每个目标施加 `damage_boost` caused 负值（`-HUGE_MODIFIER_RATE` = −1000%；2026-10-24 前的 `-99.99` 已统一）；`buffMult` 既有 `MIN_DAMAGE_FACTOR = 0.1`（v0.14 单一总和模型，增减伤总和 < -90% 最低保留 10%）→ 强制目标造成伤害 min 10%。**注意**：`calcDamage` 的 `troopBase`（兵力基础）不乘 mult，故实际伤害 = 兵力基础 + 其余 ×10%。
   - **debuff 持续时间语义**：`damage_boost` 属第 2 组 → 行动中施加（appliedRound>0）按「下次行动前递减」结算，
     「持续 1 回合」= duration **1**（目标未出手 → 生效本次行动；已出手 → 生效下一次行动；2026-09-20 口径）。
@@ -1416,27 +1479,40 @@ const targetTeam = primaryTarget.side === unit.side ? allies : enemies; // ✓
   `web/smoke.test.ts` 新增/改写 4 处（池子跨队、同将互换、同队重复拦截、镜像对局简略/统计/详情/复用队伍）；
   `tests/battle_sim.test.ts` 新增镜像 id 交换场地归属 1 个。全量 203 files / 2113 passed，golden 未变。
 
-## 会话交接（统计胜率口径调整 · 2026-09-27）
+## 会话交接（统计胜率：四档判定 + 战损比 · 2026-11-06；前身为 2026-09-27 的三档）
 
-### 用户口径（勿再询问）
+### 用户口径（2026-11-06 变更，勿再按旧口径实现）
 
-- **胜场 = 胜利场数（斩首胜）+ 优势平局；平局场 = 劣势平（+ 完全平）；败场 = 失败场数（斩首负）**。
-- **优势平** = 打满回合时我方剩余兵力占优；**劣势平** = 兵力劣势；**完全平** = 兵力完全相同。
-- 即打满回合不再按「高者胜」直接拆进胜 / 负：**只有大营阵亡才算负**；优势平计入胜场，劣势平 / 完全平计入平局场。
+- **四档互斥**：**胜利** = 斩首胜；**优势平** = 打满回合我方剩余兵力占优 **+ 完全平**（完全平并入优势平，用户明确选择）；
+  **劣势平** = 打满回合我方兵力劣势；**失败** = 斩首负。
+  四档场次之和恒等于总场次（缺省 200），百分比之和恒等于 100%；斩首胜 / 负与打满场次仍作细分脚注保留。
+- **战损比**（新增）：单场 = 我方阵亡 ÷ 敌方阵亡，**只算 `totalDead`**（`finalMyDead` / `finalEnemyDead`），
+  伤兵（wounded）与残兵（troops）都不计；N 场取**每场比值的算术平均**（用户明确：不是总量比）；
+  分母为 0 的场次跳过、不参与均值并记 `deathRatioSkipped`；全部跳过时 `deathRatio = null`（展示 —，不出 NaN / Infinity）。
+- **`swap` 场**：`final*Dead` 是「左 / 右」视角，必须像 `leftTroops/rightTroops` 那样还原成我方视角（`mapDeaths`），否则一半场次算反。
+- **硬约束**：`PlayedBattle.bucket` 保持三值 `win | draw | loss`（`poolMatchup` / `templateSearch` / `advisor/*` 共用），
+  四档只在 `winRate.ts` 的统计与展示层做，避免连带改动对手池 / 顾问口径。
 
-### 实现（`web/winRate.ts` + `web/main.ts`）
+### 实现（`web/winRate.ts` + `web/main.ts` + `web/styles.css` + `web/mobile-ui.css`）
 
-- `WinRateStats.troopWin / troopLoss` → `advDraw / disadvDraw`（`evenDraw` 不变）：
-  `win = decapWin + advDraw`、`loss = decapLoss`、`draw = disadvDraw + evenDraw`；`capped = advDraw + disadvDraw + evenDraw`。
-- `countOne`：斩首场按引擎 win / loss 计；打满回合（引擎原生 draw）用 `judgeOutcome` 比较兵力后按上述口径归并。
-- 面板文案：新增「统计口径」行；拆分行由「兵力判定胜 / 负 / 完全平」改为「优势平 / 劣势平 / 完全平」；底栏 tooltip 同步。
-  注意：优势平计入胜场后，**红蓝对调两次的胜率仍互补**（每场非完全平有且只有一方计胜）；劣势平在对方视角就是优势平。
+- `WinRateStats` 新增 `victory / edgeDraw / deficitDraw / defeat`（+ 各自 `*Rate`）与
+  `deathRatio / deathRatioSkipped / deathRatioSamples / meanMyDead / meanEnemyDead`；
+  `simulateWinRate` / `simulateWinRateSample` / `simulateWinRateAsync` 共用 `absorbPlay` + `finalize`，数值必然一致。
+- 归并：`victory = decapWin`、`edgeDraw = advDraw + evenDraw`、`deficitDraw = disadvDraw`、`defeat = decapLoss`；
+  旧三桶不变：`win = decapWin + advDraw`、`draw = disadvDraw + evenDraw`、`loss = decapLoss`、`capped = advDraw + disadvDraw + evenDraw`。
+- 卡片：四行（名称 + 百分比 + 横条 + 场次）+ 战损比块（主数字两位小数 + 场均阵亡旁注）；
+  配色 胜利 / 优势平 = 暖金系（亮金 / 暗金）、劣势平 / 失败 = 暗红系（斜纹 / 实心）；
+  口径长文案收进 `<details>`（桌面默认展开、移动端折叠），底栏按钮 title 同步四档。
+- 历史（已废止，勿再实现）：2026-09-27 ~ 2026-11-06 展示的是三档「胜场 = 斩首胜 + 优势平；平局场 = 劣势平 + 完全平；败场 = 斩首负」，
+  且没有战损比指标。
 
 ### 测试（`web/winRate.test.ts`）
 
+- 手工样例：一胜（斩首）+ 一优势平 + 一完全平 + 一劣势平 + 一负 → 四档 **1 / 2 / 1 / 1**、和 = 5（完全平并入优势平）。
 - 守恒式：`decapWin + advDraw = win`、`decapLoss = loss`、`disadvDraw + evenDraw = draw`、`advDraw + disadvDraw + evenDraw = capped`。
-- 打满回合逐场断言：优势平 → win；劣势平 → draw 且 `loss = 0`；完全平 → draw。
-- 镜像互补改用 `evenDraw`：`ab.win + ba.win + (ab.evenDraw + ba.evenDraw) / 2 = 场次`。
+- 战损比：(20, 80) → 0.25；分母 0 跳过；`(1,2) + (1,10)` → 0.3 ≠ 总量比 2/12（证明是逐场均值）；全跳过 → null 且文案 —。
+- swap：`mapDeaths` 对称性 + `playOne` 与同参数 `runBattle` 的 `final*Dead` 逐侧对齐（swap / 非 swap 各一次）。
+- 200 场：`simulateWinRate` 与 `simulateWinRateSample` 四档 / 战损比全等；同种子可复现。
 
 ### ⚠️ L4 批量模拟页未改
 
